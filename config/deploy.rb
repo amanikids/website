@@ -1,16 +1,17 @@
-set :application,       'set your application name here'
-set :repository,        'set your repository location here'
-set :database_name,     'set your database name here'
-set :database_username, 'set your database username here'
+# In all its glory:
+set :application, 'amanikids_org'
 
-# If you aren't deploying to /u/apps/#{application} on the target
-# servers (which is the default), you can specify the actual location
-# via the :deploy_to variable:
-# set :deploy_to, "/var/www/#{application}"
+# Gotta love this new way of writing it.
+server 'woodward.joyent.us', :web, :user => 'matthew'
 
-# If you aren't using Subversion to manage your source code, specify
-# your SCM below:
-# set :scm, :git
-# set :git_shallow_clone, 1
+# Git rawks, yo!
+set :scm, :git
+set :repository, '/users/home/matthew/domains/git.matthewtodd.org/var/lib/repos/amanikids_org.git'
+set :git_shallow_clone, 1
 
-server 'your server here', :web, :app, :db, :primary => true
+# I'm liking the /var these days
+set :deploy_to, '/users/home/matthew/domains/amanikids.org/var/www'
+
+# Database config parameters. It would be nice to determine the username automatically, though.
+set :database_name,     'matthew_amanikids_wordpress'
+set :database_username, 'matthew'
