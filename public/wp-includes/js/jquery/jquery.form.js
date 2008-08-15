@@ -243,7 +243,7 @@ $.fn.ajaxSubmit = function(options) {
             found = true;
 
     // options.iframe allows user to force iframe mode
-   if (options.iframe || found) { 
+   if (options.iframe || found) {
        // hack to fix Safari hang (thanks to Tim Molendijk for this)
        // see:  http://groups.google.com/group/jquery-dev/browse_thread/thread/36395b7ab510dd5d
        if ($.browser.safari && options.closeKeepAlive)
@@ -834,10 +834,10 @@ $.fn.resetForm = function() {
  * @type jQuery
  * @cat Plugins/Form
  */
-$.fn.enable = function(b) { 
+$.fn.enable = function(b) {
     if (b == undefined) b = true;
-    return this.each(function() { 
-        this.disabled = !b 
+    return this.each(function() {
+        this.disabled = !b
     });
 };
 
@@ -854,7 +854,7 @@ $.fn.enable = function(b) {
  */
 $.fn.select = function(select) {
     if (select == undefined) select = true;
-    return this.each(function() { 
+    return this.each(function() {
         var t = this.type;
         if (t == 'checkbox' || t == 'radio')
             this.checked = select;

@@ -35,12 +35,12 @@ input.checkbox {border:1px none #000000; background:transparent; vertical-align:
 
 /* Buttons */
 #insert, #cancel, input.mceButton, .updateButton {
-border: 1px solid #bbb; 
-margin:0; 
+border: 1px solid #bbb;
+margin:0;
 padding:0 0 1px;
 font-weight:bold;
 font-size: 11px;
-width:94px; 
+width:94px;
 height:24px;
 background:url(img/fade-butt.png) 0 0;
 cursor:pointer;
@@ -48,7 +48,7 @@ cursor:pointer;
 #insert:hover, #cancel:hover, input.mceButton:hover, .updateButton:hover,
 #insert:focus, #cancel:focus, input.mceButton:focus, .updateButton:focus {
 border: 1px solid #555;
-} 
+}
 
 /* Browse */
 a.browse span {display:block; width:20px; height:18px; background:url(../../img/icons.gif) -860px 0; border:1px solid #FFF; margin-left:1px;}

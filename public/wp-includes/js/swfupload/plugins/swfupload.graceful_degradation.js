@@ -1,4 +1,4 @@
-/* 
+/*
 	SWFUpload Graceful Degradation Plug-in
 
 	This plugin allows SWFUpload to display only if it is loaded successfully.  Otherwise a default form is left displayed.

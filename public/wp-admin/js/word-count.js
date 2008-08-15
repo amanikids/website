@@ -33,7 +33,7 @@
 				setTimeout( function() { t.block = 0; }, 2000 );
 			}, 1 );
 		}
-	} 
+	}
 }(jQuery));
 
 jQuery(document).ready( function(){ wpWordCount.init(); } );

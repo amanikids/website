@@ -66,7 +66,7 @@
 
 				if ( e.keyCode == 13 && (DL = ed.dom.getParent(ed.selection.getNode(), 'DL')) ) {
 					var P = ed.dom.create('p', {}, '&nbsp;');
-					if ( (DIV = DL.parentNode) && DIV.nodeName == 'DIV' ) 
+					if ( (DIV = DL.parentNode) && DIV.nodeName == 'DIV' )
 						ed.dom.insertAfter( P, DIV );
 					else ed.dom.insertAfter( P, DL );
 

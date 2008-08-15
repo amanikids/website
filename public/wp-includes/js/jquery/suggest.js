@@ -100,7 +100,7 @@
 				
 			} else if ($input.val().length != prevLength) {
 
-				if (timeout) 
+				if (timeout)
 					clearTimeout(timeout);
 				timeout = setTimeout(suggest, options.delay);
 				prevLength = $input.val().length;
@@ -207,7 +207,7 @@
 					$(this).addClass(options.selectClass);
 				})
 				.click(function(e) {
-					e.preventDefault(); 
+					e.preventDefault();
 					e.stopPropagation();
 					selectCurrentResult();
 				});
@@ -224,7 +224,7 @@
 				var token = $.trim(tokens[i]);
 				if (token) {
 					token = token.replace(
-						new RegExp(q, 'ig'), 
+						new RegExp(q, 'ig'),
 						function(q) { return '<span class="' + options.matchClass + '">' + q + '</span>' }
 						);
 					items[items.length] = token;

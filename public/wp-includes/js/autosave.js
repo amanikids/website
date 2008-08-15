@@ -11,7 +11,7 @@ jQuery(function($) {
 	//Disable autosave after the form has been submitted
 	$("#post").submit(function() { $.cancel(autosavePeriodical); });
 	
-	// Autosave when the preview button is clicked. 
+	// Autosave when the preview button is clicked.
 	$('#previewview a').click(function(e) {
 		autosave();
 		autosaveDelayURL = this.href;
@@ -109,7 +109,7 @@ function autosave_update_preview_link(post_id) {
 		}, function(permalink) {
 			jQuery('#previewview').html('<a target="_blank" href="'+permalink+'" tabindex="4">'+previewText+'</a>');
 
-			// Autosave when the preview button is clicked.  
+			// Autosave when the preview button is clicked.
 			jQuery('#previewview a').click(function(e) {
 				autosave();
 				autosaveDelayURL = this.href;
@@ -130,7 +130,7 @@ function autosave_update_slug(post_id) {
 			{
 				action: 'sample-permalink',
 				post_id: post_id,
-				new_title: jQuery('#title').val(), 
+				new_title: jQuery('#title').val(),
 				samplepermalinknonce: jQuery('#samplepermalinknonce').val()
 			},
 			function(data) {

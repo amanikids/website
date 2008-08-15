@@ -4,14 +4,14 @@
  * Copyright (c) 2007 cody lindley
  * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
 */
-		  
+		
 var tb_pathToImage = "../wp-includes/js/thickbox/loadingAnimation.gif";
 var tb_closeImage = "../wp-includes/js/thickbox/tb-close.png";
 
 /*!!!!!!!!!!!!!!!!! edit below this line at your own risk !!!!!!!!!!!!!!!!!!!!!!!*/
 
 //on page load call tb_init
-jQuery(document).ready(function(){   
+jQuery(document).ready(function(){
 	tb_init('a.thickbox, area.thickbox, input.thickbox');//pass where to apply thickbox
 	imgLoader = new Image();// preload image
 	imgLoader.src = tb_pathToImage;
@@ -59,10 +59,10 @@ function tb_show(caption, url, imageGroup) {//function called when the user clic
 		var baseURL;
 	   if(url.indexOf("?")!==-1){ //ff there is a query string involved
 			baseURL = url.substr(0, url.indexOf("?"));
-	   }else{ 
+	   }else{
 	   		baseURL = url;
 	   }
-	   
+	
 	   var urlString = /\.jpg$|\.jpeg$|\.png$|\.gif$|\.bmp$/;
 	   var urlType = baseURL.toLowerCase().match(urlString);
 
@@ -108,17 +108,17 @@ function tb_show(caption, url, imageGroup) {//function called when the user clic
 			var imageWidth = imgPreloader.width;
 			var imageHeight = imgPreloader.height;
 			if (imageWidth > x) {
-				imageHeight = imageHeight * (x / imageWidth); 
-				imageWidth = x; 
-				if (imageHeight > y) { 
-					imageWidth = imageWidth * (y / imageHeight); 
-					imageHeight = y; 
+				imageHeight = imageHeight * (x / imageWidth);
+				imageWidth = x;
+				if (imageHeight > y) {
+					imageWidth = imageWidth * (y / imageHeight);
+					imageHeight = y;
 				}
-			} else if (imageHeight > y) { 
-				imageWidth = imageWidth * (y / imageHeight); 
-				imageHeight = y; 
-				if (imageWidth > x) { 
-					imageHeight = imageHeight * (x / imageWidth); 
+			} else if (imageHeight > y) {
+				imageWidth = imageWidth * (y / imageHeight);
+				imageHeight = y;
+				if (imageWidth > x) {
+					imageHeight = imageHeight * (x / imageWidth);
 					imageWidth = x;
 				}
 			}
@@ -224,7 +224,7 @@ function tb_show(caption, url, imageGroup) {//function called when the user clic
 					});
 					tb_position();
 					jQuery("#TB_load").remove();
-					jQuery("#TB_window").css({display:"block"}); 
+					jQuery("#TB_window").css({display:"block"});
 				}else if(url.indexOf('TB_iframe') != -1){
 					tb_position();
 					if($.browser.safari){//safari needs help because it will not fire iframe onload
