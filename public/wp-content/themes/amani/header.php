@@ -37,3 +37,5 @@
       <ul><? wp_list_pages('depth=1&title_li='); ?></ul>
     </div>    
   </div>
+
+  <div id="container">

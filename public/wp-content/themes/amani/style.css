@@ -2,9 +2,9 @@
 /*
 Theme Name: Amani
 Theme URI: http://amanikids.org
-Description: a-brief-description
-Author: your-name
-Author URI: your-URI
+Description: Amani's website layout.
+Author: Adam and Colby, then tweaked by Matthew
+Author URI: http://matthewtodd.org
 Version: 0.1
 */
 
@@ -32,7 +32,7 @@ h2{
 	font-family:"Times New Roman", Times, serif;
 	font-weight:lighter;
 }
-.text{
+p{
 	font-family:"Century Gothic", Arial, Helvetica, sans-serif;
 	font-size:13px;
 	color:#848484;
