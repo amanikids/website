@@ -6,7 +6,8 @@ server 'woodward.joyent.us', :web, :user => 'matthew'
 
 # Git rawks, yo!
 set :scm, :git
-set :repository, '/users/home/matthew/domains/git.matthewtodd.org/var/lib/repos/amanikids_org.git'
+set :local_repository, "woodward:git/#{application}.git"
+set :repository, "/users/home/matthew/domains/git.matthewtodd.org/var/lib/repos/#{application}.git"
 set :git_shallow_clone, 1
 
 # I'm liking the /var these days
