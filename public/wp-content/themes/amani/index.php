@@ -1,17 +1,17 @@
-<? get_header(); ?>
+<?php get_header(); ?>
 
 <div id="left">
-  <img src="<? bloginfo('template_directory'); ?>/images/pic4.jpg" />
+  <img src="<?php bloginfo('template_directory'); ?>/images/pic4.jpg" />
 </div>
 
 <div id="right">
-	<? if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	  <div>
-  	  <h1><? if (!is_single()) : ?><a href="<? the_permalink() ?>" rel="bookmark"><? the_title(); ?></a><? else : ?><? the_title(); ?><? endif; ?></h1>
-      <? the_content(); ?>
-      <p>Posted by <? the_author(); ?> on <? the_time('F d, Y') ?>.</p>
+      <h1><?php if (!is_single()) : ?><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a><?php else : ?><?php the_title(); ?><?php endif; ?></h1>
+      <?php the_content(); ?>
+      <p>Posted by <?php the_author(); ?> on <?php the_time('F d, Y') ?>.</p>
     </div>
-  <? endwhile; endif; ?>
+  <?php endwhile; endif; ?>
 </div>
 
-<? get_footer(); ?>
+<?php get_footer(); ?>
