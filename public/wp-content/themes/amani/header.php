@@ -13,16 +13,13 @@
       <a href="<? bloginfo('home'); ?>"><img border="none" src="<? bloginfo('template_directory'); ?>/images/logo.jpg" /></a>
     </div>
     
-    <!--
     <div id="upper_nav">
       <ul>
-        <li><a href="<? get_settings('home'); ?>"><img border="none" src="<? bloginfo('template_directory'); ?>/images/home.jpg" /><br />HOME / </a></li>
-        <li><a href="#"><img border="none" src="<? bloginfo('template_directory'); ?>/images/donate.jpg" /><br />DONATE / </a></li>
-        <li><a href="#"><img border="none" src="<? bloginfo('template_directory'); ?>/images/subscribe.jpg" /><br />SUBSCRIBE / </a></li>
-        <li><a href="#"><img border="none" src="<? bloginfo('template_directory'); ?>/images/contact.jpg" /><br />CONTACT</a></li>
+        <li><a href="<? bloginfo('home'); ?>"><img border="none" src="<? bloginfo('template_directory'); ?>/images/home.jpg" /><br />HOME / </a></li>
+        <li><a href="/donate"><img border="none" src="<? bloginfo('template_directory'); ?>/images/donate.jpg" /><br />DONATE / </a></li>
+        <li><a href="mailto:joe@amanikids.org?subject=Sign%20me%20up!"><img border="none" src="<? bloginfo('template_directory'); ?>/images/subscribe.jpg" /><br />SUBSCRIBE</a></li>
       </ul>
     </div>
-    -->
 
     <? if (!is_home()) : ?>
       <div id="tag_line">
