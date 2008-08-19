@@ -35,7 +35,12 @@
   
   <div id="main_nav">
     <div id="container">
-      <ul><? wp_list_pages('depth=1&title_li='); ?></ul>
+      <ul>
+        <? wp_list_pages('depth=1&title_li=How+Amani+Helps+Tanzanian+Kids&meta_key=section&meta_value=how-amani-helps'); ?>
+        <? wp_list_pages('depth=1&title_li=How+You+Can+Help&meta_key=section&meta_value=how-you-can-help'); ?>
+        <? wp_list_pages('depth=1&title_li=Meet+Our+Kids&meta_key=section&meta_value=meet-our-kids'); ?>
+        <? wp_list_pages('depth=1&title_li=Mission,+History,+and+Supporters&meta_key=section&meta_value=mission-history-supporters'); ?>
+      </ul>
     </div>    
   </div>
 
