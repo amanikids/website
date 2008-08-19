@@ -5,10 +5,11 @@
   <title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
   <link href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" rel="stylesheet">
   <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="<?php bloginfo('atom_url'); ?>" />
+  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/javascripts/dropdown.js"></script>
 </head>
 
 <body>
-  <div id="container">
+  <div class="container">
     <div id="logo">
       <a href="<?php bloginfo('home'); ?>"><img border="none" src="<?php bloginfo('template_directory'); ?>/images/logo.jpg" /></a>
     </div>
@@ -31,14 +32,14 @@
   </div>
   
   <div id="main_nav">
-    <div id="container">
-      <ul>
+    <div class="container">
+      <ul id="main_nav_ul">
         <?php wp_list_pages('depth=1&title_li=How+Amani+Helps+Tanzanian+Kids&meta_key=section&meta_value=how-amani-helps'); ?>
         <?php wp_list_pages('depth=1&title_li=How+You+Can+Help&meta_key=section&meta_value=how-you-can-help'); ?>
         <?php wp_list_pages('depth=1&title_li=Meet+Our+Kids&meta_key=section&meta_value=meet-our-kids'); ?>
         <?php wp_list_pages('depth=1&title_li=Mission,+History,+and+Supporters&meta_key=section&meta_value=mission-history-supporters'); ?>
       </ul>
-    </div>    
+    </div>
   </div>
 
-  <div id="container">
+  <div class="container">
