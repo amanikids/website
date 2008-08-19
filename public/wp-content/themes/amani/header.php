@@ -24,11 +24,13 @@
     </div>
     -->
 
-    <div id="tag_line">
-      <h2>Rescuing Children.</h2>
-      <h2>Restoring Hope.</h2>
-      <h2>Transforming Lives.</h2>
-    </div>
+    <? if (!is_home()) : ?>
+      <div id="tag_line">
+        <h2>Rescuing Children.</h2>
+        <h2>Restoring Hope.</h2>
+        <h2>Transforming Lives.</h2>
+      </div>
+    <? endif; ?>
   </div>
   
   <div id="main_nav">
