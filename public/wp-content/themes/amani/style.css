@@ -122,6 +122,7 @@ p{
 	text-decoration:none;
 }
 #left{
+  clear: both;
 	width:545px;
 	margin:25px 0px;
 	float:left;

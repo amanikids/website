@@ -4,6 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
   <link href="<? bloginfo('stylesheet_url'); ?>" type="text/css" rel="stylesheet">
+  <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="<? bloginfo('atom_url'); ?>" />
 </head>
 
 <body>
@@ -23,13 +24,11 @@
     </div>
     -->
 
-    <? if (!is_home()) : ?>
     <div id="tag_line">
       <h2>Rescuing Children.</h2>
       <h2>Restoring Hope.</h2>
       <h2>Transforming Lives.</h2>
     </div>
-    <? endif ?>
   </div>
   
   <div id="main_nav">
