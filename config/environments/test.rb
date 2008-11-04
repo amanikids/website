@@ -21,7 +21,7 @@ config.action_controller.allow_forgery_protection    = false
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
 
-# Specify gems that this application depends on for testing. 
+# Specify gems that this application depends on for testing.
 # They can then be installed with "RAILS_ENV=test rake gems:install" on new installations.
 config.gem 'thoughtbot-factory_girl',    :lib => 'factory_girl',   :source => 'http://gems.github.com/'
 config.gem 'thoughtbot-quientbacktrace', :lib => 'quietbacktrace', :source => 'http://gems.github.com/'
