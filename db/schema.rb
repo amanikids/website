@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(:version => 20081104122338) do
 
   create_table "sections", :force => true do |t|
     t.string   "title"
-    t.string   "slug"
     t.integer  "position",   :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
