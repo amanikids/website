@@ -17,6 +17,7 @@ Rails::Initializer.run do |config|
 
   # Specify gems that this application depends on.
   # They can then be installed with "rake gems:install" on new installations.
+  config.gem 'RedCloth'
   config.gem 'haml'
 
   # Only load the plugins named here, in the order given. By default, all plugins

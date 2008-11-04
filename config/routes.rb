@@ -1,8 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.with_options(:conditions => { :method => :get }) do |map|
-    map.with_options(:controller => 'pages') do |map|
-      map.root :action => 'index'
-      map.page '/:id', :action => 'show'
-    end
+  map.namespace :admin do |admin|
+    admin.resources :sections
+  end
+
+  map.with_options(:controller => 'pages') do |map|
+    map.root         :action => 'index', :conditions => { :method => :get }
+    map.page '/:id', :action => 'show',  :conditions => { :method => :get }
   end
 end

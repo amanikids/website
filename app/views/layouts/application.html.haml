@@ -1,0 +1,19 @@
+!!! XML
+!!!
+%html{html_attrs}
+  %head
+    %title Amani Children's Home | Moshi, Tanzania
+  %body
+    %h1
+      = link_to_unless_current "Amani Children's Home", root_path
+
+    %ul.navigation
+      - Section.ordered.each do |section|
+        %li
+          = section.title
+          %ul
+            - section.pages.each do |page|
+              %li
+                = link_to_unless_current page.title, page
+
+    = yield
