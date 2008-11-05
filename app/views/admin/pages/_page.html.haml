@@ -1,0 +1,5 @@
+%li[page]
+  = page.title
+  = link_to 'View', page_path(page)
+  = link_to 'Edit', edit_admin_page_path(page)
+  = link_to 'Delete', admin_page_path(page), :method => :delete, :confirm => 'Are you sure you want to delete this Page?'

@@ -1,3 +1,6 @@
-%div[section]
+%li[section]
   = section.title
   = link_to 'Edit', edit_admin_section_path(section)
+  = link_to 'Delete', admin_section_path(section), :method => :delete, :confirm => "Are you sure you want to delete this Section and all of its Pages?"
+  %ol.pages
+    = render :partial => section.pages

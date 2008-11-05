@@ -1,1 +1,6 @@
-= render :partial => @sections
+%ul
+  %li= link_to 'New Section', new_admin_section_path
+  %li= link_to 'New Page', new_admin_page_path
+
+%ol.sections
+  = render :partial => @sections

@@ -1,0 +1,17 @@
+- form_for [:admin, @page] do |f|
+  .field
+    = f.label :section_id
+    = f.collection_select :section_id, Section.ordered, :id, :title
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :slug
+    = f.text_field :slug
+  .field
+    = f.label :body
+    = textile_area :page, :body
+  .field
+    = f.submit
+    or
+    = link_to 'Cancel', admin_sections_path

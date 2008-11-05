@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
-    admin.resources :sections
+    admin.resources :pages, :sections
   end
 
   map.with_options(:controller => 'pages') do |map|

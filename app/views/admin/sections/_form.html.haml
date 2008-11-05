@@ -1,3 +1,8 @@
 - form_for [:admin, @section] do |f|
-  = f.text_field :title
-  = f.submit
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.submit
+    or
+    = link_to 'Cancel', admin_sections_path
