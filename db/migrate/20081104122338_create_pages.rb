@@ -1,7 +1,7 @@
 class CreatePages < ActiveRecord::Migration
   def self.up
     create_table :pages do |t|
-      t.references :section
+      t.references :section, :parent
       t.string :title, :slug
       t.text :body
       t.integer :position, :default => 0

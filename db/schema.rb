@@ -13,6 +13,7 @@ ActiveRecord::Schema.define(:version => 20081104122338) do
 
   create_table "pages", :force => true do |t|
     t.integer  "section_id"
+    t.integer  "parent_id"
     t.string   "title"
     t.string   "slug"
     t.text     "body"
