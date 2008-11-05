@@ -23,3 +23,7 @@
 
     .content
       = yield
+
+      .footer
+        Contact Us:
+        = mail_to 'info@amanikds.org', nil, :encode => 'javascript'
