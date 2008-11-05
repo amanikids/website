@@ -1,4 +1,6 @@
 %li[page]
+  = link_to '&uarr;', admin_page_path(page, :page => { :move_higher => true }), :method => :put
+  = link_to '&darr;', admin_page_path(page, :page => { :move_lower => true }), :method => :put
   = page.title
   = link_to 'View', page_path(page)
   = link_to 'Edit', edit_admin_page_path(page)

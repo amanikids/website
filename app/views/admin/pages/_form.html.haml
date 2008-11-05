@@ -12,6 +12,6 @@
     = f.label :body
     = textile_area :page, :body
   .field
-    = f.submit
+    = f.submit 'Save changes', :name => 'page[continue_editing]'
     or
     = link_to 'Cancel', admin_sections_path

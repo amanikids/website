@@ -19,7 +19,7 @@ class Admin::PagesController < Admin::ApplicationController
   def update
     @page = Page.find_by_param(params[:id])
     if @page.update_attributes(params[:page])
-      redirect_to edit_admin_page_path(@page)
+      redirect_to @page.continue_editing ? edit_admin_page_path(@page) : admin_sections_path
     else
       render :action => 'edit'
     end
