@@ -4,7 +4,7 @@
   %head
     %title Amani Children's Home | Moshi, Tanzania
     = stylesheet_link_tag 'application'
-    
+
   %body
     .header
       %h1.logo
@@ -12,13 +12,14 @@
 
     %ul.navigation
       - Section.ordered.each do |section|
-        %li
-          = section.title
+        %li.section
+          .title
+            = section.title
           - if section.pages.any?
             %ul.pages
               - section.pages.each do |page|
-                %li
-                  = link_to_unless_current page.title, page
+                %li.page
+                  = link_to page.title, page
 
     .content
       = yield

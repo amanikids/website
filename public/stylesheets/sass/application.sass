@@ -1,17 +1,61 @@
 !orange = #de6a2a
+!sans_serif = 'Century Gothic'
+!yellow = #ffc614
 
 body
   :margin 0
   :padding 0
-  
+
 .navigation
   :background-color = !orange
-  
-  li
-    :display inline
+  :font-family = !sans_serif
+  :font-size 14px
+  :font-weight bold
+  :line-height 16px
+  :height 30px
+
+  li.section
+    :color = !yellow
+    :float left
+    :list-style none
     :margin 0
     :padding 0
+    :width 12em
+
+    .title
+      :display block
+      :padding 0.5em 1em
+
+      &:hover
+        :background-color = !yellow
+        :color = !orange
+
     .pages
-      :display hidden
-      :hover
+      :background-color = !orange
+      :display none
+      :margin 0
+      :padding 0
+      :position absolute
+      :width 12em
+
+      li.page
+        :border-top-color = !yellow
+        :border-top-style solid
+        :border-top-width 1px
+        :list-style none
+        :margin 0
+        :padding 0
+
+        a
+          :color = !yellow
+          :display block
+          :padding 0.5em 1em
+          :text-decoration none
+
+          &:hover
+            :background-color = !yellow
+            :color = !orange
+
+    &:hover
+      .pages
         :display block
