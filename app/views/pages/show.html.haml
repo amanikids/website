@@ -1,2 +1,5 @@
-%h2= @page.title
+%h2
+  = @page.section.title + ':'
+  = @page.title
+
 = textilize @page.body
