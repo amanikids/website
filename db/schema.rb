@@ -11,19 +11,12 @@
 
 ActiveRecord::Schema.define(:version => 20081104122338) do
 
-  create_table "pages", :force => true do |t|
-    t.integer  "section_id"
+  create_table "contents", :force => true do |t|
     t.integer  "parent_id"
+    t.string   "type"
     t.string   "title"
     t.string   "slug"
     t.text     "body"
-    t.integer  "position",   :default => 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sections", :force => true do |t|
-    t.string   "title"
     t.integer  "position",   :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"

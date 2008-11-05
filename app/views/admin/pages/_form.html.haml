@@ -1,7 +1,7 @@
 - form_for [:admin, @page] do |f|
   .field
-    = f.label :section_id
-    = f.collection_select :section_id, Section.ordered, :id, :title
+    = f.label :parent_id
+    = f.select :parent_id, Section.ordered.inject([]) { |options, section| options << [section.title, section.id]; section.children.each { |child| options << ['- ' + child.title, child.id] }; options }
   .field
     = f.label :title
     = f.text_field :title
