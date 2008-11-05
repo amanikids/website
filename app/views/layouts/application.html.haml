@@ -9,17 +9,25 @@
     .header
       %h1.logo
         = link_to_unless_current image_tag('logo.jpg', :size => '209x88', :alt => "Amani Children's Home"), root_path
+      .tagline
+        Rescuing Children. Restoring Hope. Transforming Lives.
+      %ul.links
+        %li= link_to image_tag('home.jpg')      + content_tag(:span, 'Home'),      root_path
+        %li= link_to image_tag('donate.jpg')    + content_tag(:span, 'Donate'),    root_path
+        %li= link_to image_tag('subscribe.jpg') + content_tag(:span, 'Subscribe'), root_path
+        %li= mail_to 'info@amanikids.org', image_tag('contact.jpg') + content_tag(:span, 'Contact'), :encode => 'javascript'
 
-    %ul.navigation
-      - Section.ordered.each do |section|
-        %li.section
-          .title
-            = section.title
-          - if section.pages.any?
-            %ul.pages
-              - section.pages.each do |page|
-                %li.page
-                  = link_to page.title, page
+    .navigation
+      %ul.sections
+        - Section.ordered.each do |section|
+          %li.section
+            .title
+              = section.title
+            - if section.pages.any?
+              %ul.pages
+                - section.pages.each do |page|
+                  %li.page
+                    = link_to page.title, page
 
     .content
       = yield

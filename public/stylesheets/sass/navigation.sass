@@ -2,54 +2,59 @@
 
 .navigation
   :background-color = !orange
+  :clear both
   :font-family = !sans_serif
   :font-size 14px
   :font-weight bold
   :height 30px
   :line-height 16px
   :margin 0
-  :padding 0
+  :padding = 0 !side_margin
 
-  li.section
-    :color = !yellow
-    :float left
+  .sections
     :list-style none
     :margin 0
     :padding 0
-    :width 12em
 
-    .title
-      :display block
-      :padding 0.5em 1em
-
-      &:hover
-        :background-color = !yellow
-        :color = !orange
-
-    .pages
-      :background-color = !orange
-      :display none
+    .section
+      :color = !yellow
+      :float left
       :margin 0
       :padding 0
-      :position absolute
       :width 12em
 
-      li.page
-        :border-top = 1px solid !yellow
-        :list-style none
+      .title
+        :display block
+        :padding 0.5em 1em
+
+        &:hover
+          :background-color = !yellow
+          :color = !orange
+
+      .pages
+        :background-color = !orange
+        :display none
         :margin 0
         :padding 0
+        :position absolute
+        :width 12em
 
-        a
-          :color = !yellow
+        li.page
+          :border-top = 1px solid !yellow
+          :list-style none
+          :margin 0
+          :padding 0
+
+          a
+            :color = !yellow
+            :display block
+            :padding 0.5em 1em
+            :text-decoration none
+
+            &:hover
+              :background-color = !yellow
+              :color = !orange
+
+      &:hover
+        .pages
           :display block
-          :padding 0.5em 1em
-          :text-decoration none
-
-          &:hover
-            :background-color = !yellow
-            :color = !orange
-
-    &:hover
-      .pages
-        :display block
