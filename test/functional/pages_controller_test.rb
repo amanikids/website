@@ -3,6 +3,7 @@ require 'test_helper'
 class PagesControllerTest < ActionController::TestCase
   should_route :get, '/', :action => 'index'
   should_route :get, '/this-is-my-page', :action => 'show', :id => 'this-is-my-page'
+  should_route :get, '/this-is-my-parent/this-is-my-page', :action => 'show', :parent_id => 'this-is-my-parent', :id => 'this-is-my-page'
 
   context 'index' do
     setup { get :index }

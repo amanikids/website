@@ -108,6 +108,46 @@ become_a_helping_hand:
   body: "*Become a Helping Hand to the Amani children by making regular contributions.*\n\nAmani Children’s Home provides caring and holistic support to the nearly 300 children who we have rescued from a life on the streets. When you become a Helping Hand by giving monthly to Amani, you make it possible for us to reach out to homeless children in a sustainable way and give them a future filled with hope. You are transforming the life of a child.\n\nA neat aspect of the Helping Hands program is that there are different levels of giving, so that you can choose the level that’s best for you, with the knowledge that your donations are making a significant difference to the kids. Amani is a small, grassroots organization with no overseas offices, so we’re able to ensure that donations go directly to care for the children.\n\nYour monthly sponsorship will go a long way in Tanzania. For example:\n\n*$9 (£5)* - Provides one child with ongoing, nutritious meals every day\n\n*$29 (£16)* - Provides full care for one child for a month, including food, clothing, primary school education, medicine and counseling.\n\n*$49 (£27)* - Provides full care for one child plus secondary school expenses for one of our older children.\n\n*$99 (£55)* - Provides full care for two children in addition to supporting our family reunification program, which finds home-based care for street-children in loving homes.\n\n*How many children will you help?*\n\n*Learn how to become a Helping Hand sponsor* from the United States [TODO flag image], the UK [TODO flag image], Norway [TODO flag image], Canada [TODO flag image] or from anywhere else in the world [TODO globe image]."
   position: 1
 
+helping_hands_united_states:
+  type: Page
+  parent: become_a_helping_hand
+  title: Helping Hands United States
+  slug: helping-hands-united-states
+  body: TODO
+  position: 0
+
+helping_hands_united_kingdom:
+  type: Page
+  parent: become_a_helping_hand
+  title: Helping Hands United Kingdom
+  slug: helping-hands-united-kingdom
+  body: TODO
+  position: 1
+
+helping_hands_norway:
+  type: Page
+  parent: become_a_helping_hand
+  title: Helping Hands Norway
+  slug: helping-hands-norway
+  body: TODO
+  position: 2
+
+helping_hands_canada:
+  type: Page
+  parent: become_a_helping_hand
+  title: Helping Hands Canada
+  slug: helping-hands-canada
+  body: TODO
+  position: 3
+
+helping_hands_elsewhere:
+  type: Page
+  parent: become_a_helping_hand
+  title: Helping Hands Elsewhere
+  slug: helping-hands-elsewhere
+  body: TODO
+  position: 4
+
 donate:
   type: Page
   parent: how_you_can_help

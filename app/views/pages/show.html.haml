@@ -1,5 +1,10 @@
 %h2
-  = @page.parent.title + ':'
+  = link_to_if(@page.parent.is_a?(Page), @page.parent.title, page_path(@page.parent)) + ':'
   = @page.title
+
+- if @parent_page.children.any?
+  %ul
+    - @parent_page.children.each do |child|
+      %li= link_to_unless_current child.title, sub_page_path(@parent_page, child)
 
 = textilize @page.body
