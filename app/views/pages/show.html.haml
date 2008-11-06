@@ -1,10 +1,12 @@
-= image_tag @page.photo_with_fallback.url, :size => '500x500'
+.image
+  = image_tag @page.photo_with_fallback.url, :size => '500x500'
 
-%h2= link_to_unless_current @parent_page.title, @parent_page.path
+.text
+  %h2= link_to_unless_current @parent_page.title, @parent_page.path
 
-- if @parent_page.children.any?
-  %ul
-    - @parent_page.children.each do |child|
-      %li= link_to_unless_current child.title, child.path
+  - if @parent_page.children.any?
+    %ul
+      - @parent_page.children.each do |child|
+        %li= link_to_unless_current child.title, child.path
 
-= textilize @page.body
+  = textilize @page.body
