@@ -4,12 +4,7 @@ class PagesController < ApplicationController
   end
 
   def show
-    if params[:parent_slug]
-      @parent_page = Page.find_by_slug(params[:parent_slug]) || raise(ActiveRecord::RecordNotFound)
-      @page        = @parent_page.children.find_by_slug(params[:slug]) || raise(ActiveRecord::RecordNotFound)
-    else
-      @parent_page = Page.find_by_slug(params[:slug]) || raise(ActiveRecord::RecordNotFound)
-      @page        = @parent_page
-    end
+    page = Content.find_by_slug(params[:slug]) || raise(ActiveRecord::RecordNotFound)
+    @parent_page, @page = page.parent_and_child
   end
 end

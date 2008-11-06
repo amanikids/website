@@ -1,0 +1,16 @@
+%h1 Gallery
+- form_for [:admin, @gallery] do |f|
+  = f.error_messages
+  .field
+    = f.label :parent_id
+    = f.collection_select :parent_id, Section.ordered, :id, :title
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :slug
+    = f.text_field :slug
+  .field
+    = f.submit 'Save changes'
+    or
+    = link_to 'Cancel', admin_sections_path

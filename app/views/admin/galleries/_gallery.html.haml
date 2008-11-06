@@ -1,0 +1,11 @@
+%li[gallery]
+  = link_to '&uarr;', admin_gallery_path(gallery, :gallery => { :move_higher => true }), :method => :put
+  = link_to '&darr;', admin_gallery_path(gallery, :gallery => { :move_lower => true }), :method => :put
+  = gallery.title
+  = link_to 'View', gallery.path
+  = link_to 'Edit', edit_admin_gallery_path(gallery)
+  = link_to 'Delete', admin_gallery_path(gallery), :method => :delete, :confirm => 'Are you sure you want to delete this Gallery?'
+  - if gallery.children.any?
+    %ol.pages
+      = render :partial => gallery.children
+

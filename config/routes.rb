@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
-    admin.resources :pages, :sections
+    admin.resources :galleries, :pages, :sections
   end
 
   # TODO this page / sub_page weirdness is probably due to the fact that we're not representing Sections in the URLs.

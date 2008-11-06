@@ -1,4 +1,6 @@
+%h1 Page
 - form_for [:admin, @page], :html => { :multipart => true } do |f|
+  = f.error_messages
   .field
     = f.label :parent_id
     = f.select :parent_id, Section.ordered.inject([]) { |options, section| options << [section.title, section.id]; section.children.each { |child| options << ['- ' + child.title, child.id] }; options }
