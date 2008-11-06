@@ -156,6 +156,38 @@ donate:
   body: "*Make a donation, or make a contribution in the name of a friend as a birthday or holiday gift.* You can make a difference in the lives of Kilimanjaro’s orphaned and homeless children by giving to Amani Children’s Home.\n\nAs a small, grassroots organization, every donation to Amani makes a difference - your specific donation might provide a table for children to eat at, send a child to school for a year, or pay for bandages or antibiotics.\n\nIf you donate to Amani, you are free to specify which need or program you would like your contribution to be used towards, or to leave it to the Amani staff to choose the most urgent need. You’ll receive a personal thank-you letter from Tanzania. If you contribute in the name of a loved one, Amani will send a thank-you to that person along with a drawing by one of the children.\n\nClick here to donate from the United States. [TODO flag image]\n\nClick here to donate from the UK. [TODO flag image]\n\nClick here to donate from Norway. [TODO flag image]\n\nClick here to donate from Canada. [TODO flag image]"
   position: 2
 
+donate_canada:
+  type: Page
+  parent: donate
+  title: Canada
+  slug: canada
+  body: TODO
+  position: 0
+
+donate_norway:
+  type: Page
+  parent: donate
+  title: Norway
+  slug: norway
+  body: TODO
+  position: 1
+
+donate_united_kingdom:
+  type: Page
+  parent: donate
+  title: United Kingdom
+  slug: united-kingdom
+  body: TODO
+  position: 2
+
+donate_united_states:
+  type: Page
+  parent: donate
+  title: United States
+  slug: united-states
+  body: TODO
+  position: 3
+
 kilimanjaro_climb_for_kids:
   type: Page
   parent: how_you_can_help
@@ -179,6 +211,23 @@ volunteering_at_amani:
   slug: volunteering-at-amani
   body: "For those interested in spending time at Amani we have two programs, our Ambassador program for short-term visitors (up to 2 weeks) and our long-term volunteer program (6-18 months).\n\nVolunteers make an invaluable contribution to the lives of the Amani children. Amani Children’s Home welcomes volunteers with skills in a variety of areas. Currently, Amani is looking for skilled volunteers to fill the following positions:\n\n*Health Assistant* - trained medical professionals to help assist Amani’s nurse in providing health care to the Amani children.\n\n*Social Work / Counseling Teachers* - Trained social workers and mental health professionals who can help strengthen the level of care given to the Amani children.\n\n*Marketing Assistant/Graphic Designer* - Marketing professionals and skilled graphic artists to assist in the production of marketing and fundraising materials.\n\n*Computer/ IT Assistant* - Computer savvy individuals to assist in designing our new computer training program.\n\nClick TODO here for more information about available positions\n\nh3. Amani Children’s Home Volunteer Requirements\n* Long term Amani volunteers must be 22 years or older\n* We only accept volunteers who are able to stay at Amani for at least 6 months\n* Volunteers are responsible for food and accommodation during their stay in Tanzania\n* Placement as a volunteer with Amani Children’s Home depends on your specific skills and experience, a successful reference check, and the timing and length of your stay.\n\nTODO Download the Amani Volunteer Application\n\nTODO Download the Amani Volunteer Handbook\n\nLearn more about volunteering with Amani by reading the experiences of past volunteers here. Learn how you can raise funds to help the Amani children here. For more information email info@amanikids.org"
   position: 4
+
+volunteering_at_amani_amani_ambassadors:
+  type: Page
+  parent: volunteering_at_amani
+  title: Amani Ambassadors
+  slug: amani-ambassadors
+  body: TODO
+  position: 0
+
+volunteering_at_amani_nathaniel_evans:
+  type: Page
+  parent: volunteering_at_amani
+  title: Nathaniel Evans
+  slug: nathaniel-evans
+  body: TODO
+  position: 1
+
 
 
 
