@@ -1,4 +1,4 @@
-- form_for [:admin, @page] do |f|
+- form_for [:admin, @page], :html => { :multipart => true } do |f|
   .field
     = f.label :parent_id
     = f.select :parent_id, Section.ordered.inject([]) { |options, section| options << [section.title, section.id]; section.children.each { |child| options << ['- ' + child.title, child.id] }; options }
@@ -11,6 +11,10 @@
   .field
     = f.label :body
     = textile_area :page, :body
+  .field
+    = f.label :photo
+    = f.file_field :photo
+    = image_tag @page.photo.url(:small)
   .field
     = f.submit 'Save changes', :name => 'page[continue_editing]'
     or

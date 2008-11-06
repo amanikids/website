@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081104122338) do
+ActiveRecord::Schema.define(:version => 20081106105151) do
 
   create_table "contents", :force => true do |t|
     t.integer  "parent_id"
@@ -17,9 +17,13 @@ ActiveRecord::Schema.define(:version => 20081104122338) do
     t.string   "title"
     t.string   "slug"
     t.text     "body"
-    t.integer  "position",   :default => 0
+    t.integer  "position",           :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
 end

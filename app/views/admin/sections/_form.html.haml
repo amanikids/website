@@ -1,7 +1,13 @@
-- form_for [:admin, @section] do |f|
+- form_for [:admin, @section], :html => { :multipart => true } do |f|
+  = f.error_messages
+
   .field
     = f.label :title
     = f.text_field :title
+  .field
+    = f.label :photo
+    = f.file_field :photo
+    = image_tag @section.photo.url(:small)
   .field
     = f.submit
     or

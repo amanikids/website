@@ -3,11 +3,8 @@ class Content < ActiveRecord::Base
 
   acts_as_list :scope => :parent
   belongs_to :parent, :class_name => 'Content'
+  has_attached_file :photo, :styles => { :large => '500x500#', :small => '120x120#' }, :default_style => :large
   has_many :children, :class_name => 'Content', :foreign_key => 'parent_id', :order => :position, :dependent => :destroy
-  has_param :slug
-
-  validates_presence_of :title, :slug
-  validates_format_of :slug, :with => /^[a-z0-9-]+$/
 
   def move_higher=(*args)
     move_higher
@@ -15,5 +12,17 @@ class Content < ActiveRecord::Base
 
   def move_lower=(*args)
     move_lower
+  end
+
+  def photo_with_fallback
+    if photo.file?
+      photo
+    else
+      if parent
+        parent.photo
+      else
+        photo
+      end
+    end
   end
 end
