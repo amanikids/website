@@ -1,5 +1,5 @@
 %h1 Gallery
-- form_for [:admin, @gallery] do |form|
+- form_for [:admin, @gallery], :html => { :multipart => true } do |form|
   = form.error_messages
   .field
     = form.label :parent_id
@@ -11,7 +11,14 @@
     = form.label :slug
     = form.text_field :slug
   .field
+    = form.label :body
+    = textile_area :gallery, :body
+  .field
+    = form.label :photo
+    = form.file_field :photo
+    = image_tag @gallery.photo.url(:small)
+  .field
     = form.submit 'Save and Continue Editing', :name => 'gallery[continue_editing]'
     = form.submit 'Save and Close'
     or
-    = link_to 'Cancel', admin_sections_path
+    = link_to 'Cancel', admin_root_path
