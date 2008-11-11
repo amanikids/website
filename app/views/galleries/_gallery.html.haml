@@ -1,11 +1,11 @@
 .gallery
   %ul.thumbnails
-    - gallery.children.each do |child|
+    - children.each do |child|
       %li= link_to image_tag(child.photo.url(:small), :size => '120x120'), page_path(child.slug)
 
   .image
-    = image_tag gallery.photo.url(:gallery), :size => '368x500'
+    = image_tag content.photo.url(:gallery), :size => '368x500'
 
 .text
-  %h2= gallery.title
-  = textilize gallery.body
+  %h2= content.title
+  = textilize content.body

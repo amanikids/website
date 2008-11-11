@@ -1,1 +1,11 @@
-= render :partial => @content
+- case @content
+  - when Gallery
+    = render :partial => @content, :locals => { :content => @content, :children => @content.children }
+  - when Page
+    - case @content.parent
+      - when Gallery
+        = render :partial => @content.parent, :locals => { :content => @content, :children => @content.parent.children }
+      - when Page
+        = render :partial => @content, :locals => { :content => @content, :children => @content.parent.children }
+      - when Section
+        = render :partial => @content, :locals => { :content => @content, :children => @content.children }
