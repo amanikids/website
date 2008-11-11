@@ -5,10 +5,6 @@ class Content < ActiveRecord::Base
   belongs_to :parent, :class_name => 'Content'
   has_many :children, :class_name => 'Content', :foreign_key => 'parent_id', :order => :position, :dependent => :destroy
 
-  def gallery?
-    false
-  end
-
   def move_higher=(*args)
     move_higher
   end
