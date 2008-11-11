@@ -10,6 +10,6 @@
   - if children.any?
     %ul.children
       - children.each do |child|
-        %li= link_to_unless_current child.title, page_path(child.slug)
+        %li= link_to_unless_current child.title, child.path
 
   = textilize content.body

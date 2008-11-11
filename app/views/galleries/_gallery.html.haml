@@ -1,7 +1,7 @@
 .gallery
   %ul.thumbnails
     - children.each do |child|
-      %li= link_to image_tag(child.photo.url(:small), :size => '120x120'), page_path(child.slug)
+      %li= link_to image_tag(child.photo.url(:small), :size => '120x120'), child.path
 
   .image
     = image_tag content.photo.url(:gallery), :size => '368x500'

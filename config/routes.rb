@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.with_options(:controller => 'contents') do |c|
-    c.root           :action => 'index', :conditions => { :method => :get }
-    c.page '/:slug', :action => 'show',  :conditions => { :method => :get }
+    c.root               :action => 'index', :conditions => { :method => :get }
+    c.connect '/*slugs', :action => 'show',  :conditions => { :method => :get }
   end
 end

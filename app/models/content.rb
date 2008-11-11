@@ -15,4 +15,8 @@ class Content < ActiveRecord::Base
   def move_lower=(*args)
     move_lower
   end
+
+  def path
+    parent ? "#{parent.path}/#{slug}" : "/#{slug}"
+  end
 end

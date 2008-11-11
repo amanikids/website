@@ -8,11 +8,7 @@ module ApplicationHelper
     end
 
     parents.map! do |parent|
-      if parent === Section
-        parent.title
-      else
-        link_to parent.title, page_path(parent.slug)
-      end
+      link_to_if parent.path, parent.title, parent.path
     end
 
     parents.join(': ') + ':'
