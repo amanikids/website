@@ -1,10 +1,10 @@
 %h1 Section
-- form_for [:admin, @section], :html => { :multipart => true } do |f|
-  = f.error_messages
+- form_for [:admin, @section], :html => { :multipart => true } do |form|
+  = form.error_messages
   .field
-    = f.label :title
-    = f.text_field :title
+    = form.label :title
+    = form.text_field :title
   .field
-    = f.submit
+    = form.submit
     or
-    = link_to 'Cancel', admin_sections_path
+    = link_to 'Cancel', admin_root_path

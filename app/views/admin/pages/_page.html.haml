@@ -2,10 +2,7 @@
   = link_to '&uarr;', admin_page_path(page, :page => { :move_higher => true }), :method => :put
   = link_to '&darr;', admin_page_path(page, :page => { :move_lower => true }), :method => :put
   = page.title
-  = link_to 'View', page.path
   = link_to 'Edit', edit_admin_page_path(page)
-  = link_to 'Delete', admin_page_path(page), :method => :delete, :confirm => 'Are you sure you want to delete this Page?'
-  - if page.children.any?
-    %ol.pages
-      = render :partial => page.children
-
+  = link_to 'Delete', admin_page_path(page), :method => :delete, :confirm => 'Are you sure you want to delete this Page and all of its Children?'
+  %ol
+    = render :partial => page.children

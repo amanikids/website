@@ -1,33 +1,35 @@
 class Admin::GalleriesController < Admin::ApplicationController
-  def new
-    @gallery = Gallery.new(params[:gallery])
-  end
+  before_filter :load_new_gallery, :only => %w[new create]
+  before_filter :load_gallery,     :only => %w[edit update destroy]
 
   def create
-    @gallery = Gallery.new(params[:gallery])
     if @gallery.save
-      redirect_to admin_sections_path
+      redirect_to admin_root_path
     else
       render :action => 'new'
     end
   end
 
-  def edit
-    @gallery = Gallery.find(params[:id])
-  end
-
   def update
-    @gallery = Gallery.find(params[:id])
     if @gallery.update_attributes(params[:gallery])
-      redirect_to admin_sections_path
+      redirect_to admin_root_path
     else
       render :action => 'edit'
     end
   end
 
   def destroy
-    @gallery = Gallery.find(params[:id])
     @gallery.destroy
-    redirect_to admin_sections_path
+    redirect_to admin_root_path
+  end
+
+  private
+
+  def load_new_gallery
+    @gallery = Gallery.new(params[:gallery])
+  end
+
+  def load_gallery
+    @gallery = Gallery.find(params[:id])
   end
 end

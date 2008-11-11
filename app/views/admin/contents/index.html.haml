@@ -4,4 +4,4 @@
   %li= link_to 'New Gallery', new_admin_gallery_path
 
 %ol.sections
-  = render :partial => @sections
+  = render :partial => Section.ordered

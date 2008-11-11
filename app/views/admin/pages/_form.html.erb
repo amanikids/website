@@ -1,0 +1,38 @@
+<h1>Page</h1>
+
+<%- form_for [:admin, @page], :html => { :multipart => true } do |form| -%>
+  <%= form.error_messages %>
+
+  <div class="field">
+    <%= form.label :parent_id %>
+    <%= form.select :parent_id, parents %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slug %>
+    <%= form.text_field :slug %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= textile_area :page, :body %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.file_field :photo %>
+    <%= image_tag @page.photo.url(:small) %>
+  </div>
+
+  <div class="field">
+    <%= form.submit 'Save and Continue Editing', :name => 'page[continue_editing]' %>
+    <%= form.submit 'Save and Close' %>
+    or
+    <%= link_to 'Cancel', admin_root_path %>
+  </div>
+<%- end -%>
