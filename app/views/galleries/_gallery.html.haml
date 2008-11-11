@@ -7,5 +7,8 @@
     = image_tag content.photo.url(:gallery), :size => '368x500'
 
 .text
+  .breadcrumbs
+    = breadcrumbs(content)
+
   %h2= content.title
   = textilize content.body

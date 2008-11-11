@@ -6,6 +6,6 @@
       - when Gallery
         = render :partial => @content.parent, :locals => { :content => @content, :children => @content.parent.children }
       - when Page
-        = render :partial => @content, :locals => { :content => @content, :children => @content.parent.children }
+        = render :partial => @content, :locals => { :content => @content, :children => [] }
       - when Section
         = render :partial => @content, :locals => { :content => @content, :children => @content.children }

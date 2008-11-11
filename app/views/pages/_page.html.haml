@@ -2,6 +2,9 @@
   = image_tag content.photo.url, :size => '500x500'
 
 .text
+  .breadcrumbs
+    = breadcrumbs(content)
+
   %h2= content.title
 
   - if children.any?
