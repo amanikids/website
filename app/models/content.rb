@@ -2,6 +2,7 @@ class Content < ActiveRecord::Base
   named_scope :ordered, :order => :position
 
   acts_as_list :scope => :parent
+  attr_accessor :continue_editing
   belongs_to :parent, :class_name => 'Content'
   has_many :children, :class_name => 'Content', :foreign_key => 'parent_id', :order => :position, :dependent => :destroy
 

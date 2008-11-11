@@ -3,7 +3,7 @@
   = form.error_messages
   .field
     = form.label :parent_id
-    = form.collection_select :parent_id, Section.ordered, :id, :title
+    = form.select :parent_id, parents
   .field
     = form.label :title
     = form.text_field :title
@@ -11,6 +11,7 @@
     = form.label :slug
     = form.text_field :slug
   .field
-    = form.submit 'Save changes'
+    = form.submit 'Save and Continue Editing', :name => 'gallery[continue_editing]'
+    = form.submit 'Save and Close'
     or
     = link_to 'Cancel', admin_sections_path

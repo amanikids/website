@@ -4,7 +4,7 @@ class Admin::PagesController < Admin::ApplicationController
 
   def create
     if @page.save
-      redirect_to admin_root_path
+      redirect_to @page.continue_editing ? edit_admin_page_path(@page) : admin_root_path
     else
       render :action => 'new'
     end
@@ -12,7 +12,7 @@ class Admin::PagesController < Admin::ApplicationController
 
   def update
     if @page.update_attributes(params[:page])
-      redirect_to admin_root_path
+      redirect_to @page.continue_editing ? edit_admin_page_path(@page) : admin_root_path
     else
       render :action => 'edit'
     end

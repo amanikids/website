@@ -4,7 +4,7 @@ class Admin::GalleriesController < Admin::ApplicationController
 
   def create
     if @gallery.save
-      redirect_to admin_root_path
+      redirect_to @gallery.continue_editing ? edit_admin_gallery_path(@gallery) : admin_root_path
     else
       render :action => 'new'
     end
@@ -12,7 +12,7 @@ class Admin::GalleriesController < Admin::ApplicationController
 
   def update
     if @gallery.update_attributes(params[:gallery])
-      redirect_to admin_root_path
+      redirect_to @gallery.continue_editing ? edit_admin_gallery_path(@gallery) : admin_root_path
     else
       render :action => 'edit'
     end

@@ -4,7 +4,7 @@ class Admin::SectionsController < Admin::ApplicationController
 
   def create
     if @section.save
-      redirect_to admin_root_path
+      redirect_to @section.continue_editing ? edit_admin_section_path(@section) : admin_root_path
     else
       render :action => 'new'
     end
@@ -12,7 +12,7 @@ class Admin::SectionsController < Admin::ApplicationController
 
   def update
     if @section.update_attributes(params[:section])
-      redirect_to admin_root_path
+      redirect_to @section.continue_editing ? edit_admin_section_path(@section) : admin_root_path
     else
       render :action => 'edit'
     end
