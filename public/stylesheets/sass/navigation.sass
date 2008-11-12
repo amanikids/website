@@ -11,34 +11,35 @@
   :margin 0
   :padding = 0 !side_margin
 
-  .sections
+  .tops
     :list-style none
     :margin 0
     :padding 0
 
-    .section
+    .top
       :border-right = 1px solid !yellow
-      :color = !yellow
       :float left
       :margin 0
       :padding 0
 
       .title
+        :color = !yellow
         :display block
         :padding 0.5em 1em
+        :text-decoration none
 
         &:hover
           :background-color = !yellow
           :color = !orange
 
-      .pages
+      .children
         :background-color = !orange
         :display none
         :margin 0
         :padding 0
         :position absolute
 
-        li.page
+        .child
           :border-top = 1px solid !yellow
           :list-style none
           :margin 0
@@ -55,5 +56,5 @@
               :color = !orange
 
       &:hover
-        .pages
+        .children
           :display block

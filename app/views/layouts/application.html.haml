@@ -18,15 +18,15 @@
         %li= mail_to 'info@amanikids.org', image_tag('contact.jpg') + content_tag(:span, 'Contact'), :encode => 'javascript'
 
     .navigation
-      %ul.sections
+      %ul.tops
         - Content.top_level.positioned.each do |top|
-          %li.section
-            .title
-              = link_to_if top.path, top.title, top.path
+          %li.top
+            = link_to_unless(top.path.nil?, top.title, top.path, :class => :title) { |name| %Q{<div class="title">#{name}</div>} }
+
             - if top.children.any?
-              %ul.pages
+              %ul.children
                 - top.children.each do |child|
-                  %li.page
+                  %li.child
                     = link_to child.title, child.path
 
     .content
