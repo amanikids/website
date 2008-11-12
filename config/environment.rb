@@ -30,6 +30,9 @@ Rails::Initializer.run do |config|
   # Run "rake -D time" for a list of tasks for finding time zone names. Comment line to use default local time.
   config.time_zone = 'UTC'
 
+  # Use public/cache for page caching, so that we can clear out all the pages more easily.
+  config.action_controller.page_cache_directory = File.join(Rails.public_path, 'cache')
+
   # Your secret key for verifying cookie session data integrity.
   # If you change this key, all old sessions will become invalid!
   # Make sure the secret is at least 30 characters and all random,
@@ -40,5 +43,5 @@ Rails::Initializer.run do |config|
   }
 
   # Activate observers that should always be running
-  # config.active_record.observers = :cacher, :garbage_collector
+  config.active_record.observers = :cache_sweeper
 end

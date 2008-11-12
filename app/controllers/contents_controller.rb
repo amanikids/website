@@ -1,4 +1,6 @@
 class ContentsController < ApplicationController
+  caches_page :index, :show
+
   def index
     respond_to do |format|
       format.html

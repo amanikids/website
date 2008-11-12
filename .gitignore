@@ -2,5 +2,6 @@
 config/database.yml
 db/*.sqlite3
 log/*.log
+public/cache
 public/photos
 public/stylesheets/*.css
