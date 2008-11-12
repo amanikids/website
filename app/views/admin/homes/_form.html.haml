@@ -1,0 +1,18 @@
+%h1 Home
+- form_for [:admin, @home], :html => { :multipart => true } do |form|
+  = form.error_messages
+  .field
+    = form.label :title
+    = form.text_field :title
+  .field
+    = form.label :body
+    = textile_area :home, :body
+  .field
+    = form.label :photo
+    = form.file_field :photo
+    = image_tag @home.photo.url(:small)
+  .field
+    = form.submit 'Save and Continue Editing', :name => 'home[continue_editing]'
+    = form.submit 'Save and Close'
+    or
+    = link_to 'Cancel', admin_root_path

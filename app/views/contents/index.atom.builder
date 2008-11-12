@@ -7,7 +7,7 @@ atom_feed do |feed|
     author.email 'info@amanikids.org'
   end
 
-  @contents.select(&:body).each do |content|
+  @contents.select(&:path).each do |content|
     feed.entry(content, :url => content.path) do |entry|
       entry.title(content.title)
       entry.content(textilize(content.body) + image_tag(content.photo.url(:small)), :type => 'html')

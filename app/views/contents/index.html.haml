@@ -1,0 +1,14 @@
+.image
+  = image_tag @home.photo.url, :size => '500x500'
+
+.text
+  %h2= @home.title
+  = textilize @home.body
+
+  - Blog.all.each do |blog|
+    - if blog.children.any?
+      .blog
+        %h3= link_to blog.title, blog.path
+        %ul
+          - blog.children.recent.each do |post|
+            %li= link_to post.title, post.path

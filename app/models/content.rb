@@ -1,7 +1,6 @@
 class Content < ActiveRecord::Base
   named_scope :positioned, :order => :position
   named_scope :recent, :order => 'created_at DESC', :limit => 10
-  named_scope :top_level, :conditions => { :parent_id => nil }
 
   acts_as_list :scope => :parent
   belongs_to :parent, :class_name => 'Content'

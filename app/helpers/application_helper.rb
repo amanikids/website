@@ -2,8 +2,9 @@ module ApplicationHelper
   def breadcrumbs(current)
     parents = []
 
+    current = current.parent
     while current.parent
-      parents.unshift(current.parent)
+      parents.unshift(current)
       current = current.parent
     end
 

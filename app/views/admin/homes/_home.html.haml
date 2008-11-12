@@ -1,0 +1,7 @@
+%li[home]
+  Home
+  = link_to 'New Section', new_admin_section_path(:section => {:parent_id => home})
+  = link_to 'New Blog', new_admin_blog_path(:blog => {:parent_id => home})
+  = link_to 'Edit', edit_admin_home_path(home)
+  %ol
+    = render :partial => home.children.positioned

@@ -3,8 +3,8 @@ class ContentsController < ApplicationController
 
   def index
     respond_to do |format|
-      format.html
-      format.atom { @contents = Content.all :order => 'updated_at DESC' }
+      format.html { @home = Home.first }
+      format.atom { @contents = Content.all(:order => 'updated_at DESC') }
     end
   end
 

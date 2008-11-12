@@ -20,7 +20,7 @@
 
     .navigation
       %ul.tops
-        - Content.top_level.positioned.each do |top|
+        - Home.first.children.positioned.each do |top|
           %li.top
             = link_to_unless(top.path.nil?, top.title, top.path, :class => :title) { |name| %Q{<div class="title">#{name}</div>} }
 
