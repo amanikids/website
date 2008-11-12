@@ -1,0 +1,13 @@
+%h1 Please Log In
+- form_for @user_session, :url => admin_user_session_path do |form|
+  = form.error_messages
+  .field
+    = form.label :login
+    = form.text_field :login
+  .field
+    = form.label :password
+    = form.password_field :password
+  .field
+    = form.submit 'Login'
+    or
+    = link_to 'Return to site', root_path

@@ -4,4 +4,11 @@
   %head
     = javascript_include_tag 'prototype', 'textile_toolbar'
   %body
+    - if @current_user
+      %ul
+        %li
+          Logged in as
+          = @current_user.login
+        %li
+          = link_to 'Logout', admin_user_session_path, :method => :delete
     = yield
