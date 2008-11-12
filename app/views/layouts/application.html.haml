@@ -4,6 +4,7 @@
   %head
     %title Amani Children's Home | Moshi, Tanzania
     = stylesheet_link_tag 'document', 'header', 'navigation', 'content', :cache => true
+    = auto_discovery_link_tag :atom, formatted_feed_url(:atom)
 
   %body
     .header
