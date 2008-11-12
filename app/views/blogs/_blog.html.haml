@@ -5,5 +5,9 @@
   %h2= blog.title
 
   - blog.children.recent.each do |post|
-    %h3= post.title
-    = textilize post.body
+    .post
+      %h3= link_to post.title, post.path
+      .timestamp
+        Posted on
+        = post.created_at.to_date.to_s(:long_ordinal) + '.'
+      = textilize post.body

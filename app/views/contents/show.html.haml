@@ -1,13 +1,17 @@
-- case @content
-  - when Blog
-    = render :partial => @content
-  - when Gallery
-    = render :partial => @content, :locals => { :content => @content, :children => @content.children.positioned }
-  - when Page
-    - case @content.parent
-      - when Gallery
-        = render :partial => @content.parent, :locals => { :content => @content, :children => @content.parent.children.positioned }
-      - when Page
-        = render :partial => @content, :locals => { :content => @content, :children => [] }
-      - when Section
-        = render :partial => @content, :locals => { :content => @content, :children => @content.children.positioned }
+- if @content.is_a?(Blog)
+  = render :partial => @content
+
+- if @content.is_a?(Gallery)
+  = render :partial => @content, :locals => { :content => @content, :children => @content.children.positioned }
+
+- if @content.is_a?(Page)
+  - case @content.parent
+    - when Gallery
+      = render :partial => @content.parent, :locals => { :content => @content, :children => @content.parent.children.positioned }
+    - when Page
+      = render :partial => @content, :locals => { :content => @content, :children => [] }
+    - when Section
+      = render :partial => @content, :locals => { :content => @content, :children => @content.children.positioned }
+
+- if @content.is_a?(Post)
+  = render :partial => @content

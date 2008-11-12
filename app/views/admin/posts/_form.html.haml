@@ -1,25 +1,22 @@
-%h1 Gallery
-- form_for [:admin, @gallery], :html => { :multipart => true } do |form|
+%h1 Post
+- form_for [:admin, @post], :html => { :multipart => true } do |form|
   = form.error_messages
   .field
     = form.label :parent_id
     = form.hidden_field :parent_id
-    = @gallery.parent.title
+    = @post.parent.title
   .field
     = form.label :title
     = form.text_field :title
   .field
-    = form.label :slug
-    = form.text_field :slug
-  .field
     = form.label :body
-    = textile_area :gallery, :body
+    = textile_area :post, :body
   .field
     = form.label :photo
     = form.file_field :photo
-    = image_tag @gallery.photo.url(:small)
+    = image_tag @blog.photo.url(:small)
   .field
-    = form.submit 'Save and Continue Editing', :name => 'gallery[continue_editing]'
+    = form.submit 'Save and Continue Editing', :name => 'post[continue_editing]'
     = form.submit 'Save and Close'
     or
     = link_to 'Cancel', admin_root_path
