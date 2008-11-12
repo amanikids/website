@@ -19,15 +19,15 @@
 
     .navigation
       %ul.sections
-        - Section.ordered.each do |section|
+        - Content.top_level.positioned.each do |top|
           %li.section
             .title
-              = section.title
-            - if section.children.any?
+              = link_to_if top.path, top.title, top.path
+            - if top.children.any?
               %ul.pages
-                - section.children.each do |page|
+                - top.children.each do |child|
                   %li.page
-                    = link_to page.title, page.path
+                    = link_to child.title, child.path
 
     .content
       = yield
