@@ -4,7 +4,8 @@
   <%= form.error_messages %>
 
   <div class="field">
-    <%= form.label :parent %>
+    <%= form.label :parent_id %>
+    <%= form.hidden_field :parent_id %>
     <%= @page.parent.title %>
   </div>
 

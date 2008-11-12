@@ -1,0 +1,9 @@
+.image
+  = image_tag blog.photo.url, :size => '500x500'
+
+.text
+  %h2= blog.title
+
+  - blog.children.recent.each do |post|
+    %h3= post.title
+    = textilize post.body

@@ -23,9 +23,9 @@
           %li.top
             = link_to_unless(top.path.nil?, top.title, top.path, :class => :title) { |name| %Q{<div class="title">#{name}</div>} }
 
-            - if top.children.any?
+            - if top.navigation_children.any?
               %ul.children
-                - top.children.each do |child|
+                - top.navigation_children.positioned.each do |child|
                   %li.child
                     = link_to child.title, child.path
 

@@ -8,6 +8,10 @@
     = form.label :slug
     = form.text_field :slug
   .field
+    = form.label :photo
+    = form.file_field :photo
+    = image_tag @blog.photo.url(:small)
+  .field
     = form.submit 'Save and Continue Editing', :name => 'blog[continue_editing]'
     = form.submit 'Save and Close'
     or
