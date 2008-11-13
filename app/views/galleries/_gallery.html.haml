@@ -1,7 +1,10 @@
 .gallery
   %ul.thumbnails
     - children.each do |child|
-      %li= link_to image_tag(child.photo.url(:small), :size => '120x120'), child.path
+      %li[child]
+        = link_to image_tag(child.photo.url(:small), :size => '120x120', :class => "#{child == content ? 'current' : ''}"), child.path
+
+  = javascript_tag "$('.thumbnails').animate({scrollTop: $('##{dom_id(content)}').offset().top - $('.thumbnails').offset().top - 136}, 1000);"
 
   .image
     = image_tag content.photo.url(:gallery), :size => '368x500'
