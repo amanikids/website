@@ -4,7 +4,8 @@
       %li[child]
         = link_to image_tag(child.photo.url(:small), :size => '120x120', :class => "#{child == content ? 'current' : ''}"), child.path
 
-  = javascript_tag "$('.thumbnails').animate({scrollTop: $('##{dom_id(content)}').offset().top - $('.thumbnails').offset().top - 136}, 1000);"
+  - unless content.is_a?(Gallery)
+    = javascript_tag "$('.thumbnails').scrollTop(($('##{dom_id(content)}').prevAll().size() - 1) * 136);"
 
   .image
     = image_tag content.photo.url(:gallery), :size => '368x500'
@@ -13,5 +14,9 @@
   .breadcrumbs
     = breadcrumbs(content)
 
-  %h2= content.title
+  %h2
+    = content.title
+    - if content.is_a?(Page)
+      = "(#{content.parent.children.index(content) + 1}/#{content.parent.children.size})"
+
   = textilize content.body
