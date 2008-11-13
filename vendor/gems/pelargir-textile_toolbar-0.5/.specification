@@ -1,0 +1,71 @@
+--- !ruby/object:Gem::Specification 
+name: pelargir-textile_toolbar
+version: !ruby/object:Gem::Version 
+  version: "0.5"
+platform: ruby
+authors: 
+- Matthew Bass
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2008-08-21 00:00:00 +03:00
+default_executable: 
+dependencies: []
+
+description: Adds a handy Textile toolbar to any text area.
+email: pelargir@gmail.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- README
+files: 
+- CHANGELOG
+- files/public/images/textile_toolbar/bold.png
+- files/public/images/textile_toolbar/hyperlink.png
+- files/public/images/textile_toolbar/image.png
+- files/public/images/textile_toolbar/italic.png
+- files/public/javascripts/textile_toolbar.js
+- init.rb
+- install.rb
+- lib/textile_toolbar.rb
+- MIT-LICENSE
+- Rakefile
+- README
+- tasks/textile_toolbar.rake
+- test/test_helper.rb
+- test/textile_toolbar_test.rb
+- textile_toolbar.gemspec
+- TODO
+has_rdoc: true
+homepage: http://github.com/pelargir/textile_toolbar
+post_install_message: 
+rdoc_options: 
+- --main
+- README
+require_paths: 
+- bin
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.0
+signing_key: 
+specification_version: 2
+summary: Adds a handy Textile toolbar to any text area.
+test_files: []
+

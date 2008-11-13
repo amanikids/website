@@ -20,11 +20,7 @@ Rails::Initializer.run do |config|
   config.gem 'RedCloth'
   config.gem 'authlogic'
   config.gem 'haml'
-
-  # Only load the plugins named here, in the order given. By default, all plugins
-  # in vendor/plugins are loaded in alphabetical order.
-  # :all can be used as a placeholder for all plugins not explicitly named
-  # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
+  config.gem 'pelargir-textile_toolbar', :lib => 'textile_toolbar', :source => 'http://gems.github.com'
 
   # Make Time.zone default to the specified zone, and make Active Record store time values
   # in the database in UTC, and return them converted to the specified local zone.
