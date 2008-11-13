@@ -1,0 +1,15 @@
+== Features
+
+* Deployment configuration (extra photos symlink, secret key?, .htaccess tweak)
+* File uploads
+
+== Tasks
+
+* Scroll gallery thumbnails
+* Re-select "missing" image
+* Check layout in Firefox, Internet Explorer
+* Final styling pass
+* Admin area styling / usability
+* Change authentication to use email?
+* "Nested slug" finder method
+* validate_uniqueness_of :slug, :scope => :parent
