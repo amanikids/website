@@ -20,7 +20,6 @@ Rails::Initializer.run do |config|
   config.gem 'RedCloth'
   config.gem 'authlogic', :version => '1.0.0' # FIXME upgrade to authlogic-1.2.0 when available. 1.1.0 has no open id and loads test/unit, which makes rake ugly.
   config.gem 'haml'
-  config.gem 'pelargir-textile_toolbar', :lib => 'textile_toolbar', :source => 'http://gems.github.com'
 
   # Make Time.zone default to the specified zone, and make Active Record store time values
   # in the database in UTC, and return them converted to the specified local zone.
