@@ -13,6 +13,11 @@ set :git_enable_submodules, true
 
 server 'amanikids.joyeurs.com', :web, :app, :db, :primary => true, :user => user
 
+
+def create_symlink(path)
+  run "rm -rf #{latest_release}/#{path}; ln -s #{shared_path}/#{path} #{latest_release}/#{path}"
+end
+
 namespace :deploy do
   desc 'Restart the Application'
   task :restart do
@@ -22,14 +27,9 @@ namespace :deploy do
   namespace :shared do
     desc 'Symlink shared content and configuration'
     task :symlinks do
-      run <<-CMD
-        rm -rf #{latest_release}/config/database.yml &&
-        rm -rf #{latest_release}/config/secret.txt   &&
-        rm -rf #{latest_release}/public/photos       &&
-        ln -s #{shared_path}/config/database.yml #{latest_release}/config/database.yml &&"
-        ln -s #{shared_path}/config/secret.txt   #{latest_release}/config/secret.txt   &&"
-        ln -s #{shared_path}/assets/photos       #{latest_release}/public/photos"
-      CMD
+      create_symlink 'config/database.yml'
+      create_symlink 'config/secret.txt'
+      create_symlink 'public/photos'
     end
   end
 end
