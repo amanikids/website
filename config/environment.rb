@@ -35,7 +35,7 @@ Rails::Initializer.run do |config|
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
     :session_key => '_amanikids_org_session',
-    :secret      => 'd0b4205ce8eb531ea5bc180c9de5204da090501199ac4826bf42841d7bc33f84f84eb182d8a6e266d22408122acb44c4a586cfc0bf18dcb6efd2d6e945c40a91'
+    :secret      => File.read("#{Rails.root}/config/secret.txt")
   }
 
   # Activate observers that should always be running
