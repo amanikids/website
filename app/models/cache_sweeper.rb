@@ -12,6 +12,14 @@ class CacheSweeper < ActiveRecord::Observer
   private
 
   def expire_entire_cache
-    FileUtils.rm_rf(ActionController::Base.page_cache_directory) if ActionController::Base.perform_caching
+    FileUtils.rm_rf(cached_files, :verbose => true) if ActionController::Base.perform_caching
+  end
+
+  def cached_files
+    files('**', '*.{atom,html}') - files('[0-9][0-9][0-9].html')
+  end
+
+  def files(*args)
+    Dir.glob(File.join(ActionController::Base.page_cache_directory, *args))
   end
 end
