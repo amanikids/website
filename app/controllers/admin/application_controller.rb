@@ -1,4 +1,6 @@
 class Admin::ApplicationController < ApplicationController
+  session :on
+
   before_filter :load_user
   before_filter :require_user
 
