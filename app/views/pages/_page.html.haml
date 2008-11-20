@@ -1,20 +1,20 @@
 .image
-  = image_tag content.photo.url, :size => '500x500'
+  = image_tag page.photo.url, :size => '500x500'
 
 .text
   .breadcrumbs
-    = breadcrumbs(content)
+    = breadcrumbs(page)
 
-  %h2= content.title
+  %h2= page.title
 
-  - if children.any?
+  - if page.children.any?
     %ul.children
-      - children.each do |child|
+      - page.children.each do |child|
         %li= link_to_unless_current child.title, child.path
 
-  = textilize content.body
+  = textilize page.body
 
-  - unless content.last?
+  - if page.parent.is_a?(Section) && !page.last?
     %p.next_link
       Next:
-      = link_to content.lower_item.title, content.lower_item.path
+      = link_to page.lower_item.title, page.lower_item.path
