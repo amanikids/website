@@ -13,3 +13,8 @@
         %li= link_to_unless_current child.title, child.path
 
   = textilize content.body
+
+  - unless content.last?
+    %p.next_link
+      Next:
+      = link_to content.lower_item.title, content.lower_item.path
