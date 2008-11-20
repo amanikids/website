@@ -1,17 +1,17 @@
 module ApplicationHelper
-  def breadcrumbs(current)
+  def breadcrumbs(page)
     parents = []
 
-    current = current.parent
-    while current.parent
-      parents.unshift(current)
-      current = current.parent
+    parent = page.parent
+    until parent.is_a?(Home)
+      parents.unshift(parent)
+      parent = parent.parent
     end
 
     parents.map! do |parent|
-      link_to_if parent.path, parent.title, parent.path
+      link_to_if(parent.path, parent.title, parent.path) + ':'
     end
 
-    parents.join(': ') + ':'
+    parents.join(' ')
   end
 end
