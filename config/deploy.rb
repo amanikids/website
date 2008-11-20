@@ -29,6 +29,7 @@ namespace :deploy do
     task :symlinks do
       create_symlink 'config/database.yml'
       create_symlink 'config/secret.txt'
+      create_symlink 'public/documents'
       create_symlink 'public/photos'
     end
   end
