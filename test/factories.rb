@@ -1,6 +1,11 @@
-Factory.sequence(:slug) do |n|
-  Digest::SHA1.hexdigest(n.to_s)
+Factory.sequence(:email) do |n|
+  "#{n}@example.com"
 end
+
+Factory.sequence(:slug) do |n|
+  "slug#{n}"
+end
+
 
 Factory.define(:page) do |page|
   page.association :parent, :factory => :section
@@ -13,4 +18,11 @@ end
 Factory.define(:section) do |section|
   section.title 'Something'
   section.slug { Factory.next(:slug) }
+end
+
+Factory.define(:share) do |share|
+  share.to   { Factory.next(:email) }
+  share.from { Factory.next(:email) }
+  share.message "Thought you'd appreciate this."
+  share.association :content, :factory => :page
 end

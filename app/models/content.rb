@@ -10,13 +10,13 @@ class Content < ActiveRecord::Base
   attr_accessor :continue_editing
   has_attached_file :photo, :styles => { :large => '500x500#', :gallery => '368x500#', :small => '120x120#' }, :default_style => :large
 
-  def self.find_by_slugs(*slugs)
-    slugs = slugs.dup
+  def self.find_by_slugs(*slug_params)
+    slug_params = slug_params.dup
 
-    slug = slugs.shift
+    slug = slug_params.shift
     content = find_all_by_slug(slug).find { |c| c.path == "/#{slug}" } || raise(ActiveRecord::RecordNotFound)
 
-    slugs.each do |slug|
+    slug_params.each do |slug|
       content = content.children.find_by_slug(slug) || raise(ActiveRecord::RecordNotFound)
     end
 
@@ -41,6 +41,11 @@ class Content < ActiveRecord::Base
   end
 
   def path
-    parent ? "#{parent.path}/#{slug}" : "/#{slug}"
+    '/' + slugs.join('/') if slugs.any?
+  end
+
+  def slugs
+    slugs = parent ? parent.slugs + [slug] : [slug]
+    slugs.compact
   end
 end

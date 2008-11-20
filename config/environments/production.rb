@@ -18,5 +18,7 @@ config.action_view.cache_template_loading            = true
 # Enable serving of images, stylesheets, and javascripts from an asset server
 # config.action_controller.asset_host                  = "http://assets.example.com"
 
-# Disable delivery errors, bad email addresses will be ignored
-# config.action_mailer.raise_delivery_errors = false
+# ActionMailer settings
+config.action_mailer.delivery_method     = :sendmail
+config.action_mailer.sendmail_settings   = { :location => '/opt/local/sbin/sendmail', :arguments => '-i -t' }
+config.action_mailer.default_url_options = { :host => 'amanikids.joyeurs.com' } # FIXME

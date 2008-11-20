@@ -8,6 +8,6 @@ ActionController::Routing::Routes.draw do |map|
   map.with_options(:controller => 'contents') do |c|
     c.root                            :action => 'index', :conditions => { :method => :get }
     c.formatted_feed '/feed.:format', :action => 'index', :conditions => { :method => :get }
-    c.connect        '/*slugs',       :action => 'show',  :conditions => { :method => :get }
+    c.content        '/*slugs',       :action => 'show',  :conditions => { :method => :get }
   end
 end
