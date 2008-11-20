@@ -5,8 +5,7 @@
 
   <div class="field">
     <%= form.label :parent_id %>
-    <%= form.hidden_field :parent_id %>
-    <%= @page.parent.title %>
+    <%= form.collection_select :parent_id, @page.parent.generation, :id, :title %>
   </div>
 
   <div class="field">

@@ -9,6 +9,10 @@ class Content < ActiveRecord::Base
   attr_accessor :continue_editing
   has_attached_file :photo, :styles => { :large => '500x500#', :gallery => '368x500#', :small => '120x120#' }, :default_style => :large
 
+  def generation
+    parent ? parent.children.positioned: []
+  end
+
   def move_higher=(*args)
     move_higher
   end
@@ -17,6 +21,7 @@ class Content < ActiveRecord::Base
     move_lower
   end
 
+  # Blog overrides navigation_children -> []
   def navigation_children
     children
   end
