@@ -9,6 +9,6 @@ class ContentsController < ApplicationController
   end
 
   def show
-    @content = Content.find_by_slug(params[:slugs].last) || raise(ActiveRecord::RecordNotFound)
+    @content = Content.find_by_slugs(*params[:slugs])
   end
 end

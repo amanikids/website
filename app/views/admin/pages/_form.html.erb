@@ -5,7 +5,12 @@
 
   <div class="field">
     <%= form.label :parent_id %>
-    <%= form.collection_select :parent_id, @page.parent.generation, :id, :title %>
+    <%- if @page.parent.generation.size > 1 -%>
+      <%= form.collection_select :parent_id, @page.parent.generation, :id, :title %>
+    <%- else -%>
+      <%= form.hidden_field :parent_id %>
+      <%= @page.parent.title %>
+    <%- end -%>
   </div>
 
   <div class="field">
