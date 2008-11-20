@@ -19,6 +19,11 @@ def create_symlink(path)
 end
 
 namespace :deploy do
+  desc '[OVERRIDE] Deploy and run pending migrations.'
+  task :default do
+    migrations
+  end
+
   desc 'Restart the Application'
   task :restart do
     run "touch #{current_path}/tmp/restart.txt"
