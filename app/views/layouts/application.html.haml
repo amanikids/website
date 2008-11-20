@@ -23,7 +23,12 @@
       %ul.tops
         - Home.first.children.positioned.each do |top|
           %li.top
-            = link_to_unless(top.path.nil?, top.title, top.path, :class => :title) { |name| %Q{<div class="title">#{name}</div>} }
+            - if top.path
+              = link_to top.title, top.path, :class => :title
+            - elsif top.navigation_children.any?
+              = link_to top.title, top.navigation_children.positioned.first.path, :class => :title
+            - else
+              .title= top.title
 
             - if top.navigation_children.any?
               %ul.children
