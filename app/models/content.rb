@@ -9,7 +9,7 @@ class Content < ActiveRecord::Base
   validates_uniqueness_of :slug, :allow_nil => true
 
   attr_accessor :continue_editing
-  has_attached_file :photo, :styles => { :large => '500x500#', :gallery => '368x500#', :small => '120x120#' }, :default_style => :large
+  has_attached_file :photo, :styles => { :large => '500x500#', :gallery => '368x500#', :small => '120x120#' }, :default_style => :large, :whiny_thumbnails => true
 
   def self.find_by_slugs(*slug_params)
     slug_params = slug_params.dup
