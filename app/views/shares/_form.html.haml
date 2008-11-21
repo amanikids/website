@@ -1,15 +1,15 @@
 = form.error_messages
-.field
+.field.textfield
   = form.label :from
-  = form.text_field :from
-.field
+  = form.text_field :from, :size => nil
+.field.textfield
   = form.label :to
-  = form.text_field :to
-.field
+  = form.text_field :to, :size => nil
+.field.textfield
   = form.label :subject
   = @share.subject
-.field
-  = form.label :message
-  = form.text_area :message
-.field
-  = form.submit 'Send'
+.field.textarea
+  = form.label :message, 'Message (Optional)'
+  = form.text_area :message, :rows => 5, :cols => nil
+.field.submit
+  = form.submit 'Share this Page'
