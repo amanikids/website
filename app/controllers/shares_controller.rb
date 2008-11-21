@@ -4,7 +4,11 @@ class SharesController < ApplicationController
 
   def create
     if @share.save
-      redirect_to content_path(@share.content.slugs)
+      respond_to do |format|
+        format.html { redirect_to content_path(@share.content.slugs) }
+        format.js
+      end
+
     else
       render :action => 'new'
     end
