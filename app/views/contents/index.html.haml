@@ -1,9 +1,9 @@
 .image
-  = image_tag @home.photo.url, :size => '500x500'
+  = image_tag @content.photo.url, :size => '500x500'
 
 .text
-  %h2= @home.title
-  = textilize @home.body
+  %h2= @content.title
+  = textilize @content.body
 
   - Blog.all.each do |blog|
     - if blog.children.any?

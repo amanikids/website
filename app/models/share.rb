@@ -6,6 +6,10 @@ class Share < ActiveRecord::Base
   validates_presence_of :from, :to
   validates_email_veracity_of :from, :to, :message => 'is invalid'
 
+  def subject
+    content.title # FIXME show the title nesting, like breadcrumbs
+  end
+
   private
 
   def deliver_share_created

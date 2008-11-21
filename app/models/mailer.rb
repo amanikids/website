@@ -3,7 +3,7 @@ class Mailer < ActionMailer::Base
     from ActionMailer::Configuration.site
     reply_to share.from
     recipients share.to
-    subject 'A page at amanikids.org' # FIXME
+    subject share.subject
     body :message => share.message, :url => content_url(share.content.slugs)
   end
 end

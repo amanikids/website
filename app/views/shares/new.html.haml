@@ -1,0 +1,16 @@
+- form_for @share do |form|
+  = form.error_messages
+  .field
+    = form.label :from
+    = form.text_field :from
+  .field
+    = form.label :to
+    = form.text_field :to
+  .field
+    = form.label :subject
+    = @share.subject
+  .field
+    = form.label :message
+    = form.text_area :message
+  .field
+    = form.submit 'Send'

@@ -21,20 +21,21 @@
 
     .navigation
       %ul.tops
-        - Home.first.children.positioned.each do |top|
-          %li.top
-            - if top.path
-              = link_to top.title, top.path, :class => :title
-            - elsif top.navigation_children.any?
-              = link_to top.title, top.navigation_children.positioned.first.path, :class => :title
-            - else
-              .title= top.title
+        - if Home.first
+          - Home.first.children.positioned.each do |top|
+            %li.top
+              - if top.path
+                = link_to top.title, top.path, :class => :title
+              - elsif top.navigation_children.any?
+                = link_to top.title, top.navigation_children.positioned.first.path, :class => :title
+              - else
+                .title= top.title
 
-            - if top.navigation_children.any?
-              %ul.children
-                - top.navigation_children.positioned.each do |child|
-                  %li.child
-                    = link_to child.title, child.path
+              - if top.navigation_children.any?
+                %ul.children
+                  - top.navigation_children.positioned.each do |child|
+                    %li.child
+                      = link_to child.title, child.path
 
     .content
       = yield
@@ -42,3 +43,4 @@
       .footer
         Contact Us:
         = mail_to 'info@amanikds.org', nil, :encode => 'javascript'
+        = link_to 'Share this Page', new_share_path(@content) if @content
