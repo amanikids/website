@@ -1,5 +1,5 @@
 %h1 Post
-- form_for [:admin, @post], :html => { :multipart => true } do |form|
+- form_for [:admin, @post] do |form|
   = form.error_messages
   .field
     = form.label :parent_id
@@ -11,10 +11,6 @@
   .field
     = form.label :body
     = form.text_area :body
-  .field
-    = form.label :photo
-    = form.file_field :photo
-    = image_tag @post.photo.url(:small)
   .field
     = form.submit 'Save and Continue Editing', :name => 'post[continue_editing]'
     = form.submit 'Save and Close'

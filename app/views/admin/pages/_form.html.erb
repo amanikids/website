@@ -1,6 +1,6 @@
 <h1>Page</h1>
 
-<%- form_for [:admin, @page], :html => { :multipart => true } do |form| -%>
+<%- form_for [:admin, @page] do |form| -%>
   <%= form.error_messages %>
 
   <div class="field">
@@ -26,12 +26,6 @@
   <div class="field">
     <%= form.label :body %>
     <%= form.text_area :body %>
-  </div>
-
-  <div class="field">
-    <%= form.label :photo %>
-    <%= form.file_field :photo %>
-    <%= image_tag @page.photo.url(:small) %>
   </div>
 
   <div class="field">

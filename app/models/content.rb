@@ -5,11 +5,11 @@ class Content < ActiveRecord::Base
   acts_as_list :scope => :parent
   belongs_to :parent, :class_name => 'Content'
   has_many :children, :class_name => 'Content', :foreign_key => 'parent_id', :dependent => :destroy
+  has_many :photos, :order => :position
   has_many :shares
   validates_uniqueness_of :slug, :allow_nil => true
 
   attr_accessor :continue_editing
-  has_attached_file :photo, :styles => { :large => '500x500#', :gallery => '368x500#', :small => '120x120#' }, :default_style => :large, :whiny_thumbnails => true
 
   def self.find_by_slugs(*slug_params)
     slug_params = slug_params.dup
@@ -43,6 +43,10 @@ class Content < ActiveRecord::Base
 
   def path
     '/' + slugs.join('/') if slugs.any?
+  end
+
+  def photo
+    (photos.first || Photo.new).photo
   end
 
   def slugs

@@ -1,5 +1,5 @@
 %h1 Home
-- form_for [:admin, @home], :html => { :multipart => true } do |form|
+- form_for [:admin, @home] do |form|
   = form.error_messages
   .field
     = form.label :title
@@ -7,10 +7,6 @@
   .field
     = form.label :body
     = form.text_area :body
-  .field
-    = form.label :photo
-    = form.file_field :photo
-    = image_tag @home.photo.url(:small)
   .field
     = form.submit 'Save and Continue Editing', :name => 'home[continue_editing]'
     = form.submit 'Save and Close'
