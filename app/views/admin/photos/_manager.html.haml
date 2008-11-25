@@ -1,0 +1,6 @@
+- if content.photos.any?
+  %h2 Existing Photos
+  = render :partial => content.photos
+
+%h2 Attach a New Photo
+= render :partial => content.photos.build

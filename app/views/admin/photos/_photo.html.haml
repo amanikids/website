@@ -1,0 +1,13 @@
+.photo
+  - form_for [:admin, photo], :html => { :multipart => true } do |form|
+    = form.error_messages
+    .field
+      = form.file_field :photo
+      = image_tag photo.photo.url(:small) unless photo.new_record?
+      = form.hidden_field :content_id
+      = form.submit
+      - unless photo.new_record?
+        or
+        = link_to 'Delete', [:admin, photo], :method => :delete
+
+
