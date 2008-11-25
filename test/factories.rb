@@ -21,8 +21,10 @@ Factory.define(:section) do |section|
 end
 
 Factory.define(:share) do |share|
-  share.to   { Factory.next(:email) }
-  share.from { Factory.next(:email) }
+  share.to_address   { Factory.next(:email) }
+  share.to_name 'Bob'
+  share.from_address { Factory.next(:email) }
+  share.from_name 'Fred'
   share.message "Thought you'd appreciate this."
   share.association :content, :factory => :page
 end

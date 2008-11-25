@@ -3,9 +3,9 @@ require 'test_helper'
 class ShareTest < ActiveSupport::TestCase
   should_belong_to :content
 
-  should_require_attributes :from, :to
-  should_not_allow_values_for :from, 'bob'
-  should_not_allow_values_for :to, 'bob'
+  should_require_attributes :from_name, :from_address, :to_name, :to_address
+  should_not_allow_values_for :from_address, 'bob'
+  should_not_allow_values_for :to_address, 'bob'
   should_have_instance_methods :message, :message=
 
   context 'with an unsaved Share' do
@@ -17,5 +17,13 @@ class ShareTest < ActiveSupport::TestCase
         Mailer.expects(:deliver_share_created).with(@share)
       end
     end
+  end
+
+  should 'combine from_name and from_address for from' do
+    assert_equal 'Bob <bob@example.com>', Share.new(:from_name => 'Bob', :from_address => 'bob@example.com').from
+  end
+
+  should 'combine to_name and to_address for to' do
+    assert_equal 'Bob <bob@example.com>', Share.new(:to_name => 'Bob', :to_address => 'bob@example.com').to
   end
 end

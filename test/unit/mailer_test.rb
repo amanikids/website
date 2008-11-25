@@ -8,11 +8,11 @@ class MailerTest < ActionMailer::TestCase
       setup { @message = Mailer.create_share_created(@share) }
 
       should 'be sent to share.to' do
-        assert_equal [@share.to], @message.to
+        assert_equal [@share.to_address], @message.to
       end
 
       should 'have reply-to share.from' do
-        assert_equal [@share.from], @message.reply_to
+        assert_equal [@share.from_address], @message.reply_to
       end
 
       should 'be from site' do
