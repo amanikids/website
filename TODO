@@ -1,15 +1,11 @@
-== Features
-
-* Deployment configuration (extra photos symlink, secret key?, .htaccess tweak)
-* File uploads
-
-== Tasks
-
-* Re-select "missing" image
-* Check layout in Firefox, Internet Explorer
-* Final styling pass
-* Admin area styling / usability
-* Change authentication to use email?
-* "Nested slug" finder method
-* validate_uniqueness_of :slug, :scope => :parent
-* Scroll thumbnails with mousewheel or arrow keys on hover?
+TODO update Share this Page with this feedback from Joe:
+  1. The "Share This Page" button should be above the footer page
+     break, maybe to the left or right of the text, or perhaps
+     underneath the "Next Page" link?? But, where it is now, it's hard
+     to find.
+  2. The "From" and "To" text fields should be "Sender's Email Address"
+     "Recipient's Email Address" respectively. And the Recipient's
+     Email Address should be first.
+  3. After you hit "Share this Page" and your email gets send, you get
+     a Thanks message. Very cool, but can we make it say: "Thank you
+     for helping us rescue more children from a life on the streets"?
