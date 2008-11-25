@@ -1,15 +1,16 @@
-= form.error_messages
-.field.textfield
-  = form.label :from
-  = form.text_field :from, :size => nil
-.field.textfield
-  = form.label :to
-  = form.text_field :to, :size => nil
-.field.textfield
-  = form.label :subject
-  = @share.subject
-.field.textarea
-  = form.label :message, 'Message (Optional)'
-  = form.text_area :message, :rows => 5, :cols => nil
-.field.submit
-  = form.submit 'Share this Page'
+- form_for @share, :builder => ApplicationHelper::FormBuilder do |form|
+  = form.error_messages
+  .field.textfield
+    = form.label :from
+    = form.text_field :from, :size => nil
+  .field.textfield
+    = form.label :to
+    = form.text_field :to, :size => nil
+  .field.textfield
+    = form.label :subject
+    = @share.subject
+  .field.textarea
+    = form.label :message, 'Message (Optional)'
+    = form.text_area :message, :rows => 5, :cols => nil
+  .field.submit
+    = form.submit 'Share this Page'
