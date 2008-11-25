@@ -4,6 +4,6 @@ class Mailer < ActionMailer::Base
     reply_to share.from
     recipients share.to
     subject share.subject
-    body :message => share.message, :url => content_url(share.content.slugs)
+    body :message => share.message, :title => share.content.title, :url => content_url(share.content.slugs)
   end
 end

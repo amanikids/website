@@ -11,7 +11,7 @@ class Share < ActiveRecord::Base
   end
 
   def subject
-    "Hey #{to_name}, #{from_name} thought you would be interested in this Amani Children's Home webpage."
+    "#{from_name} just sent you a link to Amani Children's Home."
   end
 
   def to

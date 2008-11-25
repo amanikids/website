@@ -1,3 +1,11 @@
-<%= @message %>
+Joe Ventura just sent you this link to Amani Children's Home: <%= @title %>.
 
 <%= @url %>
+<%- unless @message.blank? -%>
+
+----------------------------------------------------------------------
+<%= @message %>
+----------------------------------------------------------------------
+<%- end -%>
+
+At the foot of Mt. Kilimanjaro in Moshi, Tanzania, Amani Children's Home rescues street children and orphans from homelessness and restores hope in their lives. Amani provides children off the street with a safe and loving home, education, medical care, healthy food, and counseling. Amani, which means peace in Swahili, has been a haven of peace for homeless children since its founding in 2001.
