@@ -4,7 +4,7 @@ class Share < ActiveRecord::Base
   belongs_to :content
 
   validates_presence_of :from, :to
-  validates_email_veracity_of :from, :to, :message => 'is invalid'
+  validates_email_veracity_of :from, :to, :domain_check => false, :message => 'is invalid'
 
   def subject
     content.title # FIXME show the title nesting, like breadcrumbs
