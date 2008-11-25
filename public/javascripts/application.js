@@ -8,7 +8,8 @@ $(document).ready(function() {
 
 $(document).bind('reveal.facebox', function() {
   $('#facebox form').submit(function() {
-    $.post($(this).attr('action'), $(this).serialize(), function(data) { $.facebox(data) })
+    $.facebox.loading();
+    $.post($(this).attr('action'), $(this).serialize(), function(data) { $.facebox(data) });
     return false;
   })
 })
