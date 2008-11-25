@@ -1,14 +1,13 @@
-- form_for @share, :builder => ApplicationHelper::FormBuilder do |form|
-  = form.error_messages
+%h2 Share this Page
+- form_for @share do |form|
   .field.textfield
-    = form.label :from
-    = form.text_field :from, :size => nil
-  .field.textfield
-    = form.label :to
+    = form.label :to, "Recipient's Email Address"
     = form.text_field :to, :size => nil
+    = form.error_message_on :to
   .field.textfield
-    = form.label :subject
-    = @share.subject
+    = form.label :from, "Sender's Email Address"
+    = form.text_field :from, :size => nil
+    = form.error_message_on :from
   .field.textarea
     = form.label :message, 'Message (Optional)'
     = form.text_area :message, :rows => 5, :cols => nil

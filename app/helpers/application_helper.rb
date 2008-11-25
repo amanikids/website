@@ -14,12 +14,4 @@ module ApplicationHelper
 
     parents.join(' ')
   end
-
-  class FormBuilder < ActionView::Helpers::FormBuilder
-    def error_messages
-      if object.errors.any?
-        @template.content_tag(:p, @object.errors.full_messages.to_sentence + '.', :class => 'errorExplanation', :id => 'errorExplanation')
-      end
-    end
-  end
 end
