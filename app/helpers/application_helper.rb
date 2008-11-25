@@ -14,4 +14,8 @@ module ApplicationHelper
 
     parents.join(' ')
   end
+
+  def slideshow_tag(content)
+    image_tag content.photo.url(:large), :size => '500x500'
+  end
 end
