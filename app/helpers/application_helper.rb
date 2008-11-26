@@ -15,6 +15,14 @@ module ApplicationHelper
     parents.join(' ')
   end
 
+  def photo_attrs(counter)
+    if counter.zero?
+      { :style => 'display:block' }
+    else
+      { :style => 'display:none' }
+    end
+  end
+
   # FIXME should work with sizes other than the default (see _gallery.html.haml)
   def slideshow_tag(content, options = {})
     options.reverse_merge! :size => '500x500', :style => :large

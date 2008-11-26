@@ -43,12 +43,6 @@ jQuery.fn.slideshow = function() {
   }, 5000); // how long to show the slide
 };
 
-$(document).ready(function() {
-  $('.image').each(function() {
-    $(this).children().eq(0).show();
-  });
-});
-
 $(window).load(function() {
   $('.image').each(function() {
     if ($(this).children().size() > 1) {
@@ -62,6 +56,6 @@ $(window).load(function() {
 // ============================================================================
 $(document).ready(function() {
   $('.thumbnails').find('.current').each(function() {
-    $(this).parent().scrollTop($(this).position().top - 136);
+    $(this).parent().scrollTop(($(this).prevAll().size() - 1) * 136);
   });
 });

@@ -1,4 +1,4 @@
-.photo
+.photo{photo_attrs(photo_counter)}
   = image_tag photo.photo.url(style), :size => size
   - unless photo.caption.blank?
     .caption
