@@ -35,7 +35,7 @@
                 %ul.children
                   - top.navigation_children.positioned.each do |child|
                     %li.child
-                      = link_to child.title, child.path
+                      = link_to child.title, child.path, :class => :title
 
     .content
       = yield

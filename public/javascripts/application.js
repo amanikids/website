@@ -18,6 +18,13 @@ $(document).bind('reveal.facebox', function() {
 });
 
 // ============================================================================
+// = Navigation Stuff                                                         =
+// ============================================================================
+$(document).ready(function() {
+  $('.navigation .top').hover(function() { $(this).find('.children').show() }, function() { $(this).find('.children').hide() });
+});
+
+// ============================================================================
 // = Slideshow Stuff                                                          =
 // ============================================================================
 jQuery.fn.nextSibling = function() {
