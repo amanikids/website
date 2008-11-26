@@ -1,7 +1,10 @@
 !!! XML
 !!!
 %html{html_attrs}
-  %body
+  %head
+    = stylesheet_link_tag 'admin'
+
+  %body.admin
     - if @current_user
       %ul
         %li
@@ -9,4 +12,6 @@
           = @current_user.login
         %li
           = link_to 'Logout', admin_user_session_path, :method => :delete
-    = yield
+
+    .content
+      = yield

@@ -3,6 +3,8 @@
     = form.error_messages
     - unless photo.new_record?
       .field
+        = link_to '&uarr;', admin_photo_path(photo, :photo => { :move_higher => true }), :method => :put
+        = link_to '&darr;', admin_photo_path(photo, :photo => { :move_lower => true }), :method => :put
         = image_tag photo.photo.url(:small)
     .field
       = form.label :photo, 'Upload'
