@@ -8,7 +8,7 @@
     = javascript_tag "$('.thumbnails').scrollTop(($('##{dom_id(content)}').prevAll().size() - 1) * 136);"
 
   .image
-    = image_tag content.photo.url(:gallery), :size => '368x500'
+    = slideshow_tag(content, :style => :gallery, :size => '368x500')
 
 .text
   .breadcrumbs

@@ -16,13 +16,15 @@ module ApplicationHelper
   end
 
   # FIXME should work with sizes other than the default (see _gallery.html.haml)
-  def slideshow_tag(content)
+  def slideshow_tag(content, options = {})
+    options.reverse_merge! :size => '500x500', :style => :large
+
     case content.photos.count
     when 0
     when 1
-      image_tag content.photo.url, :size => '500x500'
+      image_tag content.photo.url(options[:style]), :size => options[:size]
     else
-      render :partial => 'photos/slideshow', :locals => { :photos => content.photos }
+      render :partial => 'photos/slideshow', :locals => { :photos => content.photos, :style => options[:style], :size => options[:size] }
     end
   end
 end
