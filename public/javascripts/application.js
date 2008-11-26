@@ -56,3 +56,12 @@ $(window).load(function() {
     }
   });
 });
+
+// ============================================================================
+// = Thumbnail Stuff                                                          =
+// ============================================================================
+$(document).ready(function() {
+  $('.thumbnails').find('.current').each(function() {
+    $(this).parent().scrollTop($(this).position().top - 136);
+  });
+});

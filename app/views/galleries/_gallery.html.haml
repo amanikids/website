@@ -1,11 +1,8 @@
 .gallery
   %ul.thumbnails
     - children.each do |child|
-      %li[child]
-        = link_to image_tag(child.photo.url(:small), :size => '120x120', :class => "#{child == content ? 'current' : ''}"), child.path
-
-  - unless content.is_a?(Gallery)
-    = javascript_tag "$('.thumbnails').scrollTop(($('##{dom_id(content)}').prevAll().size() - 1) * 136);"
+      %li[child]{ :class => "#{child == content ? 'current' : ''}" }
+        = link_to image_tag(child.photo.url(:small), :size => '120x120'), child.path
 
   .image
     = slideshow_tag(content, :style => :gallery, :size => '368x500')
