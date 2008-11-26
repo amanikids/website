@@ -26,26 +26,26 @@ jQuery.fn.nextSibling = function() {
 };
 
 jQuery.fn.slideshow = function() {
-  $(this).siblings().css('z-index', '-2');
-  $(this).css('z-index', '-1');
-
   var currentSlide = $(this);
+  currentSlide.siblings().css('z-index', '-2').end().css('z-index', '-1');
   setTimeout(function() {
+    currentSlide.find('.caption').hide();
     currentSlide.fadeIn(1000, function() { // how long to take for the transition
-      $(this).siblings().hide();
-      $(this).nextSibling().slideshow();
+      $(this).siblings().hide().end().find('.caption').show().end().nextSibling().slideshow();
     });
-  }, 2000); // how long to show the slide
+  }, 5000); // how long to show the slide
 };
 
 $(document).ready(function() {
-  $('.slideshow').each(function() {
+  $('.image').each(function() {
     $(this).children().eq(0).show();
   });
 });
 
 $(window).load(function() {
-  $('.slideshow').each(function() {
-    $(this).children().eq(1).slideshow();
+  $('.image').each(function() {
+    if ($(this).children().size() > 1) {
+      $(this).children().eq(1).slideshow();
+    }
   });
 });

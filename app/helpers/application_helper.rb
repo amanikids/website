@@ -21,10 +21,9 @@ module ApplicationHelper
 
     case content.photos.count
     when 0
-    when 1
-      image_tag content.photo.url(options[:style]), :size => options[:size]
+      render :partial => Photo.new, :locals => { :style => options[:style], :size => options[:size], :photo_total => 1 }
     else
-      render :partial => 'photos/slideshow', :locals => { :photos => content.photos, :style => options[:style], :size => options[:size] }
+      render :partial => content.photos, :locals => { :style => options[:style], :size => options[:size], :photo_total => content.photos.count }
     end
   end
 end

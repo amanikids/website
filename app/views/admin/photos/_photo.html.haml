@@ -1,9 +1,16 @@
 .photo
   - form_for [:admin, photo], :html => { :multipart => true } do |form|
     = form.error_messages
+    - unless photo.new_record?
+      .field
+        = image_tag photo.photo.url(:small)
     .field
+      = form.label :photo, 'Upload'
       = form.file_field :photo
-      = image_tag photo.photo.url(:small) unless photo.new_record?
+    .field
+      = form.label :caption
+      = form.text_field :caption
+    .field
       = form.hidden_field :content_id
       = form.submit
       - unless photo.new_record?
