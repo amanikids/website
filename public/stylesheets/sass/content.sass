@@ -67,9 +67,32 @@
 
     .box
       :background-color = !light_yellow
-      :border = 3px solid !light_orange
+      :border = 1px solid !orange
+      :color black
       :margin-bottom 1em
-      :padding 0em 1em
+      :padding 1em
+      h3
+        :margin-top 0
+
+    .blog
+      h3
+        :margin-bottom 0.5em
+        a
+          :color = !orange
+          :text-decoration none
+      ul
+        :list-style none
+        :margin-bottom 0
+        :margin-top 0
+        :padding 0
+      li
+        :margin-bottom 0.5em
+        a
+          :text-decoration none
+          .title
+            :font-family = !sans_serif
+          .excerpt
+            :font-size 0.8em
 
     .next_link
       a
