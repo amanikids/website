@@ -63,23 +63,34 @@
     .next_link
       a
         :background-color = !orange
+        :border = 1px solid !orange
         :color white
-        :display block
         :float right
-        :font-family = !sans_serif
-        :font-size 14px
-        :font-weight bold
-        :margin-bottom 1em
-        :padding 0.4em 0.5em 0.5em
-        :text-decoration none
         &:hover
-          :background-color = !medium_yellow
+          :background-color white
           :color = !orange
-
 
   .share
     :clear right
-    :text-align right
+    a
+      :background-color = !medium_yellow
+      :border = 1px solid !medium_yellow
+      :color = !orange
+      :float right
+      &:hover
+        :background-color white
+        :border-color = !orange
+        :color = !orange
+
+
+  a.button
+    :display block
+    :font-family = !sans_serif
+    :font-size 14px
+    :font-weight bold
+    :margin-bottom 1em
+    :padding 0.4em 0.5em 0.5em
+    :text-decoration none
 
   .footer
     :border-top = 2px solid !yellow
