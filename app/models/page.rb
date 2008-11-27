@@ -7,6 +7,6 @@ class Page < Content
   end
 
   def show_children?
-    children.any?
+    show_child_links? && children.any?
   end
 end

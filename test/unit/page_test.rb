@@ -59,6 +59,13 @@ class PageTest < ActiveSupport::TestCase
       should 'be true' do
         assert @page.show_children?
       end
+
+      context 'but show_child_links is false' do
+        setup { @page.update_attribute(:show_child_links, false) }
+        should 'be false' do
+          assert !@page.show_children?
+        end
+      end
     end
   end
 end
