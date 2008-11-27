@@ -33,6 +33,16 @@ class PageTest < ActiveSupport::TestCase
         should 'return that page as next_page' do
           assert_equal @next_page, @page.next_page
         end
+
+        context 'or two, sorted' do
+          setup do
+            @actual_next_page = Factory(:page, :parent => @next_section)
+            @actual_next_page.move_higher
+          end
+          should 'really return the first page as next_page' do
+            assert_equal @actual_next_page, @page.next_page
+          end
+        end
       end
 
       context 'when the next "section" is not a section' do
