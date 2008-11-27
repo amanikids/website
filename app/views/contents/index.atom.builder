@@ -10,7 +10,7 @@ atom_feed do |feed|
   @contents.select(&:path).each do |content|
     feed.entry(content, :url => content.path) do |entry|
       entry.title(content.title)
-      entry.content(textilize(content.body) + content.photos.map { |photo| image_tag(photo.photo.url(:small)) }.join, :type => 'html')
+      entry.content(textilize(content.body) + content.photos.map { |photo| image_tag(photo.photo.url(:thumbnail)) }.join, :type => 'html')
     end
   end
 end

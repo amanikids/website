@@ -5,7 +5,7 @@
       .field
         = link_to '&uarr;', admin_photo_path(photo, :photo => { :move_higher => true }), :method => :put
         = link_to '&darr;', admin_photo_path(photo, :photo => { :move_lower => true }), :method => :put
-        = image_tag photo.photo.url(:small)
+        = image_tag photo.photo.url(:thumbnail)
     .field
       = form.label :photo, 'Upload'
       = form.file_field :photo

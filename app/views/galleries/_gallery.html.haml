@@ -2,7 +2,7 @@
   %ul.thumbnails
     - children.each do |child|
       %li[child]{ :class => "#{child == content ? 'current' : ''}" }
-        = link_to image_tag(child.photo.url(:small), :size => '120x120'), child.path
+        = link_to image_tag(child.photo.url(:thumbnail), :size => '120x120'), child.path
 
   .image
     = slideshow_tag(content, :style => :gallery, :size => '368x500')
