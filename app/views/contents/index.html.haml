@@ -11,7 +11,7 @@
         %h3= link_to blog.title, blog.path
         %ul
           - blog.children.recent.each do |post|
-            %li= link_to content_tag(:div, post.title, :class => 'title') + content_tag(:div, textilize_without_paragraph(truncate(post.body, 50)), :class => 'excerpt'), post.path
+            %li= link_to content_tag(:div, post.title, :class => 'title') + content_tag(:div, textilize(truncate(post.body, 50).strip), :class => 'excerpt'), post.path
 
   .next_link
     = link_to "James' Amazing Rotating Fact Widget&trade;", '', :class => 'button'
