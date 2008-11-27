@@ -1,0 +1,18 @@
+%h1 Donation Page
+- form_for [:admin, @donation_page] do |form|
+  = form.error_messages
+  .field
+    = form.label :parent_id
+    = form.hidden_field :parent_id
+    = @donation_page.parent.title
+  .field
+    = form.label :title
+    = form.text_field :title
+  .field
+    = form.label :slug
+    = form.text_field :slug
+  .field
+    = form.submit 'Save and Continue Editing', :name => 'blog[continue_editing]'
+    = form.submit 'Save and Close'
+    or
+    = link_to 'Cancel', admin_root_path

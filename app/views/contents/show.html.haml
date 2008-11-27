@@ -1,6 +1,9 @@
 - if @content.is_a?(Blog)
   = render :partial => @content
 
+- if @content.is_a?(DonationPage)
+  = render :partial => @content
+
 - if @content.is_a?(Gallery)
   = render :partial => @content, :locals => { :content => @content, :children => @content.children.positioned }
 
