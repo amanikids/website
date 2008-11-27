@@ -61,9 +61,24 @@
       :padding 0em 1em
 
     .next_link
-      :text-align right
+      a
+        :background-color = !orange
+        :color white
+        :display block
+        :float right
+        :font-family = !sans_serif
+        :font-size 14px
+        :font-weight bold
+        :margin-bottom 1em
+        :padding 0.4em 0.5em 0.5em
+        :text-decoration none
+        &:hover
+          :background-color = !medium_yellow
+          :color = !orange
+
 
   .share
+    :clear right
     :text-align right
 
   .footer

@@ -16,5 +16,4 @@
 
   - if page.parent.is_a?(Section) && !page.last?
     %p.next_link
-      Next:
-      = link_to page.lower_item.title, page.lower_item.path
+      = link_to "#{page.lower_item.title} &#x25ba;", page.lower_item.path
