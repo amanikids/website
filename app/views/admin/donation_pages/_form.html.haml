@@ -12,7 +12,10 @@
     = form.label :slug
     = form.text_field :slug
   .field
-    = form.submit 'Save and Continue Editing', :name => 'blog[continue_editing]'
+    = form.label :body
+    = form.text_area :body
+  .field
+    = form.submit 'Save and Continue Editing', :name => 'donation_page[continue_editing]'
     = form.submit 'Save and Close'
     or
     = link_to 'Cancel', admin_root_path

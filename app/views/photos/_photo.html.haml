@@ -1,4 +1,4 @@
-.photo{photo_attrs(photo_counter)}
+.photo{slideshow ? display_first_only(photo_counter) : {}}
   = image_tag photo.photo.url(style), :size => size
   - unless photo.caption.blank?
     .caption= textilize photo.caption

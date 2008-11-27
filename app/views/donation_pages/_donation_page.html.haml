@@ -1,0 +1,11 @@
+.donation_page
+  .left
+
+  .right
+    = render :partial => donation_page.photos, :locals => { :style => :small, :size => '120x120', :slideshow => false }
+
+  .middle
+    .breadcrumbs= breadcrumbs(donation_page)
+    %h2= donation_page.title
+    = textilize donation_page.body
+
