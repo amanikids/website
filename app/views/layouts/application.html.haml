@@ -16,8 +16,8 @@
       %ul.links
         %li= link_to image_tag('home.jpg')      + content_tag(:span, 'Home'),      root_path
         %li= link_to image_tag('donate.jpg')    + content_tag(:span, 'Donate'),    '/donate'
-        %li= link_to image_tag('subscribe.jpg') + content_tag(:span, 'Subscribe'), root_path
-        %li= mail_to 'info@amanikids.org', image_tag('contact.jpg') + content_tag(:span, 'Contact'), :encode => 'javascript'
+        %li= link_to image_tag('subscribe.jpg') + content_tag(:span, 'Subscribe'), '/subscribe'
+        %li= link_to image_tag('contact.jpg')   + content_tag(:span, 'Contact'),   '/contact'
 
     .navigation
       %ul.tops
