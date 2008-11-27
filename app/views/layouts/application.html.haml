@@ -3,7 +3,7 @@
 %html{html_attrs}
   %head
     %title Amani Children's Home | Moshi, Tanzania
-    = stylesheet_link_tag 'content', 'document', 'form', 'header', 'navigation', '/facebox/facebox', :cache => true
+    = stylesheet_link_tag 'content', 'document', 'form', 'header', 'navigation', '/facebox/facebox', 'facebox', :cache => true
     = javascript_include_tag 'jquery', '/facebox/facebox', 'application', :cache => true
     = auto_discovery_link_tag :atom, formatted_feed_path(:atom)
 
@@ -22,8 +22,8 @@
     .navigation
       %ul.tops
         - if Home.first
-          - Home.first.children.positioned.each do |top|
-            %li.top
+          - Home.first.children.positioned.each_with_index do |top, index|
+            %li.top{:class => "#{(index.zero? ? 'first' : '')}"}
               - if top.path
                 = link_to top.title, top.path, :class => :title
               - elsif top.navigation_children.any?
