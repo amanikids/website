@@ -34,7 +34,7 @@ jQuery.fn.nextSibling = function() {
 
 jQuery.fn.slideshow = function() {
   var currentSlide = $(this);
-  currentSlide.siblings().css('z-index', '-2').end().css('z-index', '-1');
+  currentSlide.siblings().css('z-index', '0').end().css('z-index', '1');
   setTimeout(function() {
     currentSlide.find('.caption').hide();
     currentSlide.fadeIn(1000, function() { // how long to take for the transition
