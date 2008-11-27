@@ -7,21 +7,13 @@ $.ajaxSetup({
 // ============================================================================
 $(document).ready(function() {
   $('a[rel*=facebox]').facebox();
-
-  $('input.to-facebox').each(function() {
-    $(this).parents('form').submit(function(event) {
-      event.preventDefault();
-      $.facebox.loading();
-      $.get($(this).attr('action'), null, function(data) { $.facebox(data) });
-    });
-  });
 });
 
 $(document).bind('reveal.facebox', function() {
-  $('#facebox form').submit(function(event) {
-    event.preventDefault();
+  $('#facebox form').submit(function() {
     $.facebox.loading();
     $.post($(this).attr('action'), $(this).serialize(), function(data) { $.facebox(data) });
+    return false;
   })
 });
 

@@ -41,7 +41,7 @@
       = yield
 
       .share
-        = button_to 'Share this Page', new_share_path(@content), :class => 'to-facebox', :method => :get
+        = link_to 'Share this Page', new_share_path(@content), :rel => :facebox
 
       .footer
         Contact Us:
