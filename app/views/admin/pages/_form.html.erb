@@ -24,6 +24,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :show_child_links %>
+    <%= form.check_box :show_child_links %>
+  </div>
+
+  <div class="field">
     <%= form.label :body %>
     <%= find_and_preserve(form.text_area :body) %>
   </div>
