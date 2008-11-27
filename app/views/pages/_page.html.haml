@@ -14,6 +14,8 @@
 
   = textilize page.body
 
-  - if page.parent.is_a?(Section) && !page.last?
-    %p.next_link
-      = link_to "#{page.lower_item.title} &#x25ba;", page.lower_item.path, :class => 'button'
+  - if page.parent.is_a?(Section)
+    - target = page.last? ? (page.parent.lower_item.is_a?(Section) ? page.parent.lower_item.children.first : nil) : page.lower_item
+    - if target
+      .next_link
+        = link_to "#{target.title} &#x25ba;", target.path, :class => 'button'
