@@ -1,8 +1,4 @@
 .photo{photo_attrs(photo_counter)}
   = image_tag photo.photo.url(style), :size => size
   - unless photo.caption.blank?
-    .caption
-      - if photo_total > 1
-        = textilize("(#{photo_counter + 1}/#{photo_total}) #{photo.caption}")
-      - else
-        = textilize photo.caption
+    .caption= textilize photo.caption
