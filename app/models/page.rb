@@ -5,4 +5,8 @@ class Page < Content
   def next_page
     lower_item || (parent.lower_item.is_a?(Section) ? parent.lower_item.children.first : nil)
   end
+
+  def show_children?
+    children.any?
+  end
 end

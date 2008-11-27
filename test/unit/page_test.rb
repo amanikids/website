@@ -46,4 +46,19 @@ class PageTest < ActiveSupport::TestCase
       end
     end
   end
+
+  context 'show children' do
+    setup { @page = Factory(:page) }
+
+    should 'be false' do
+      assert !@page.show_children?
+    end
+
+    context 'when the page has children' do
+      setup { @child = Factory(:page, :parent => @page) }
+      should 'be true' do
+        assert @page.show_children?
+      end
+    end
+  end
 end
