@@ -7,16 +7,21 @@ Factory.sequence(:slug) do |n|
 end
 
 
+
+Factory.define(:home) do |home|
+  home.title 'Home'
+  home.body 'Hi there, and welcome.'
+end
+
 Factory.define(:page) do |page|
   page.association :parent, :factory => :section
-
-  page.title 'Hello'
+  page.title 'Page'
   page.slug { Factory.next(:slug) }
-  page.body 'Hi there, and welcome.'
+  page.body 'This is a page.'
 end
 
 Factory.define(:section) do |section|
-  section.title 'Something'
+  section.title 'Section'
   section.slug { Factory.next(:slug) }
 end
 
