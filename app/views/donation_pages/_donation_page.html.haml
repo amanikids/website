@@ -8,6 +8,8 @@
   .middle
     .breadcrumbs= breadcrumbs(donation_page)
     %h2= donation_page.title
-    = textilize donation_page.body
-    = textilize donation_page.footer
+    .body
+      = textilize donation_page.body
+    .footer
+      = textilize donation_page.footer
 

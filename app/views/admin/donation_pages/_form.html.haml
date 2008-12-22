@@ -1,4 +1,4 @@
-%h1 Donation Page
+%h1= link_to_unless @donation_page.new_record?, 'Donation Page', @donation_page.path
 - form_for [:admin, @donation_page] do |form|
   = form.error_messages
   .field

@@ -2,5 +2,6 @@
   = link_to '&uarr;', admin_post_path(post, :post => { :move_higher => true }), :method => :put
   = link_to '&darr;', admin_post_path(post, :post => { :move_lower => true }), :method => :put
   = post.title
+  = link_to 'View', post.path
   = link_to 'Edit', edit_admin_post_path(post)
   = link_to 'Delete', admin_post_path(post), :method => :delete, :confirm => 'Are you sure you want to delete this Post?'

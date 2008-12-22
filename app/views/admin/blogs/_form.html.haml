@@ -1,4 +1,4 @@
-%h1 Blog
+%h1= link_to_unless @blog.new_record?, 'Blog', @blog.path
 - form_for [:admin, @blog] do |form|
   = form.error_messages
   .field

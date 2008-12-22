@@ -1,4 +1,4 @@
-%h1 Home
+%h1= link_to 'Home', root_path
 - form_for [:admin, @home] do |form|
   = form.error_messages
   .field
