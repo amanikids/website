@@ -8,8 +8,7 @@
   .middle
     .breadcrumbs= breadcrumbs(donation_page)
     %h2= donation_page.title
-    .body
-      = textilize donation_page.body
-    .footer
-      = textilize donation_page.footer
+    = textilize donation_page.body
+    = render :partial => 'donation_pages/paypal', :locals => { :donation_page => donation_page } if donation_page.paypal_account?
+    = textilize donation_page.footer
 

@@ -19,4 +19,9 @@ class DonationPageTest < ActiveSupport::TestCase
     should_allow_values_for :donation_amounts, '25,50,75', '25, 50, 75'
     should_not_allow_values_for :donation_amounts, 'a, b, c', '25 50 75', '', nil, :message => 'should be a comma-separated list of numbers'
   end
+
+  should 'provide list of donation amounts' do
+    donation_page = Factory.build(:donation_page, :donation_amounts => '25, 50, 75')
+    assert_equal [25, 50, 75], donation_page.donation_amounts_list
+  end
 end

@@ -1,0 +1,12 @@
+.paypal
+  - payment_service_for 'foo', donation_page.paypal_account, :service => :paypal, :html => { :method => :get } do |service|
+    - donation_page.donation_amounts_list.each do |amount|
+      %span
+        %label
+          = radio_button_tag :amount, amount
+          = amount
+          = donation_page.currency
+    - service.cmd = '_donations'
+    - service.currency donation_page.currency
+    - service.item_name = "Donation to Amani Children's Home"
+    = submit_tag 'Donate Online'
