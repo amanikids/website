@@ -18,6 +18,7 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on.
   # They can then be installed with "rake gems:install" on new installations.
   config.gem 'RedCloth'
+  config.gem 'activemerchant', :lib => 'active_merchant'
   config.gem 'authlogic'
   config.gem 'haml'
 
