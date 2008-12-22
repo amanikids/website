@@ -15,6 +15,12 @@
     = form.label :body
     = form.text_area :body
   .field
+    = form.label :sidebar
+    = form.text_area :sidebar
+  .field
+    = form.label :footer
+    = form.text_area :footer
+  .field
     = form.submit 'Save and Continue Editing', :name => 'donation_page[continue_editing]'
     = form.submit 'Save and Close'
     or
