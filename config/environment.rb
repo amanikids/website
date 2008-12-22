@@ -18,7 +18,7 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on.
   # They can then be installed with "rake gems:install" on new installations.
   config.gem 'RedCloth'
-  config.gem 'authlogic', :version => '1.0.0' # FIXME upgrade to authlogic-1.2.0 when available. 1.1.0 has no open id and loads test/unit, which makes rake ugly.
+  config.gem 'authlogic'
   config.gem 'haml'
 
   # Make Time.zone default to the specified zone, and make Active Record store time values
