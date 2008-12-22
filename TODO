@@ -1,0 +1,1 @@
+TODO change validates_email_veracity_of plugin's error message from "is invalid." to "is invalid", removing the period.

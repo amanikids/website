@@ -8,6 +8,9 @@ end
 
 
 
+Factory.define(:donation_page) do |donation_page|
+end
+
 Factory.define(:home) do |home|
   home.title 'Home'
   home.body 'Hi there, and welcome.'

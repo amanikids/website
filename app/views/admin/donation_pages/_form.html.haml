@@ -20,6 +20,19 @@
   .field
     = form.label :footer
     = form.text_area :footer
+
+  %h2 Paypal Configuration
+  %p If you enter the email address for a paypal account below, we'll include online donation buttons in the main section of the page, between the body and the footer.
+  .field
+    = form.label :paypal_account
+    = form.text_field :paypal_account
+  .field
+    = form.label :currency
+    = form.text_field :currency
+  .field
+    = form.label :donation_amounts
+    = form.text_field :donation_amounts
+
   .field
     = form.submit 'Save and Continue Editing', :name => 'donation_page[continue_editing]'
     = form.submit 'Save and Close'

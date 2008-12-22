@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081222063011) do
+ActiveRecord::Schema.define(:version => 20081222080823) do
 
   create_table "contents", :force => true do |t|
     t.integer  "parent_id"
@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(:version => 20081222063011) do
     t.boolean  "show_child_links", :default => true
     t.text     "footer"
     t.text     "sidebar"
+    t.string   "currency"
+    t.string   "donation_amounts"
+    t.string   "paypal_account"
   end
 
   create_table "documents", :force => true do |t|
