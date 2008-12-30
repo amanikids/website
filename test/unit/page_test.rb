@@ -57,23 +57,23 @@ class PageTest < ActiveSupport::TestCase
     end
   end
 
-  context 'show children' do
+  context 'show children at' do
     setup { @page = Factory(:page) }
 
     should 'be false' do
-      assert !@page.show_children?
+      assert !@page.show_children_at?(:top)
     end
 
     context 'when the page has children' do
       setup { @child = Factory(:page, :parent => @page) }
       should 'be true' do
-        assert @page.show_children?
+        assert @page.show_children_at?(:top)
       end
 
-      context 'but show_child_links is false' do
-        setup { @page.update_attribute(:show_child_links, false) }
+      context 'but show_child_links_at is bottom' do
+        setup { @page.update_attribute(:show_child_links_at, 'bottom') }
         should 'be false' do
-          assert !@page.show_children?
+          assert !@page.show_children_at?(:top)
         end
       end
     end

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081222080823) do
+ActiveRecord::Schema.define(:version => 20081230084631) do
 
   create_table "contents", :force => true do |t|
     t.integer  "parent_id"
@@ -17,15 +17,15 @@ ActiveRecord::Schema.define(:version => 20081222080823) do
     t.string   "title"
     t.string   "slug"
     t.text     "body"
-    t.integer  "position",         :default => 0
+    t.integer  "position",            :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "show_child_links", :default => true
     t.text     "footer"
     t.text     "sidebar"
     t.string   "currency"
     t.string   "donation_amounts"
     t.string   "paypal_account"
+    t.string   "show_child_links_at", :default => "top"
   end
 
   create_table "documents", :force => true do |t|
