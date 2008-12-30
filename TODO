@@ -1,2 +1,4 @@
 TODO custom donation amount
 TODO page property, "show_child_links_as" => [:links, :dropdown]
+TODO Gallery thumbnails: hover should immediately show title of the page.
+
