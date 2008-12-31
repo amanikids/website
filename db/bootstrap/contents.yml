@@ -1,7 +1,3 @@
-# TODO search for ', replace with '
-# TODO search for \", replace with \"
-# TODO search for \", replace with \"
-
 # =============================================================================
 # = Home                                                                      =
 # =============================================================================
@@ -51,7 +47,7 @@ faq:
   parent: how_amani_helps_tanzanian_kids
   title: FAQ
   slug: faq
-  body: "h3. Who started Amani and how?\n\nAmani Children's Home was established on August 29, 2001 by local Tanzanians to meet the needs of the rapidly growing population of street children in the Kilimanjaro region of Tanzania. They named the new home \"Amani\", which means peace in Swahili. Life on the streets is terrifying and dangerous for children, and from the very beginning Amani has been a haven of peace for children who are homeless. Amani is proud to have been founded by locals and, to this day, almost all of the staff, leadership and Board are indigenous Tanzanians. We believe that the local community knows its own needs and the best ways to address them.\n\nh3. Why are there street children in Tanzania?\n\nThe root causes behind children fleeing to the streets are complex and multi-faceted and each child has their own individual story and background. However, almost all children go to the streets seeking escape from hunger, abuse or neglect. Other root causes include: HIV/AIDS, rising divorce rates, the lack of rights for women and children, the prohibitive cost of primary education, and the lack of a functioning government-run social welfare system. For some specific examples of reasons why children run to the streets, read the children's individual stories (TODO link to meet the kids).\n\nh3. How many kids live at Amani? How old are they? Are there both boys and girls?\n\nAs of this writing (June 2008), there are currently 86 children living at Amani, both boys and girls, who are between the ages of 5 and 16. In addition to the children living at Amani, we support 174 kids who used to be homeless who Amani's social workers were able to reunify with relatives.\n\nh3. Is Amani affiliated with a religious denomination or organization?\n\nAmani is committed to nurturing the children's spiritual growth. However, Amani is not affiliated with any denomination or particular religious organization. There are several different religious organizations who have chosen to support us, both financially and by teaching and interacting with the children.\n\nh3. How is Amani funded?\n\nAmani receives funding from three sources - foundations, businesses, and individuals - with the bulk of our funding coming from individuals. Every donor makes a difference.\n\nh3. How do I know I can trust Amani with my donations?\n\nAmani is dedicated to the sound management of our funds. Because of this, Amani is externally audited every year. Also, Amani is governed by an active external Board of Trustees - all of whom live in Moshi; none of whom receive any financial compensation for their role in Amani's supervision. This is made up of men and women including: a Norwegian doctor, a Tanzanian social worker, and Indian priest, a British accountant, a Tanzanian management consultant, an Indian educations specialist and a Tanzanian human rights advocate. Learn more about governance at Amani (TODO link to governance).\n\nh3. How can I help?\n\nThere are several ways you can help. First of all, join our Helping Hands (TODO link to helping hands) sponsorship program. Helping Hands commit to give monthly to Amani and provide a reliable source of support for the Amani children. Then, consider where you can spread the word about Amani [link to fundraising page] - raising support from your business, church, or community gorup. You also may apply for membership with Friends of Amani in your home country. If you have skills that you feel would benefit the children and caregivers at Amani, consider applying for our volunteer program (TODO link to volunteer program)."
+  body: "h3. Who started Amani and how?\n\nAmani Children's Home was established on August 29, 2001 by local Tanzanians to meet the needs of the rapidly growing population of street children in the Kilimanjaro region of Tanzania. They named the new home \"Amani\", which means peace in Swahili. Life on the streets is terrifying and dangerous for children, and from the very beginning Amani has been a haven of peace for children who are homeless. Amani is proud to have been founded by locals and, to this day, almost all of the staff, leadership and Board are indigenous Tanzanians. We believe that the local community knows its own needs and the best ways to address them.\n\nh3. Why are there street children in Tanzania?\n\nThe root causes behind children fleeing to the streets are complex and multi-faceted and each child has their own individual story and background. However, almost all children go to the streets seeking escape from hunger, abuse or neglect. Other root causes include: HIV/AIDS, rising divorce rates, the lack of rights for women and children, the prohibitive cost of primary education, and the lack of a functioning government-run social welfare system. For some specific examples of reasons why children run to the streets, read the children's individual stories ( link to meet the kids).\n\nh3. How many kids live at Amani? How old are they? Are there both boys and girls?\n\nAs of this writing (June 2008), there are currently 86 children living at Amani, both boys and girls, who are between the ages of 5 and 16. In addition to the children living at Amani, we support 174 kids who used to be homeless who Amani's social workers were able to reunify with relatives.\n\nh3. Is Amani affiliated with a religious denomination or organization?\n\nAmani is committed to nurturing the children's spiritual growth. However, Amani is not affiliated with any denomination or particular religious organization. There are several different religious organizations who have chosen to support us, both financially and by teaching and interacting with the children.\n\nh3. How is Amani funded?\n\nAmani receives funding from three sources - foundations, businesses, and individuals - with the bulk of our funding coming from individuals. Every donor makes a difference.\n\nh3. How do I know I can trust Amani with my donations?\n\nAmani is dedicated to the sound management of our funds. Because of this, Amani is externally audited every year. Also, Amani is governed by an active external Board of Trustees - all of whom live in Moshi; none of whom receive any financial compensation for their role in Amani's supervision. This is made up of men and women including: a Norwegian doctor, a Tanzanian social worker, and Indian priest, a British accountant, a Tanzanian management consultant, an Indian educations specialist and a Tanzanian human rights advocate. Learn more about governance at Amani ( link to governance).\n\nh3. How can I help?\n\nThere are several ways you can help. First of all, join our Helping Hands ( link to helping hands) sponsorship program. Helping Hands commit to give monthly to Amani and provide a reliable source of support for the Amani children. Then, consider where you can spread the word about Amani [link to fundraising page] - raising support from your business, church, or community gorup. You also may apply for membership with Friends of Amani in your home country. If you have skills that you feel would benefit the children and caregivers at Amani, consider applying for our volunteer program ( link to volunteer program)."
   position: 4
 
 giving_primary_care:
@@ -75,7 +71,7 @@ outreach_to_the_streets:
   parent: how_amani_helps_tanzanian_kids
   title: Outreach to the Streets
   slug: outreach-to-the-streets
-  body: "The children at Amani have been rescued from life on the streets. While each of the children have their own unique stories of the hardships that drove them to the streets, the life of every homeless child in Tanzania is full of fear, hunger, and danger.\n\nAmani's Street Educators go to the streets of Moshi town and nearby Arusha five nights a week to meet with the children who spend their nights sleeping in drainage ditches and back alleys.  Because many of the children have been physically and sexually abused, they are cautious about trusting adults.  Our Street Educators take time to build a friendship with the children, telling them that there is a safe place where they will be fed and protected, given clothing, an education and love. The children make a decision for themselves to accept the offer of rescue and to come to Amani.\n\nEach week, Amani's nurse goes to the streets and offers medical care to the children living there.  She also gives health lessons on a variety of topics.  For many of the children, this is the first time they've ever seen a trained medical caregiver.  You can read about the reasons children end up living on the streets in Tanzania here. (TODO link to B.4)"
+  body: "The children at Amani have been rescued from life on the streets. While each of the children have their own unique stories of the hardships that drove them to the streets, the life of every homeless child in Tanzania is full of fear, hunger, and danger.\n\nAmani's Street Educators go to the streets of Moshi town and nearby Arusha five nights a week to meet with the children who spend their nights sleeping in drainage ditches and back alleys.  Because many of the children have been physically and sexually abused, they are cautious about trusting adults.  Our Street Educators take time to build a friendship with the children, telling them that there is a safe place where they will be fed and protected, given clothing, an education and love. The children make a decision for themselves to accept the offer of rescue and to come to Amani.\n\nEach week, Amani's nurse goes to the streets and offers medical care to the children living there.  She also gives health lessons on a variety of topics.  For many of the children, this is the first time they've ever seen a trained medical caregiver.  You can read about the reasons children end up living on the streets in Tanzania here. ( link to B.4)"
   position: 7
 
 reuniting_families:
@@ -115,7 +111,7 @@ become_a_helping_hand:
   parent: how_you_can_help
   title: Become a Helping Hand
   slug: become-a-helping-hand
-  body: "*Become a Helping Hand to the Amani children by making regular contributions.*\n\nAmani Children's Home provides caring and holistic support to the nearly 300 children who we have rescued from a life on the streets. When you become a Helping Hand by giving monthly to Amani, you make it possible for us to reach out to homeless children in a sustainable way and give them a future filled with hope. You are transforming the life of a child.\n\nA neat aspect of the Helping Hands program is that there are different levels of giving, so that you can choose the level that's best for you, with the knowledge that your donations are making a significant difference to the kids. Amani is a small, grassroots organization with no overseas offices, so we're able to ensure that donations go directly to care for the children.\n\nYour monthly sponsorship will go a long way in Tanzania. For example:\n\n*$9 (£5)* - Provides one child with ongoing, nutritious meals every day\n\n*$29 (£16)* - Provides full care for one child for a month, including food, clothing, primary school education, medicine and counseling.\n\n*$49 (£27)* - Provides full care for one child plus secondary school expenses for one of our older children.\n\n*$99 (£55)* - Provides full care for two children in addition to supporting our family reunification program, which finds home-based care for street-children in loving homes.\n\n*How many children will you help?*\n\n*Learn how to become a Helping Hand sponsor* from the United States [TODO flag image], the UK [TODO flag image], Norway [TODO flag image], Canada [TODO flag image] or from anywhere else in the world [TODO globe image]."
+  body: "*Become a Helping Hand to the Amani children by making regular contributions.*\n\nAmani Children's Home provides caring and holistic support to the nearly 300 children who we have rescued from a life on the streets. When you become a Helping Hand by giving monthly to Amani, you make it possible for us to reach out to homeless children in a sustainable way and give them a future filled with hope. You are transforming the life of a child.\n\nA neat aspect of the Helping Hands program is that there are different levels of giving, so that you can choose the level that's best for you, with the knowledge that your donations are making a significant difference to the kids. Amani is a small, grassroots organization with no overseas offices, so we're able to ensure that donations go directly to care for the children.\n\nYour monthly sponsorship will go a long way in Tanzania. For example:\n\n*$9 (£5)* - Provides one child with ongoing, nutritious meals every day\n\n*$29 (£16)* - Provides full care for one child for a month, including food, clothing, primary school education, medicine and counseling.\n\n*$49 (£27)* - Provides full care for one child plus secondary school expenses for one of our older children.\n\n*$99 (£55)* - Provides full care for two children in addition to supporting our family reunification program, which finds home-based care for street-children in loving homes.\n\n*How many children will you help?*\n\n*Learn how to become a Helping Hand sponsor* from the United States [ flag image], the UK [ flag image], Norway [ flag image], Canada [ flag image] or from anywhere else in the world [ globe image]."
   position: 2
 
 helping_hands_united_states:
@@ -123,7 +119,7 @@ helping_hands_united_states:
   parent: become_a_helping_hand
   title: Helping Hands United States
   slug: helping-hands-united-states
-  body: TODO
+  body:
   position: 1
 
 helping_hands_united_kingdom:
@@ -131,7 +127,7 @@ helping_hands_united_kingdom:
   parent: become_a_helping_hand
   title: Helping Hands United Kingdom
   slug: helping-hands-united-kingdom
-  body: TODO
+  body:
   position: 2
 
 helping_hands_norway:
@@ -139,7 +135,7 @@ helping_hands_norway:
   parent: become_a_helping_hand
   title: Helping Hands Norway
   slug: helping-hands-norway
-  body: TODO
+  body:
   position: 3
 
 helping_hands_canada:
@@ -147,7 +143,7 @@ helping_hands_canada:
   parent: become_a_helping_hand
   title: Helping Hands Canada
   slug: helping-hands-canada
-  body: TODO
+  body:
   position: 4
 
 helping_hands_elsewhere:
@@ -155,7 +151,7 @@ helping_hands_elsewhere:
   parent: become_a_helping_hand
   title: Helping Hands Elsewhere
   slug: helping-hands-elsewhere
-  body: TODO
+  body:
   position: 5
 
 donate:
@@ -163,7 +159,7 @@ donate:
   parent: how_you_can_help
   title: Donate
   slug: donate
-  body: "*Make a donation, or make a contribution in the name of a friend as a birthday or holiday gift.* You can make a difference in the lives of Kilimanjaro's orphaned and homeless children by giving to Amani Children's Home.\n\nAs a small, grassroots organization, every donation to Amani makes a difference - your specific donation might provide a table for children to eat at, send a child to school for a year, or pay for bandages or antibiotics.\n\nIf you donate to Amani, you are free to specify which need or program you would like your contribution to be used towards, or to leave it to the Amani staff to choose the most urgent need. You'll receive a personal thank-you letter from Tanzania. If you contribute in the name of a loved one, Amani will send a thank-you to that person along with a drawing by one of the children.\n\nClick here to donate from the United States. [TODO flag image]\n\nClick here to donate from the UK. [TODO flag image]\n\nClick here to donate from Norway. [TODO flag image]\n\nClick here to donate from Canada. [TODO flag image]"
+  body: "*Make a donation, or make a contribution in the name of a friend as a birthday or holiday gift.* You can make a difference in the lives of Kilimanjaro's orphaned and homeless children by giving to Amani Children's Home.\n\nAs a small, grassroots organization, every donation to Amani makes a difference - your specific donation might provide a table for children to eat at, send a child to school for a year, or pay for bandages or antibiotics.\n\nIf you donate to Amani, you are free to specify which need or program you would like your contribution to be used towards, or to leave it to the Amani staff to choose the most urgent need. You'll receive a personal thank-you letter from Tanzania. If you contribute in the name of a loved one, Amani will send a thank-you to that person along with a drawing by one of the children.\n\nClick here to donate from the United States. [ flag image]\n\nClick here to donate from the UK. [ flag image]\n\nClick here to donate from Norway. [ flag image]\n\nClick here to donate from Canada. [ flag image]"
   position: 3
 
 donate_canada:
@@ -171,7 +167,7 @@ donate_canada:
   parent: donate
   title: Canada
   slug: canada
-  body: TODO
+  body:
   position: 1
 
 donate_norway:
@@ -179,7 +175,7 @@ donate_norway:
   parent: donate
   title: Norway
   slug: norway
-  body: TODO
+  body:
   position: 2
 
 donate_united_kingdom:
@@ -187,7 +183,7 @@ donate_united_kingdom:
   parent: donate
   title: United Kingdom
   slug: united-kingdom
-  body: TODO
+  body:
   position: 3
 
 donate_united_states:
@@ -195,7 +191,7 @@ donate_united_states:
   parent: donate
   title: United States
   slug: united-states
-  body: TODO
+  body:
   position: 4
 
 kilimanjaro_climb_for_kids:
@@ -219,7 +215,7 @@ volunteering_at_amani:
   parent: how_you_can_help
   title: Volunteering at Amani
   slug: volunteering-at-amani
-  body: "For those interested in spending time at Amani we have two programs, our Ambassador program for short-term visitors (up to 2 weeks) and our long-term volunteer program (6-18 months).\n\nVolunteers make an invaluable contribution to the lives of the Amani children. Amani Children's Home welcomes volunteers with skills in a variety of areas. Currently, Amani is looking for skilled volunteers to fill the following positions:\n\n*Health Assistant* - trained medical professionals to help assist Amani's nurse in providing health care to the Amani children.\n\n*Social Work / Counseling Teachers* - Trained social workers and mental health professionals who can help strengthen the level of care given to the Amani children.\n\n*Marketing Assistant/Graphic Designer* - Marketing professionals and skilled graphic artists to assist in the production of marketing and fundraising materials.\n\n*Computer/ IT Assistant* - Computer savvy individuals to assist in designing our new computer training program.\n\nClick TODO here for more information about available positions\n\nh3. Amani Children's Home Volunteer Requirements\n* Long term Amani volunteers must be 22 years or older\n* We only accept volunteers who are able to stay at Amani for at least 6 months\n* Volunteers are responsible for food and accommodation during their stay in Tanzania\n* Placement as a volunteer with Amani Children's Home depends on your specific skills and experience, a successful reference check, and the timing and length of your stay.\n\nTODO Download the Amani Volunteer Application\n\nTODO Download the Amani Volunteer Handbook\n\nLearn more about volunteering with Amani by reading the experiences of past volunteers here. Learn how you can raise funds to help the Amani children here. For more information email info@amanikids.org"
+  body: "For those interested in spending time at Amani we have two programs, our Ambassador program for short-term visitors (up to 2 weeks) and our long-term volunteer program (6-18 months).\n\nVolunteers make an invaluable contribution to the lives of the Amani children. Amani Children's Home welcomes volunteers with skills in a variety of areas. Currently, Amani is looking for skilled volunteers to fill the following positions:\n\n*Health Assistant* - trained medical professionals to help assist Amani's nurse in providing health care to the Amani children.\n\n*Social Work / Counseling Teachers* - Trained social workers and mental health professionals who can help strengthen the level of care given to the Amani children.\n\n*Marketing Assistant/Graphic Designer* - Marketing professionals and skilled graphic artists to assist in the production of marketing and fundraising materials.\n\n*Computer/ IT Assistant* - Computer savvy individuals to assist in designing our new computer training program.\n\nClick  here for more information about available positions\n\nh3. Amani Children's Home Volunteer Requirements\n* Long term Amani volunteers must be 22 years or older\n* We only accept volunteers who are able to stay at Amani for at least 6 months\n* Volunteers are responsible for food and accommodation during their stay in Tanzania\n* Placement as a volunteer with Amani Children's Home depends on your specific skills and experience, a successful reference check, and the timing and length of your stay.\n\n Download the Amani Volunteer Application\n\n Download the Amani Volunteer Handbook\n\nLearn more about volunteering with Amani by reading the experiences of past volunteers here. Learn how you can raise funds to help the Amani children here. For more information email info@amanikids.org"
   position: 6
 
 volunteering_at_amani_amani_ambassadors:
@@ -227,7 +223,7 @@ volunteering_at_amani_amani_ambassadors:
   parent: volunteering_at_amani
   title: Amani Ambassadors
   slug: amani-ambassadors
-  body: TODO
+  body:
   position: 1
 
 volunteering_at_amani_nathaniel_evans:
@@ -235,7 +231,7 @@ volunteering_at_amani_nathaniel_evans:
   parent: volunteering_at_amani
   title: Nathaniel Evans
   slug: nathaniel-evans
-  body: TODO
+  body:
   position: 2
 
 
@@ -260,7 +256,7 @@ children_in_the_community:
   parent: meet_our_kids
   title: Children in the Community
   slug: children-in-the-community
-  body: "We believe that the best place for children to grow up is in a safe and loving family, not in an institution. Amani's social workers begin trying to locate extended family members of the children as soon as they arrive.\n\nLocating family members is often a challenging task in Tanzania, where roads are unmapped and unnamed, and only a small minority of the population has access to electricity, a telephone or the Internet. For more about our Family Reunification program, go here. (TODO link to A.3)\n\nTo date Amani has reunited NUMBER children with their families. Below you'll find the stories of NAME and NAME, two children rescued by Amani and reunited with their families."
+  body: "We believe that the best place for children to grow up is in a safe and loving family, not in an institution. Amani's social workers begin trying to locate extended family members of the children as soon as they arrive.\n\nLocating family members is often a challenging task in Tanzania, where roads are unmapped and unnamed, and only a small minority of the population has access to electricity, a telephone or the Internet. For more about our Family Reunification program, go here. ( link to A.3)\n\nTo date Amani has reunited NUMBER children with their families. Below you'll find the stories of NAME and NAME, two children rescued by Amani and reunited with their families."
   position: 1
 
 why_are_there_street_children:
