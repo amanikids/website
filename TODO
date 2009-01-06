@@ -1,6 +1,6 @@
-MAYBE page property, "show_child_links_as" => [:links, :dropdown]
-MAYBE Gallery thumbnails: hover should immediately show title of the page.
-MAYBE Improve thumbnail scrolling
+TODO page property, "show_child_links_as" => [:links, :dropdown]
+TODO Gallery thumbnails: hover should immediately show title of the page.
+TODO Improve thumbnail scrolling
 
 ===============================================================================
 = Design thoughts                                                             =
