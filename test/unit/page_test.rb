@@ -57,6 +57,29 @@ class PageTest < ActiveSupport::TestCase
     end
   end
 
+  context 'show children as' do
+    setup { @page = Factory(:page) }
+
+    should 'be false' do
+      assert !@page.show_children_as?(:links)
+    end
+
+    context 'when the page has children' do
+      setup { Factory(:page, :parent => @page) }
+
+      should 'be true' do
+        assert @page.show_children_as?(:links)
+      end
+
+      context 'but show_child_links_as is dropdown' do
+        setup { @page.update_attribute(:show_child_links_as, 'dropdown') }
+        should 'be false' do
+          assert !@page.show_children_as?(:links)
+        end
+      end
+    end
+  end
+
   context 'show children at' do
     setup { @page = Factory(:page) }
 
@@ -65,7 +88,8 @@ class PageTest < ActiveSupport::TestCase
     end
 
     context 'when the page has children' do
-      setup { @child = Factory(:page, :parent => @page) }
+      setup { Factory(:page, :parent => @page) }
+
       should 'be true' do
         assert @page.show_children_at?(:top)
       end

@@ -8,16 +8,12 @@
   %h2= page.title
 
   - if page.show_children_at?(:top)
-    %ul.children
-      - page.children.each do |child|
-        %li= link_to_unless_current child.title, child.path
+    = render :partial => 'pages/child_links', :locals => { :page => page }
 
   = textilize page.body
 
   - if page.show_children_at?(:bottom)
-    %ul.children
-      - page.children.each do |child|
-        %li= link_to_unless_current child.title, child.path
+    = render :partial => 'pages/child_links', :locals => { :page => page }
 
   - if page.next_page
     .next_link
