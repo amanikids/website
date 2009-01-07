@@ -42,9 +42,7 @@
     .content
       = yield
 
-      .share
-        = link_to 'Share this Page', new_share_path(@content), :class => 'button', :rel => :facebox
-
       .footer
+        = link_to 'Share this Page', new_share_path(@content), :class => 'share button', :rel => :facebox
         Contact Us:
         = mail_to 'info@amanikids.org', nil, :encode => 'javascript'

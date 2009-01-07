@@ -124,19 +124,6 @@
         :background-color white
         :color = !orange
 
-  .share
-    :clear right
-    a
-      :background-color = !medium_yellow
-      :border = 1px solid !medium_yellow
-      :color = !orange
-      :float right
-      &:hover
-        :background-color white
-        :border-color = !orange
-        :color = !orange
-
-
   a.button
     :display block
     :font-family = !sans_serif
@@ -151,8 +138,16 @@
     :clear both
     :font-size 0.8em
     :margin-top 1em
-    :padding 1em
-    :text-align center
+    :padding 1em 0em
 
     a
       :color = !gray
+    a.share
+      :background-color = !medium_yellow
+      :border = 1px solid !medium_yellow
+      :color = !orange
+      :float right
+      &:hover
+        :background-color white
+        :border-color = !orange
+        :color = !orange
