@@ -1,6 +1,7 @@
 .donation_page
   .left
-    = textilize donation_page.sidebar
+    .padding
+      = textilize donation_page.sidebar
 
   .right
     = render :partial => donation_page.photos, :locals => { :style => :small, :size => '200x200', :slideshow => false }

@@ -1,18 +1,30 @@
-.donation_page
-  .middle
-    :margin 0em 200px
+@import constants.sass
 
-  .left, .right
-    :margin-bottom 1em
-    :width 200px
-    p
-      :margin-top 0
-      :margin-bottom 1em
+.donation_page
+  :position relative
+
+  .middle
+    :margin 0em 216px
+
+    form.inline
+      :background-color = !light_yellow
+      :float left
+      :margin-right 0.5em
+      :padding 1em
 
   .left
-    :float left
+    :background-color #eee
+    :font-size 0.9em
+    :left 0
+    :position absolute
+    :top 0
+    :width 200px
+    .padding
+      :padding 1em
 
   .right
     :float right
+    :margin-bottom 1em
+    :width 200px
     .photo
       :margin-bottom 1em

@@ -1,26 +1,26 @@
 .paypal
   %h3 Schedule a Monthly Donation
   - donation_page.donation_amounts_list.each do |amount|
-    - monthly_donation_form(donation_page, amount) do
-      .field
+    - monthly_donation_form(donation_page, amount, :class => :inline) do
+      .single_field
         = submit_tag "#{amount} #{donation_page.currency} Monthly"
 
-  %p Or, specify a custom amount:
+  %p{ :style => 'clear: left' } Or, specify a custom amount:
   - monthly_donation_form(donation_page) do
-    .field
+    .single_field
       = text_field_tag :a3
       = donation_page.currency
       = submit_tag "Schedule Monthly Donation"
 
   %h3 Make a One-time Donation
   - donation_page.donation_amounts_list.each do |amount|
-    - one_time_donation_form(donation_page, amount) do
-      .field
+    - one_time_donation_form(donation_page, amount, :class => :inline) do
+      .single_field
         = submit_tag "#{amount} #{donation_page.currency}"
 
-  %p Or, specify a custom amount:
+  %p{ :style => 'clear: left' } Or, specify a custom amount:
   - one_time_donation_form(donation_page) do
-    .field
+    .single_field
       = text_field_tag :amount
       = donation_page.currency
       = submit_tag "Donate"

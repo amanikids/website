@@ -19,12 +19,12 @@ module ApplicationHelper
     counter.zero? ? {} : { :style => 'display:none' }
   end
 
-  def monthly_donation_form(donation_page, amount = nil, &block)
-    donation_form(monthly_donation_fields(donation_page.paypal_account, amount, donation_page.currency), &block)
+  def monthly_donation_form(donation_page, amount = nil, options = {}, &block)
+    donation_form(monthly_donation_fields(donation_page.paypal_account, amount, donation_page.currency), options, &block)
   end
 
-  def one_time_donation_form(donation_page, amount = nil, &block)
-    donation_form(one_time_donation_fields(donation_page.paypal_account, amount, donation_page.currency), &block)
+  def one_time_donation_form(donation_page, amount = nil, options = {}, &block)
+    donation_form(one_time_donation_fields(donation_page.paypal_account, amount, donation_page.currency), options, &block)
   end
 
   def slideshow_tag(content, options = {})
@@ -35,10 +35,10 @@ module ApplicationHelper
 
   private
 
-  def donation_form(fields = {})
-    concat(form_tag(ActiveMerchant::Billing::Integrations::Paypal.service_url, :method => :get))
+  def donation_form(fields, options)
+    concat(form_tag(ActiveMerchant::Billing::Integrations::Paypal.service_url, options.merge(:method => :get)))
     yield
-    concat(content_tag(:div, fields.map { |name, value| hidden_field_tag(name, value) }.join("\n"), :class => :field))
+    concat(content_tag(:div, fields.map { |name, value| hidden_field_tag(name, value) }.join("\n"), :class => :hidden_field))
     concat("\n</form>\n")
   end
 
