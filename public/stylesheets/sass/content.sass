@@ -20,6 +20,24 @@
         :margin 0
         :margin-bottom 16px
         :padding 0
+        :position relative
+        .caption
+          :background-color = #000
+          :color #fff
+          :position absolute
+          :bottom 0
+          :left 0
+          :z-index 2
+          :line-height 1.3em
+          :padding 0.5em
+          :font-family = !sans_serif
+          :font-size 0.9em
+          :font-weight bold
+          :margin-right 16px
+
+          :opacity 0.7
+          :-moz-opacity 0.7
+          :filter alpha(opacity=70)
         img
           :border-width 0
       li.current

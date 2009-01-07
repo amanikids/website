@@ -72,3 +72,14 @@ $(document).ready(function() {
     $(this).parent().scrollTop(($(this).prevAll().size() - 1) * 136);
   });
 });
+
+$(document).ready(function() {
+  $('.thumbnails .page').hover(function() {
+    $(this).find('.caption').show();
+  }, function() {
+    $(this).find('.caption').hide();
+  });
+});
+
+
+
