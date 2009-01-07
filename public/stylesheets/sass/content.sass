@@ -9,12 +9,28 @@
     .thumbnails
       :float left
       :height 500px
-      :list-style none
       :margin 0
       :overflow hidden
       :padding 0
       :position relative
       :width 136px
+      .arrow
+        :background-color #fff
+        :color = !yellow
+        :font-size 16px
+        :line-height 24px
+        :height 24px
+        :text-align center
+        :width 120px
+        &:hover
+          :cursor pointer
+
+      ul
+        :height 452px
+        :list-style none
+        :margin 0
+        :overflow hidden
+        :padding 0
       li
         :border-right 16px solid #fff
         :line-height 0

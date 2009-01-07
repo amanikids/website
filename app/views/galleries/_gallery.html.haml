@@ -1,9 +1,14 @@
 .gallery
-  %ul.thumbnails
-    - children.each do |child|
-      %li[child]{ :class => "#{child == content ? 'current' : ''}" }
-        .caption{ :style => 'display:none' }= child.title
-        = link_to image_tag(child.photo.url(:thumbnail), :size => '120x120'), child.path
+  .thumbnails
+    .arrow.up
+      &#x25b2;
+    %ul
+      - children.each do |child|
+        %li[child]{ :class => "#{child == content ? 'current' : ''}" }
+          .caption{ :style => 'display:none' }= child.title
+          = link_to image_tag(child.photo.url(:thumbnail), :size => '120x120'), child.path
+    .arrow.down
+      &#x25bc;
 
   .image
     = slideshow_tag(content, :style => :gallery, :size => '368x500')

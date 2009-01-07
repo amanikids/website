@@ -68,8 +68,8 @@ $(window).load(function() {
 // = Thumbnail Stuff                                                          =
 // ============================================================================
 $(document).ready(function() {
-  $('.thumbnails').find('.current').each(function() {
-    $(this).parent().scrollTop(($(this).prevAll().size() - 1) * 136);
+  $('.thumbnails ul').find('.current').each(function() {
+    $('.thumbnails ul').scrollTop(($(this).prevAll().size()) * 136);
   });
 });
 
@@ -81,5 +81,24 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  var scrollingTimeout;
 
+  jQuery.fn.scrollBy = function(pixels, timeout) {
+    var element = $(this);
+    element.scrollTop($(this).scrollTop() + pixels);
+    scrollingTimeout = setTimeout(function() { element.scrollBy(pixels, timeout) }, timeout);
+  };
 
+  $('.thumbnails .up').mousedown(function() {
+    $('.thumbnails ul').scrollBy(-136, 300);
+  });
+
+  $('.thumbnails .down').mousedown(function() {
+    $('.thumbnails ul').scrollBy(136, 300);
+  });
+
+  $('.thumbnails .arrow').mouseup(function() {
+    clearTimeout(scrollingTimeout);
+  });
+});
