@@ -1,10 +1,17 @@
 %li[blog]
-  = link_to '&uarr;', admin_blog_path(blog, :blog => { :move_higher => true }), :method => :put
-  = link_to '&darr;', admin_blog_path(blog, :blog => { :move_lower => true }), :method => :put
+  - if recurse
+    = link_to '&uarr;', admin_blog_path(blog, :blog => { :move_higher => true }), :method => :put
+    = link_to '&darr;', admin_blog_path(blog, :blog => { :move_lower => true }), :method => :put
+
   = blog.title
-  = link_to 'New Post', new_admin_post_path(:post => {:parent_id => blog})
+
+  - if recurse
+    = link_to 'New Post', new_admin_post_path(:post => {:parent_id => blog})
+
   = link_to 'View', blog.path
   = link_to 'Edit', edit_admin_blog_path(blog)
   = link_to 'Delete', admin_blog_path(blog), :method => :delete, :confirm => 'Are you sure you want to delete this Blog and all of its Posts?'
-  %ol
-    = render :partial => blog.children.positioned
+
+  - if recurse
+    %ol
+      = render :partial => blog.children.positioned, :locals => { :recurse => recurse }

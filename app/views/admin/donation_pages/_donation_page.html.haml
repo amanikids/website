@@ -1,6 +1,8 @@
 %li[donation_page]
-  = link_to '&uarr;', admin_donation_page_path(donation_page, :donation_page => { :move_higher => true }), :method => :put
-  = link_to '&darr;', admin_donation_page_path(donation_page, :donation_page => { :move_lower => true }), :method => :put
+  - if recurse
+    = link_to '&uarr;', admin_donation_page_path(donation_page, :donation_page => { :move_higher => true }), :method => :put
+    = link_to '&darr;', admin_donation_page_path(donation_page, :donation_page => { :move_lower => true }), :method => :put
+
   = donation_page.title
   = link_to 'View', donation_page.path
   = link_to 'Edit', edit_admin_donation_page_path(donation_page)

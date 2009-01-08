@@ -1,9 +1,13 @@
 %li[home]
   Home
-  = link_to 'New Section', new_admin_section_path(:section => {:parent_id => home})
-  = link_to 'New Blog', new_admin_blog_path(:blog => {:parent_id => home})
-  = link_to 'New Page', new_admin_page_path(:page => {:parent_id => home})
+  - if recurse
+    = link_to 'New Section', new_admin_section_path(:section => {:parent_id => home})
+    = link_to 'New Blog', new_admin_blog_path(:blog => {:parent_id => home})
+    = link_to 'New Page', new_admin_page_path(:page => {:parent_id => home})
+
   = link_to 'View', root_path
   = link_to 'Edit', edit_admin_home_path(home)
-  %ol
-    = render :partial => home.children.positioned
+
+  - if recurse
+    %ol
+      = render :partial => home.children.positioned, :locals => { :recurse => recurse }

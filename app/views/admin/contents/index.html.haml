@@ -1,6 +1,19 @@
+%h2 Action Items
+- pages = Content.all.reject { |content| content.type == Section }
+
+- pages_without_text = pages.select { |content| content.body.to_s.length < 50 }
+- if pages_without_text.any?
+  %h3 Pages without Text
+  %ol.sections= render :partial => pages_without_text, :locals => { :recurse => false }
+
+- pages_without_photos = pages.select { |content| content.photos.count.zero? }
+- if pages_without_photos.any?
+  %h3 Pages without Photos
+  %ol.sections= render :partial => pages_without_photos, :locals => { :recurse => false }
+
 %h2 Contents
 %ol.sections
-  = render :partial => Home.first
+  = render :partial => Home.first, :locals => { :recurse => true }
 
 %h2 Documents
 - form_for [:admin, Document.new], :html => { :multipart => true } do |form|
