@@ -69,7 +69,10 @@ $(window).load(function() {
 // ============================================================================
 $(document).ready(function() {
   $('.thumbnails ul').find('.current').each(function() {
-    $('.thumbnails ul').scrollTop(($(this).prevAll().size()) * 136);
+    var thumbnailHeight = 120;
+    var thumbnailMargin = 16
+    var viewportHeight  = 452;
+    $('.thumbnails ul').scrollTop((($(this).prevAll().size()) * (thumbnailHeight + thumbnailMargin)) - (viewportHeight / 2) + (thumbnailHeight / 2));
   });
 });
 
@@ -82,23 +85,24 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  var scrollingTimeout;
+  var scrollingInterval;
 
   jQuery.fn.scrollBy = function(pixels, timeout) {
     var element = $(this);
-    element.scrollTop($(this).scrollTop() + pixels);
-    scrollingTimeout = setTimeout(function() { element.scrollBy(pixels, timeout) }, timeout);
+    scrollingInterval = setInterval(function() {
+      element.scrollTop(element.scrollTop() + pixels);
+    }, timeout);
   };
 
   $('.thumbnails .up').mousedown(function() {
-    $('.thumbnails ul').scrollBy(-136, 300);
+    $('.thumbnails ul').scrollBy(-10, 15);
   });
 
   $('.thumbnails .down').mousedown(function() {
-    $('.thumbnails ul').scrollBy(136, 300);
+    $('.thumbnails ul').scrollBy(10, 15);
   });
 
   $('.thumbnails .arrow').mouseup(function() {
-    clearTimeout(scrollingTimeout);
+    clearInterval(scrollingInterval);
   });
 });
