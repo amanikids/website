@@ -1,6 +1,5 @@
-MAYBE us js to show an "edit" link if you've got the cookie
 MAYBE why does the facebox jump around from "loading" to "loaded"?
-MAYBE admin screen could list pages that don't have any photos, that is, those that would show the "missing" photo.
+MAYBE add a <link rel="edit" /> -- see http://universaleditbutton.org/Universal_Edit_Button
 
 ===============================================================================
 = Design thoughts                                                             =

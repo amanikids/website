@@ -8,6 +8,9 @@
     = form.label :password
     = form.password_field :password
   .field
+    = form.check_box :remember_me
+    = form.label :remember_me
+  .field
     = form.submit 'Login'
     or
     = link_to 'Return to site', root_path

@@ -1,5 +1,5 @@
 %h2 Action Items
-- pages = Content.all.reject { |content| content.type == Section || content.type == Blog }
+- pages = Content.all.reject { |content| content.class == Section || content.class == Blog }
 
 - pages_without_text = pages.select { |content| content.body.to_s.length < 50 }
 - if pages_without_text.any?
