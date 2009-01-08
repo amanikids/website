@@ -1,4 +1,9 @@
-%h1 Section
+%h1
+  - if @section.new_record?
+    New Section
+  - else
+    = @section.title
+
 - form_for [:admin, @section] do |form|
   = form.error_messages
   .field

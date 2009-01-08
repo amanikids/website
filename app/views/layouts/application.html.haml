@@ -46,3 +46,4 @@
         = link_to 'Share this Page', new_share_path(@content), :class => 'share button', :rel => :facebox
         Contact Us:
         = mail_to 'info@amanikids.org', nil, :encode => 'javascript'
+        = link_to 'Edit this Page', [:edit, :admin, @content]

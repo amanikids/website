@@ -1,4 +1,9 @@
-%h1= link_to_unless @post.new_record?, 'Post', @post.path
+%h1
+  - if @post.new_record?
+    New Post
+  - else
+    = link_to @post.title, @post.path
+
 - form_for [:admin, @post] do |form|
   = form.error_messages
   .field

@@ -1,4 +1,9 @@
-%h1= link_to_unless @gallery.new_record?, 'Gallery', @gallery.path
+%h1
+  - if @gallery.new_record?
+    New Gallery
+  - else
+    = link_to @gallery.title, @gallery.path
+
 - form_for [:admin, @gallery] do |form|
   = form.error_messages
   .field

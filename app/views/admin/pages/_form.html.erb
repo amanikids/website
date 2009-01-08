@@ -1,4 +1,10 @@
-<h1><%= link_to_unless @page.new_record?, 'Page', @page.path %></h1>
+<h1>
+  <%- if @page.new_record? -%>
+    New Page
+  <%- else -%>
+    <%= link_to @page.title, @page.path %>
+  <%- end -%>
+</h1>
 
 <%- form_for [:admin, @page] do |form| -%>
   <%= form.error_messages %>
