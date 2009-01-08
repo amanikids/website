@@ -1,23 +1,25 @@
 %h2 Share this Page
-- form_for @share do |form|
-  .field.textfield
-    = form.label :to_name, "Recipient's Name"
-    = form.text_field :to_name, :size => nil
-    = form.error_message_on :to_name
-  .field.textfield
-    = form.label :to_address, "Recipient's Email Address"
-    = form.text_field :to_address, :size => nil
-    = form.error_message_on :to_address
-  .field.textfield
-    = form.label :from_name, "Sender's Name"
-    = form.text_field :from_name, :size => nil
-    = form.error_message_on :from_name
-  .field.textfield
-    = form.label :from_address, "Sender's Email Address"
-    = form.text_field :from_address, :size => nil
-    = form.error_message_on :from_address
-  .field.textarea
-    = form.label :message, 'Message (Optional)'
-    = form.text_area :message, :rows => 5, :cols => nil
-  .field.submit
-    = form.submit 'Share this Page'
+
+.padded
+  - form_for @share do |form|
+    .field.textfield
+      = form.label :to_name, "Your Friend's Name"
+      = form.text_field :to_name, :size => nil
+      = form.error_message_on :to_name
+    .field.textfield
+      = form.label :to_address, "Your Friend's Email Address"
+      = form.text_field :to_address, :size => nil
+      = form.error_message_on :to_address
+    .field.textfield
+      = form.label :from_name, "Your Name"
+      = form.text_field :from_name, :size => nil
+      = form.error_message_on :from_name
+    .field.textfield
+      = form.label :from_address, "Your Email Address"
+      = form.text_field :from_address, :size => nil
+      = form.error_message_on :from_address
+    .field.textarea
+      = form.label :message, 'Message (Optional)'
+      = form.text_area :message, :rows => 5, :cols => nil
+    .submit
+      = form.submit 'Send'
