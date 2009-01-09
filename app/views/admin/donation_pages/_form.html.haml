@@ -37,6 +37,19 @@
   .field
     = form.label :donation_amounts
     = form.text_field :donation_amounts
+  .field
+    = form.label :one_time_donation_title
+    = form.text_field :one_time_donation_title
+  .field
+    = form.label :one_time_donation_text
+    = form.text_area :one_time_donation_text
+  .field
+    = form.label :monthly_donation_title
+    = form.text_field :monthly_donation_title
+  .field
+    = form.label :monthly_donation_text
+    = form.text_area :monthly_donation_text
+
 
   .field
     = form.submit 'Save and Continue Editing', :name => 'donation_page[continue_editing]'

@@ -1,5 +1,6 @@
 .paypal
-  %h3 Make a One-time Donation
+  %h3= donation_page.one_time_donation_title
+  = textilize(donation_page.one_time_donation_text)
   - donation_page.donation_amounts_list.each do |amount|
     - one_time_donation_form(donation_page, amount, :class => :inline) do
       .single_field
@@ -12,7 +13,8 @@
       = donation_page.currency
       = submit_tag "Donate"
 
-  %h3 Schedule a Monthly Donation
+  %h3= donation_page.monthly_donation_title
+  = textilize(donation_page.monthly_donation_text)
   - donation_page.donation_amounts_list.each do |amount|
     - monthly_donation_form(donation_page, amount, :class => :inline) do
       .single_field

@@ -1,5 +1,5 @@
 class DonationPage < Content
-  validates_presence_of :title, :body, :sidebar, :footer
+  validates_presence_of :title, :body, :sidebar, :footer, :one_time_donation_title, :monthly_donation_title
 
   validates_email_veracity_of :paypal_account, :domain_check => false, :message => 'is invalid'
   validates_format_of :currency,         :with => /^[A-Z]{3}$/,                 :if => :paypal_account?, :message => 'should be 3 capital letters, like USD'

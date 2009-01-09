@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class DonationPageTest < ActiveSupport::TestCase
-  should_require_attributes :title, :body, :sidebar, :footer
+  should_require_attributes :title, :body, :sidebar, :footer, :one_time_donation_title, :monthly_donation_title
 
   should_allow_values_for :paypal_account, 'foo@example.com', '', nil
   should_not_allow_values_for :paypal_account, 'this is not an email address'

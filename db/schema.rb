@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090109082808) do
+ActiveRecord::Schema.define(:version => 20090109090557) do
 
   create_table "contents", :force => true do |t|
     t.integer  "parent_id"
@@ -29,6 +29,10 @@ ActiveRecord::Schema.define(:version => 20090109082808) do
     t.string   "show_child_links_as",     :default => "links"
     t.string   "show_child_links_prompt"
     t.boolean  "hide_next_page",          :default => false
+    t.string   "one_time_donation_title", :default => "Make a One-time Donation"
+    t.text     "one_time_donation_text"
+    t.string   "monthly_donation_title",  :default => "Schedule a Monthly Donation"
+    t.text     "monthly_donation_text"
   end
 
   create_table "documents", :force => true do |t|
