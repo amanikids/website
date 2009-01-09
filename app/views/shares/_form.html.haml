@@ -3,19 +3,19 @@
 .padded
   - form_for @share do |form|
     .field.textfield
-      = form.label :to_name, "Your Friend's Name"
+      = form.label :to_name, "Your friend's name"
       = form.text_field :to_name, :size => nil
       = form.error_message_on :to_name
     .field.textfield
-      = form.label :to_address, "Your Friend's Email Address"
+      = form.label :to_address, "Your friend's email address"
       = form.text_field :to_address, :size => nil
       = form.error_message_on :to_address
     .field.textfield
-      = form.label :from_name, "Your Name"
+      = form.label :from_name, "Your name"
       = form.text_field :from_name, :size => nil
       = form.error_message_on :from_name
     .field.textfield
-      = form.label :from_address, "Your Email Address"
+      = form.label :from_address, "Your email address"
       = form.text_field :from_address, :size => nil
       = form.error_message_on :from_address
     .field.textarea
