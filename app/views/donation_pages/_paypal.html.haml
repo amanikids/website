@@ -1,29 +1,33 @@
 .paypal
   %h3= donation_page.one_time_donation_title
   = textilize(donation_page.one_time_donation_text)
-  - donation_page.donation_amounts_list.each do |amount|
-    - one_time_donation_form(donation_page, amount, :class => :inline) do
-      .single_field
-        = submit_tag "#{amount} #{donation_page.currency}"
 
-  %p{ :style => 'clear: left' } Or, specify a custom amount:
-  - one_time_donation_form(donation_page) do
-    .single_field
-      = text_field_tag :amount
-      = donation_page.currency
-      = submit_tag "Donate"
+  .donation_buttons
+    - donation_page.donation_amounts_list.each do |amount|
+      - one_time_donation_form(donation_page, amount, :class => :inline) do
+        .single_field
+          = submit_tag "#{amount} #{donation_page.currency}"
+
+    - one_time_donation_form(donation_page, nil, :class => :block) do
+      .label Or, specify a custom amount:
+      .single_field
+        = text_field_tag :amount
+        = donation_page.currency
+        = submit_tag "Donate"
 
   %h3= donation_page.monthly_donation_title
   = textilize(donation_page.monthly_donation_text)
-  - donation_page.donation_amounts_list.each do |amount|
-    - monthly_donation_form(donation_page, amount, :class => :inline) do
-      .single_field
-        = submit_tag "#{amount} #{donation_page.currency} Monthly"
 
-  %p{ :style => 'clear: left' } Or, specify a custom amount:
-  - monthly_donation_form(donation_page) do
-    .single_field
-      = text_field_tag :a3
-      = donation_page.currency
-      = submit_tag "Schedule Monthly Donation"
+  .donation_buttons
+    - donation_page.donation_amounts_list.each do |amount|
+      - monthly_donation_form(donation_page, amount, :class => :inline) do
+        .single_field
+          = submit_tag "#{amount} #{donation_page.currency} Monthly"
+
+    - monthly_donation_form(donation_page, nil, :class => :block) do
+      .label Or, specify a custom amount:
+      .single_field
+        = text_field_tag :a3
+        = donation_page.currency
+        = submit_tag "Schedule Monthly Donation"
 
