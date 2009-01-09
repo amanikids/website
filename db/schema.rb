@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090107075655) do
+ActiveRecord::Schema.define(:version => 20090109082808) do
 
   create_table "contents", :force => true do |t|
     t.integer  "parent_id"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20090107075655) do
     t.string   "show_child_links_at",     :default => "top"
     t.string   "show_child_links_as",     :default => "links"
     t.string   "show_child_links_prompt"
+    t.boolean  "hide_next_page",          :default => false
   end
 
   create_table "documents", :force => true do |t|

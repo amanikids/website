@@ -20,8 +20,16 @@ class PageTest < ActiveSupport::TestCase
 
       context 'with a next page in the same section' do
         setup { @next_page = Factory(:page, :parent => @section) }
+
         should 'return lower_item as next_page' do
           assert_equal @next_page, @page.next_page
+        end
+
+        context 'but with hide_next_page' do
+          setup { @page.update_attribute(:hide_next_page, true) }
+          should 'return nil as next_page' do
+            assert_nil @page.next_page
+          end
         end
       end
 
@@ -30,6 +38,7 @@ class PageTest < ActiveSupport::TestCase
           @next_section = Factory(:section, :parent => @home)
           @next_page = Factory(:page, :parent => @next_section)
         end
+
         should 'return that page as next_page' do
           assert_equal @next_page, @page.next_page
         end
@@ -41,6 +50,13 @@ class PageTest < ActiveSupport::TestCase
           end
           should 'really return the first page as next_page' do
             assert_equal @actual_next_page, @page.next_page
+          end
+        end
+
+        context 'but with hide_next_page' do
+          setup { @page.update_attribute(:hide_next_page, true) }
+          should 'return nil as next_page' do
+            assert_nil @page.next_page
           end
         end
       end
