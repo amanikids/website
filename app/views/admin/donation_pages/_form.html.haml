@@ -26,11 +26,14 @@
     = form.label :footer
     = form.text_area :footer
 
-  %h2 Paypal Configuration
-  %p If you enter the email address for a paypal account below, we'll include online donation buttons in the main section of the page, between the body and the footer.
+  %h2 Online Donation Configuration
+  .field
+    = form.label :online_donation_method
+    = form.select :online_donation_method, ['', 'justgiving', 'paypal']
   .field
     = form.label :paypal_account
     = form.text_field :paypal_account
+    (Only if you're using PayPal, of course.)
   .field
     = form.label :currency
     = form.text_field :currency

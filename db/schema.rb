@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090109090557) do
+ActiveRecord::Schema.define(:version => 20090109095932) do
 
   create_table "contents", :force => true do |t|
     t.integer  "parent_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20090109090557) do
     t.text     "one_time_donation_text"
     t.string   "monthly_donation_title",  :default => "Schedule a Monthly Donation"
     t.text     "monthly_donation_text"
+    t.string   "online_donation_method"
   end
 
   create_table "documents", :force => true do |t|
