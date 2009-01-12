@@ -9,4 +9,15 @@ class SubscriptionTest < ActiveSupport::TestCase
     subscription.valid?
     assert subscription.errors.on(:email)
   end
+
+  context 'with an unsaved Subscription' do
+    setup { @subscription = Factory.build(:subscription) }
+
+    context 'save' do
+      setup { @subscription.save! }
+      before_should 'send email' do
+        Mailer.expects(:deliver_subscription_created).with(@subscription)
+      end
+    end
+  end
 end

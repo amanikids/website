@@ -32,4 +32,24 @@ class MailerTest < ActionMailer::TestCase
       end
     end
   end
+
+  context 'given a Subscription' do
+    setup { @subscription = Factory(:subscription) }
+
+    context 'subscription_created' do
+      setup { @message = Mailer.create_subscription_created(@subscription) }
+
+      should 'be sent to subscription.email' do
+        assert_equal [@subscription.email], @message.to
+      end
+
+      should 'be from site' do
+        assert_equal [ActionMailer::Configuration.site_address], @message.from
+      end
+
+      should 'have a subject' do
+        assert !@message.subject.blank?
+      end
+    end
+  end
 end

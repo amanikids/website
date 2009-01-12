@@ -1,6 +1,3 @@
-TODO send confirmation email on Subscription.create (get text from Joe)
-TODO add blurb to top of Subscribe box (get text from Joe)
-
 MAYBE Snippet model for editing non-content bits of text?
 
 ===============================================================================

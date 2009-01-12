@@ -8,7 +8,7 @@ class Admin::AddressListsController < Admin::ApplicationController
   end
 
   def create
-    @address_list = AddressList.new(params[:address_list].merge(:subscriptions => Subscription.all)) # MAYBE move the subscription logic into the model?
+    @address_list = AddressList.new(params[:address_list].merge(:subscriptions => Subscription.all))
     if @address_list.save
       redirect_to admin_address_lists_path
     else

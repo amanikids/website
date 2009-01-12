@@ -6,4 +6,10 @@ class Mailer < ActionMailer::Base
     subject share.subject
     body :message => share.message, :title => share.content.title, :url => content_url(share.content.slugs)
   end
+
+  def subscription_created(subscription)
+    from ActionMailer::Configuration.site
+    recipients subscription.email
+    subject 'Thanks!' # FIXME get this subject from Joe
+  end
 end
