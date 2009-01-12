@@ -4,7 +4,7 @@ class Share < ActiveRecord::Base
   belongs_to :content
 
   validates_presence_of :from_name, :from_address, :to_name, :to_address
-  validates_email_veracity_of :from_address, :to_address, :domain_check => false, :message => 'is invalid'
+  validates_email_veracity_of :from_address, :to_address, :domain_check => false
 
   def from
     format_email(from_name, from_address)

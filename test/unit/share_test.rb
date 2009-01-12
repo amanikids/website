@@ -3,9 +3,8 @@ require 'test_helper'
 class ShareTest < ActiveSupport::TestCase
   should_belong_to :content
 
-  should_require_attributes :from_name, :from_address, :to_name, :to_address
-  should_not_allow_values_for :from_address, 'bob'
-  should_not_allow_values_for :to_address, 'bob'
+  should_require_attributes :from_name, :to_name
+  should_validate_email_veracity_of :from_address, :to_address
   should_have_instance_methods :message, :message=
 
   context 'with an unsaved Share' do

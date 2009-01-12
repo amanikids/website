@@ -23,8 +23,7 @@ class DonationPageTest < ActiveSupport::TestCase
 
   context 'with online_donation_method paypal' do
     setup { @donation_page = Factory.build(:donation_page, :online_donation_method => 'paypal') }
-    should_allow_values_for :paypal_account, 'foo@example.com'
-    should_not_allow_values_for :paypal_account, 'not an email address', '', nil
+    should_validate_email_veracity_of :paypal_account
   end
 
   should 'provide list of donation amounts' do

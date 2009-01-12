@@ -36,3 +36,8 @@ Factory.define(:share) do |share|
   share.message "Thought you'd appreciate this."
   share.association :content, :factory => :page
 end
+
+Factory.define(:subscription) do |subscription|
+  subscription.name 'Bob'
+  subscription.email 'bob@example.com'
+end

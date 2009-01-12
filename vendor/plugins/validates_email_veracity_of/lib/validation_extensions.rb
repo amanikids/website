@@ -42,7 +42,7 @@ module ActiveRecord #:nodoc:
       #   - Any email addresses @dodgeit.com or @harvard.edu will be rejected.
       def validates_email_veracity_of(*attr_names)
         configuration = {
-          :message => 'is invalid.',
+          :message => 'is invalid',
           :timeout_message => 'domain is currently unreachable, try again later.',
           :invalid_domain_message => 'provider is not supported, try another email address.',
           :timeout => 2,
