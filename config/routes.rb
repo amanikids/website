@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.resources :shares, :path_prefix => '/contents/:content_id'
+  map.resources :subscriptions
 
   # Note, these routes should be last, since /*slugs catches everything.
   map.with_options(:controller => 'contents') do |c|

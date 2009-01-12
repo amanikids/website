@@ -16,10 +16,10 @@
       .tagline
         Rescuing Children. Restoring Hope. Transforming Lives.
       %ul.links
-        %li= link_to image_tag('home.jpg')      + content_tag(:span, 'Home'),      root_path
-        %li= link_to image_tag('donate.jpg')    + content_tag(:span, 'Donate'),    '/donate'
-        %li= link_to image_tag('subscribe.jpg') + content_tag(:span, 'Subscribe'), '/subscribe'
-        %li= link_to image_tag('contact.jpg')   + content_tag(:span, 'Contact'),   '/contact'
+        %li= link_to image_tag('home.jpg')      + content_tag(:span, 'Home'),       root_path
+        %li= link_to image_tag('donate.jpg')    + content_tag(:span, 'Donate'),     '/donate'
+        %li= link_to image_tag('subscribe.jpg') + content_tag(:span, 'Newsletter'), '/subscriptions/new', :rel => 'facebox'
+        %li= link_to image_tag('contact.jpg')   + content_tag(:span, 'Contact'),    '/contact'
 
     .navigation
       %ul.tops
@@ -43,7 +43,7 @@
       = yield
 
       .footer
-        = link_to 'Share this Page', new_share_path(@content), :class => 'share button', :rel => :facebox
+        = link_to('Share this Page', new_share_path(@content), :class => 'share button', :rel => :facebox) if @content
         Contact Us:
         = mail_to 'info@amanikids.org', nil, :encode => 'javascript'
-        = link_to 'Edit this Page', [:edit, :admin, @content], :class => 'edit_this_page', :style => 'display: none'
+        = link_to('Edit this Page', [:edit, :admin, @content], :class => 'edit_this_page', :style => 'display: none') if @content
