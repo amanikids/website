@@ -19,6 +19,7 @@ Rails::Initializer.run do |config|
   # They can then be installed with "rake gems:install" on new installations.
   config.gem 'RedCloth'
   config.gem 'authlogic'
+  config.gem 'fastercsv'
   config.gem 'haml'
 
   # Make Time.zone default to the specified zone, and make Active Record store time values
