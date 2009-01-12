@@ -1,7 +1,7 @@
 class CreateAddressLists < ActiveRecord::Migration
   def self.up
     create_table :address_lists do |t|
-      t.text :csv
+      t.text :addresses
       t.timestamps
     end
   end

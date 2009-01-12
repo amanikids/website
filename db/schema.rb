@@ -12,7 +12,7 @@
 ActiveRecord::Schema.define(:version => 20090112093201) do
 
   create_table "address_lists", :force => true do |t|
-    t.text     "csv"
+    t.text     "addresses"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
