@@ -9,4 +9,8 @@ class Test::Unit::TestCase
 
   self.backtrace_silencers << :rails_vendor
   self.backtrace_filters   << :rails_root
+
+  def really_reload(model)
+    model.class.find(model.id)
+  end
 end

@@ -1,5 +1,8 @@
-TODO set up mailman
-MAYBE add a <link rel="edit" /> -- see http://universaleditbutton.org/Universal_Edit_Button
+TODO admin interface for merging subscription lists
+TODO send confirmation email on Subscription.create (get text from Joe)
+TODO add blurb to top of Subscribe box (get text from Joe)
+
+MAYBE Snippet model for editing non-content bits of text?
 
 ===============================================================================
 = Design thoughts                                                             =
