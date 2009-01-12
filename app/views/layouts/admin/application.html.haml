@@ -7,10 +7,11 @@
   %body.admin
     - if @current_user
       %ul
+        %li= link_to_unless_current 'Address Lists', admin_address_lists_path
+        %li= link_to_unless_current 'Contents', admin_root_path
         %li
           Logged in as
           = @current_user.login
-        %li
           = link_to 'Logout', admin_user_session_path, :method => :delete
 
     .content

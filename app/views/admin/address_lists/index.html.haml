@@ -1,0 +1,20 @@
+%h2 Address Lists
+
+%ul
+  %li=link_to 'New', new_admin_address_list_path
+
+%table
+  %thead
+    %tr
+      %th Created At
+      %th Size
+      %th Actions
+
+  %tbody
+    - @address_lists.each do |address_list|
+      %tr
+        %td= address_list.created_at.strftime('%Y %B %e, %H:%M')
+        %td= pluralize(address_list.addresses.size, 'person')
+        %td
+          = link_to 'Download', formatted_admin_address_list_path(address_list, :txt)
+          = link_to 'Delete', admin_address_list_path(address_list), :method => :delete, :confirm => 'Are you sure?'

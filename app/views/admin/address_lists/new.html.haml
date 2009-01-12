@@ -1,0 +1,10 @@
+%h2 New Address List
+
+%p The addresses of people who have subscribed via the website will be mixed in with whatever csv files you upload below:
+
+- form_for [:admin, @address_list], :html => { :multipart => true } do |form|
+  %h3 CSV Files
+  - 5.times do
+    .field= file_field_tag 'address_list[csv_files][]'
+  .submit
+    = form.submit 'Create Address List'
