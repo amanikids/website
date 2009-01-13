@@ -9,7 +9,8 @@ class Mailer < ActionMailer::Base
 
   def subscription_created(subscription)
     from ActionMailer::Configuration.site
-    recipients subscription.email
-    subject 'Thanks!' # FIXME get this subject from Joe
+    recipients subscription.email_with_name
+    subject "Amani Children's Home e-Newsletter"
+    body :name => subscription.name
   end
 end

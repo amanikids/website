@@ -10,5 +10,4 @@ require 'rake/rdoctask'
 require 'tasks/rails'
 
 # Loads tasks from any unpacked gems.
-# FIXME perhaps a future version of Rails will do this automatically?
 Dir["#{RAILS_ROOT}/vendor/gems/*/tasks/*.rake"].sort.each { |ext| load ext }

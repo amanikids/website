@@ -5,6 +5,10 @@ class Subscription < ActiveRecord::Base
 
   after_create :deliver_subscription_created
 
+  def email_with_name
+    "#{name} <#{email}>"
+  end
+
   private
 
   def deliver_subscription_created
