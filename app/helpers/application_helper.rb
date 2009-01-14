@@ -15,6 +15,15 @@ module ApplicationHelper
     parents.join(' ')
   end
 
+  def copyright_year(anchor_year)
+    current_year = Time.now.year
+    if current_year == anchor_year
+      "#{anchor_year}"
+    else
+      "#{anchor_year}-#{current_year}"
+    end
+  end
+
   def display_first_only(counter)
     counter.zero? ? {} : { :style => 'display:none' }
   end
