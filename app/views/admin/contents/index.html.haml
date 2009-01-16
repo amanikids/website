@@ -11,6 +11,11 @@
   %h3 Pages without Photos
   %ol.sections= render :partial => pages_without_photos, :locals => { :recurse => false }
 
+- pages_with_todo_or_link = pages.select { |content| content.any_text_matches? /todo|link/i }
+- if pages_with_todo_or_link.any?
+  %h3 Pages with "todo" or "link"
+  %ol.sections= render :partial => pages_with_todo_or_link, :locals => { :recurse => false }
+
 %h2 Contents
 %ol.sections
   = render :partial => Home.first, :locals => { :recurse => true }

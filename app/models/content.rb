@@ -24,6 +24,10 @@ class Content < ActiveRecord::Base
     content
   end
 
+  def any_text_matches?(expression)
+    [body, footer, sidebar, one_time_donation_text, monthly_donation_text].grep(expression).any?
+  end
+
   def generation
     parent ? parent.children.positioned: [self]
   end
