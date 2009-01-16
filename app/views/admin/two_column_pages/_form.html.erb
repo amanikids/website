@@ -1,0 +1,73 @@
+<h1>
+  <%- if @two_column_page.new_record? -%>
+    New Two Column Page
+  <%- else -%>
+    <%= link_to @two_column_page.title, @two_column_page.path %>
+  <%- end -%>
+</h1>
+
+<%- form_for [:admin, @two_column_page] do |form| -%>
+  <%= form.error_messages %>
+
+  <div class="field">
+    <%= form.label :parent_id %>
+    <%- if @two_column_page.parent.generation.size > 1 -%>
+      <%= form.collection_select :parent_id, @two_column_page.parent.generation, :id, :title %>
+    <%- else -%>
+      <%= form.hidden_field :parent_id %>
+      <%= @two_column_page.parent.title %>
+    <%- end -%>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slug %>
+    <%= form.text_field :slug %>
+  </div>
+
+  <div class="field">
+    <%= form.label :show_child_links_at %>
+    <%= form.select :show_child_links_at, ['', 'top', 'bottom'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :show_child_links_as %>
+    <%= form.select :show_child_links_as, ['links', 'dropdown'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :show_child_links_prompt %>
+    <%= form.text_field :show_child_links_prompt %>
+  </div>
+
+  <div class="field">
+    <%= form.check_box :hide_next_page %>
+    <%= form.label :hide_next_page, "Hide link to next page" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= find_and_preserve(form.text_area :body) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :left_column %>
+    <%= find_and_preserve(form.text_area :left_column) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :right_column %>
+    <%= find_and_preserve(form.text_area :right_column) %>
+  </div>
+
+  <div class="field">
+    <%= form.submit 'Save and Continue Editing', :name => 'two_column_page[continue_editing]' %>
+    <%= form.submit 'Save and Close' %>
+    or
+    <%= link_to 'Cancel', admin_root_path %>
+  </div>
+<%- end -%>

@@ -1,0 +1,23 @@
+.two_column_text
+  .breadcrumbs
+    = breadcrumbs(two_column_page)
+
+  %h2= two_column_page.title
+
+  - if two_column_page.show_children_at?(:top)
+    = render :partial => 'pages/child_links', :locals => { :page => two_column_page }
+
+  = textilize two_column_page.body
+
+  %table
+    %tbody
+      %tr
+        %td.left= textilize two_column_page.left_column
+        %td.right= textilize two_column_page.right_column
+
+  - if two_column_page.show_children_at?(:bottom)
+    = render :partial => 'pages/child_links', :locals => { :page => two_column_page }
+
+  - if two_column_page.next_page
+    .next_link
+      = link_to "#{two_column_page.next_page.title} &#x25ba;", two_column_page.next_page.path, :class => 'button'

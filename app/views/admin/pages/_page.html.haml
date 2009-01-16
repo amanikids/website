@@ -7,6 +7,7 @@
 
   - if recurse && page.parent === Section
     = link_to 'New Child Page', new_admin_page_path(:page => {:parent_id => page})
+    = link_to 'New Child Two Column Page', new_admin_two_column_page_path(:two_column_page => {:parent_id => page})
     = link_to 'New Donation Page', new_admin_donation_page_path(:donation_page => {:parent_id => page})
 
   = link_to 'View', page.path

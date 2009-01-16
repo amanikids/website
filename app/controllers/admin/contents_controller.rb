@@ -10,7 +10,7 @@ class Admin::ContentsController < Admin::ApplicationController
   end
 
   def pages_without_photos
-    @pages_without_photos ||= pages.select { |content| content.photos.count.zero? }
+    @pages_without_photos ||= pages.reject { |content| content.class == TwoColumnPage }.select { |content| content.photos.count.zero? }
   end
 
   def pages_matching_expression

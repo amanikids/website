@@ -25,7 +25,7 @@ class Content < ActiveRecord::Base
   end
 
   def any_text_matches?(expression)
-    [body, footer, sidebar, one_time_donation_text, monthly_donation_text].grep(expression).any?
+    [body, footer, sidebar, one_time_donation_text, monthly_donation_text, left_column, right_column].grep(expression).any?
   end
 
   def generation
