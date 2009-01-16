@@ -1,10 +1,9 @@
-.image
-  = slideshow_tag(blog)
+= render :partial => 'blogs/archive', :locals => { :blog => blog }
 
-.text
+.blog_text
   %h2= blog.title
 
-  - blog.children.recent.each do |post|
+  - blog.children.dated.recent.each do |post|
     .post
       %h3= link_to post.title, post.path
       .timestamp

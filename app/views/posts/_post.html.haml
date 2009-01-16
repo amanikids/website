@@ -1,7 +1,6 @@
-.image
-  = slideshow_tag(post)
+= render :partial => 'blogs/archive', :locals => { :blog => post.parent }
 
-.text
+.blog_text
   .breadcrumbs
     = breadcrumbs(post)
 

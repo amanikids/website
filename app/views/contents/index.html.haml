@@ -10,5 +10,5 @@
       .blog.box
         %h3= link_to blog.title, blog.path
         %ul
-          - blog.children.recent.each do |post|
+          - blog.children.dated.recent.each do |post|
             %li= link_to post.title, post.path

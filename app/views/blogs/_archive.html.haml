@@ -1,0 +1,11 @@
+.blog_archive
+  .padding
+    %h3
+      = blog.title
+      Archive
+
+    %ul
+      - blog.children.dated.each do |post|
+        %li
+          = link_to post.title, post.path
+          = post.created_at.to_date.to_s(:long_ordinal)
