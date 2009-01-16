@@ -1,20 +1,19 @@
 %h2 Action Items
-- pages = Content.all.reject { |content| content.class == Section || content.class == Blog }
 
-- pages_without_text = pages.select { |content| content.body.to_s.length < 50 }
+%h3= "Pages matching '#{expression}'"
+- form_tag nil, :method => :get do
+  .field
+    = text_field_tag :expression, expression
+- if pages_matching_expression.any?
+  %ol.sections= render :partial => pages_matching_expression, :locals => { :recurse => false }
+
 - if pages_without_text.any?
   %h3 Pages without Text
   %ol.sections= render :partial => pages_without_text, :locals => { :recurse => false }
 
-- pages_without_photos = pages.select { |content| content.photos.count.zero? }
 - if pages_without_photos.any?
   %h3 Pages without Photos
   %ol.sections= render :partial => pages_without_photos, :locals => { :recurse => false }
-
-- pages_with_todo_or_link = pages.select { |content| content.any_text_matches? /todo|link/i }
-- if pages_with_todo_or_link.any?
-  %h3 Pages with "todo" or "link"
-  %ol.sections= render :partial => pages_with_todo_or_link, :locals => { :recurse => false }
 
 %h2 Contents
 %ol.sections
