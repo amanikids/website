@@ -37,8 +37,10 @@ module ApplicationHelper
   end
 
   def slideshow_tag(content, options = {})
-    options.reverse_merge! :size => '500x500', :style => :large
-    render :partial => (content.photos.any? ? content.photos : [Photo.new]), :locals => { :style => options[:style], :size => options[:size], :slideshow => true }
+    if content.photos.any?
+      options.reverse_merge! :size => '500x500', :style => :large
+      render :partial => content.photos, :locals => { :style => options[:style], :size => options[:size], :slideshow => true }
+    end
   end
 
   private
