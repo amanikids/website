@@ -4,7 +4,7 @@ class Mailer < ActionMailer::Base
     reply_to share.from
     recipients share.to
     subject share.subject
-    body :message => share.message, :title => share.content.title, :url => content_url(share.content.slugs)
+    body :from_name => share.from_name, :message => share.message, :title => share.content.title, :url => content_url(share.content.slugs)
   end
 
   def subscription_created(subscription)
