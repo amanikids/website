@@ -1,6 +1,7 @@
 %h2 Share this Page
 
 .padded
+  %p You can send your friend a link to the page you are looking at. Thank you for helping to spread the word about the Amani children!
   - form_for @share do |form|
     .field.textfield
       = form.label :to_name, "Your friend's name"
@@ -20,6 +21,7 @@
       = form.error_message_on :from_address
     .field.textarea
       = form.label :message, 'Message (Optional)'
-      = form.text_area :message, :rows => 5, :cols => nil
+      = form.text_area :message, :rows => 3, :cols => nil
+      %p Amani will never share your contact information with a third party.
     .submit
       = form.submit 'Send'
