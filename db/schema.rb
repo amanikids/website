@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090112093201) do
+ActiveRecord::Schema.define(:version => 20090119104646) do
 
   create_table "address_lists", :force => true do |t|
     t.text     "addresses"
@@ -23,23 +23,27 @@ ActiveRecord::Schema.define(:version => 20090112093201) do
     t.string   "title"
     t.string   "slug"
     t.text     "body"
-    t.integer  "position",                :default => 0
+    t.integer  "position",                     :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "footer"
     t.text     "sidebar"
     t.string   "currency"
-    t.string   "donation_amounts"
+    t.string   "one_time_donation_amounts"
     t.string   "paypal_account"
-    t.string   "show_child_links_at",     :default => "top"
-    t.string   "show_child_links_as",     :default => "links"
+    t.string   "show_child_links_at",          :default => "top"
+    t.string   "show_child_links_as",          :default => "links"
     t.string   "show_child_links_prompt"
-    t.boolean  "hide_next_page",          :default => false
-    t.string   "one_time_donation_title", :default => "Make a One-time Donation"
+    t.boolean  "hide_next_page",               :default => false
+    t.string   "one_time_donation_title",      :default => "Make a One-time Donation"
     t.text     "one_time_donation_text"
-    t.string   "monthly_donation_title",  :default => "Schedule a Monthly Donation"
+    t.string   "monthly_donation_title",       :default => "Schedule a Monthly Donation"
     t.text     "monthly_donation_text"
     t.string   "online_donation_method"
+    t.text     "left_column"
+    t.text     "right_column"
+    t.string   "monthly_donation_amounts",     :default => ""
+    t.string   "monthly_donation_level_names", :default => ""
   end
 
   create_table "documents", :force => true do |t|

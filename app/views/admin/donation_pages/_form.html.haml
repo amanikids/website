@@ -38,11 +38,12 @@
     = form.label :currency
     = form.text_field :currency
   .field
-    = form.label :donation_amounts
-    = form.text_field :donation_amounts
-  .field
     = form.label :one_time_donation_title
     = form.text_field :one_time_donation_title
+  .field
+    = form.label :one_time_donation_amounts
+    = form.text_field :one_time_donation_amounts
+    (Leave blank to hide one-time donations.)
   .field
     = form.label :one_time_donation_text
     = form.textile_area :one_time_donation_text
@@ -50,9 +51,15 @@
     = form.label :monthly_donation_title
     = form.text_field :monthly_donation_title
   .field
+    = form.label :monthly_donation_amounts
+    = form.text_field :monthly_donation_amounts
+    (Leave blank to hide monthly donations.)
+  .field
+    = form.label :monthly_donation_level_names
+    = form.text_field :monthly_donation_level_names
+  .field
     = form.label :monthly_donation_text
     = form.textile_area :monthly_donation_text
-
 
   .field
     = form.submit 'Save and Continue Editing', :name => 'donation_page[continue_editing]'

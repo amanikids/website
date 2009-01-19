@@ -8,7 +8,7 @@
         .breadcrumbs= breadcrumbs(donation_page)
         %h2= donation_page.title
         = textilize donation_page.body
-        = render :partial => 'donation_pages/online', :locals => { :donation_page => donation_page } if donation_page.online_donation_method?
+        = render :partial => 'donation_pages/online', :locals => { :donation_page => donation_page }
         = textilize donation_page.footer
       %td.right
         = render :partial => donation_page.photos, :locals => { :style => :small, :size => '200x200', :slideshow => false }

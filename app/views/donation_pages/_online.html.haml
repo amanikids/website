@@ -1,32 +1,35 @@
-.paypal
-  %h3= donation_page.one_time_donation_title
-  = textilize(donation_page.one_time_donation_text)
+- if donation_page.show_one_time_donations?
+  .online
+    %h3= donation_page.one_time_donation_title
+    = textilize(donation_page.one_time_donation_text)
 
-  .donation_buttons
-    - donation_page.donation_amounts_list.each do |amount|
-      - donation_form_for(donation_page, :kind => :one_time, :amount => amount, :class => :inline) do |form|
+    .donation_buttons
+      - donation_page.one_time_donation_amounts_list.each do |amount|
+        - donation_form_for(donation_page, :kind => :one_time, :amount => amount, :class => :inline) do |form|
+          .single_field
+            = form.submit "#{donation_page.currency_symbol}#{amount}"
+
+      - donation_form_for(donation_page, :kind => :one_time, :class => :block) do |form|
+        .label Or, specify a custom amount:
         .single_field
-          = form.submit "#{amount} #{donation_page.currency}"
+          = donation_page.currency_symbol
+          = form.text_field :amount
+          = form.submit "Donate"
 
-    - donation_form_for(donation_page, :kind => :one_time, :class => :block) do |form|
-      .label Or, specify a custom amount:
-      .single_field
-        = form.text_field :amount
-        = donation_page.currency
-        = form.submit "Donate"
+- if donation_page.show_monthly_donations?
+  .online
+    %h3= donation_page.monthly_donation_title
+    = textilize(donation_page.monthly_donation_text)
 
-  %h3= donation_page.monthly_donation_title
-  = textilize(donation_page.monthly_donation_text)
+    .donation_buttons
+      - donation_page.monthly_donation_amounts_with_level_names.each do |amount, level_name|
+        - donation_form_for(donation_page, :kind => :monthly, :amount => amount, :class => :inline) do |form|
+          .single_field
+            = form.submit "#{level_name.titleize}: #{donation_page.currency_symbol}#{amount} Monthly"
 
-  .donation_buttons
-    - donation_page.donation_amounts_list.each do |amount|
-      - donation_form_for(donation_page, :kind => :monthly, :amount => amount, :class => :inline) do |form|
+      - donation_form_for(donation_page, :kind => :monthly, :class => :block) do |form|
+        .label Or, specify a custom amount:
         .single_field
-          = form.submit "#{amount} #{donation_page.currency} Monthly"
-
-    - donation_form_for(donation_page, :kind => :monthly, :class => :block) do |form|
-      .label Or, specify a custom amount:
-      .single_field
-        = form.text_field :amount
-        = donation_page.currency
-        = form.submit "Schedule Monthly Donation"
+          = donation_page.currency_symbol
+          = form.text_field :amount
+          = form.submit "Schedule Monthly Donation"
