@@ -2,7 +2,7 @@
   - if page.show_child_links_prompt?
     %p= page.show_child_links_prompt
   %ul.children
-    - page.children.positioned.each do |child|
+    - page.sorted_children.each do |child|
       %li= link_to_unless_current child.title, child.path
 
 - if page.show_children_as?(:dropdown)
@@ -11,4 +11,4 @@
       %select.child_links_dropdown
         - if page.show_child_links_prompt?
           %option{ :disabled => true, :selected => true }= page.show_child_links_prompt
-        = options_from_collection_for_select(page.children.positioned, :path, :title)
+        = options_from_collection_for_select(page.sorted_children, :path, :title)

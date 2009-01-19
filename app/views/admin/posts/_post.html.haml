@@ -1,5 +1,5 @@
 %li[post]
-  - if recurse
+  - if recurse && post.parent.sort_children_by_position?
     = link_to '&uarr;', admin_post_path(post, :post => { :move_higher => true }), :method => :put
     = link_to '&darr;', admin_post_path(post, :post => { :move_lower => true }), :method => :put
   = post.title

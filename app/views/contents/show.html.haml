@@ -5,12 +5,12 @@
   = render :partial => @content
 
 - if @content.is_a?(Gallery)
-  = render :partial => @content, :locals => { :content => @content, :children => @content.children.positioned }
+  = render :partial => @content, :locals => { :content => @content, :children => @content.sorted_children }
 
 - if @content.is_a?(Page)
   - case @content.parent
     - when Gallery
-      = render :partial => @content.parent, :locals => { :content => @content, :children => @content.parent.children.positioned }
+      = render :partial => @content.parent, :locals => { :content => @content, :children => @content.parent.sorted_children }
     - else
       = render :partial => @content
 

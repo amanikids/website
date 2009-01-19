@@ -1,5 +1,5 @@
 %li[page]
-  - if recurse
+  - if recurse && page.parent.sort_children_by_position?
     = link_to '&uarr;', admin_page_path(page, :page => { :move_higher => true }), :method => :put
     = link_to '&darr;', admin_page_path(page, :page => { :move_lower => true }), :method => :put
 
@@ -16,4 +16,4 @@
 
   - if recurse
     %ol
-      = render :partial => page.children.positioned, :locals => { :recurse => recurse }
+      = render :partial => page.sorted_children, :locals => { :recurse => recurse }

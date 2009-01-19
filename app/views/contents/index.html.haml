@@ -6,9 +6,9 @@
   = textilize @content.body
 
   - Blog.all.each do |blog|
-    - if blog.children.any?
+    - if blog.sorted_children.any?
       .blog.box
         %h3= link_to blog.title, blog.path
         %ul
-          - blog.children.dated.recent.each do |post|
+          - blog.sorted_children.recent.each do |post|
             %li= link_to post.title, post.path

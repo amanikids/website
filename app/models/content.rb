@@ -1,6 +1,7 @@
 class Content < ActiveRecord::Base
-  named_scope :dated, :order => 'created_at DESC'
-  named_scope :positioned, :order => :position
+  named_scope :sorted_by_date, :order => 'created_at DESC'
+  named_scope :sorted_by_position, :order => :position
+  named_scope :sorted_by_title, :order => :title
   named_scope :recent, :limit => 5
 
   acts_as_list :scope => :parent
@@ -43,12 +44,12 @@ class Content < ActiveRecord::Base
 
   # Blog overrides navigation_children -> []
   def navigation_children
-    children
+    sorted_children
   end
 
   def next_page
     unless hide_next_page?
-      lower_item || (parent.lower_item.is_a?(Section) ? parent.lower_item.children.positioned.first : parent.lower_item)
+      lower_item || (parent.lower_item.is_a?(Section) ? parent.lower_item.sorted_children.first : parent.lower_item)
     end
   end
 
@@ -63,5 +64,13 @@ class Content < ActiveRecord::Base
   def slugs
     slugs = parent ? parent.slugs + [slug] : [slug]
     slugs.compact
+  end
+
+  def sort_children_by_position?
+    true
+  end
+
+  def sorted_children
+    children.sorted_by_position
   end
 end

@@ -5,7 +5,7 @@
       Archive
 
     %ul
-      - blog.children.dated.each do |post|
+      - blog.sorted_children.each do |post|
         %li
           = link_to post.title, post.path
           = post.created_at.to_date.to_s(:long_ordinal)

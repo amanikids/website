@@ -1,5 +1,5 @@
 %li[two_column_page]
-  - if recurse
+  - if recurse && two_column_page.parent.sort_children_by_position?
     = link_to '&uarr;', admin_two_column_page_path(two_column_page, :two_column_page => { :move_higher => true }), :method => :put
     = link_to '&darr;', admin_two_column_page_path(two_column_page, :two_column_page => { :move_lower => true }), :method => :put
 
@@ -16,4 +16,4 @@
 
   - if recurse
     %ol
-      = render :partial => two_column_page.children.positioned, :locals => { :recurse => recurse }
+      = render :partial => two_column_page.sorted_children, :locals => { :recurse => recurse }

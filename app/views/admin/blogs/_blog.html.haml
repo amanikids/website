@@ -1,5 +1,5 @@
 %li[blog]
-  - if recurse
+  - if recurse && blog.parent.sort_children_by_position?
     = link_to '&uarr;', admin_blog_path(blog, :blog => { :move_higher => true }), :method => :put
     = link_to '&darr;', admin_blog_path(blog, :blog => { :move_lower => true }), :method => :put
 
@@ -14,4 +14,4 @@
 
   - if recurse
     %ol
-      = render :partial => blog.children.positioned, :locals => { :recurse => recurse }
+      = render :partial => blog.sorted_children, :locals => { :recurse => recurse }

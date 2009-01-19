@@ -5,4 +5,12 @@ class Blog < Content
   def navigation_children
     []
   end
+
+  def sort_children_by_position?
+    false
+  end
+
+  def sorted_children
+    children.sorted_by_date
+  end
 end

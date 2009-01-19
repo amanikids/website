@@ -3,7 +3,7 @@
 .blog_text
   %h2= blog.title
 
-  - blog.children.dated.recent.each do |post|
+  - blog.sorted_children.recent.each do |post|
     .post
       %h3= link_to post.title, post.path
       .timestamp

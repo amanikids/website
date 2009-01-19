@@ -24,18 +24,18 @@
     .navigation
       %ul.tops
         - if Home.first
-          - Home.first.children.positioned.each_with_index do |top, index|
+          - Home.first.sorted_children.each_with_index do |top, index|
             %li.top{:class => "#{(index.zero? ? 'first' : '')}"}
               - if top.path
                 = link_to top.title, top.path, :class => :title
               - elsif top.navigation_children.any?
-                = link_to top.title, top.navigation_children.positioned.first.path, :class => :title
+                = link_to top.title, top.navigation_children.first.path, :class => :title
               - else
                 .title= top.title
 
               - if top.navigation_children.any?
                 %ul.children
-                  - top.navigation_children.positioned.each do |child|
+                  - top.navigation_children.each do |child|
                     %li.child
                       = link_to child.title, child.path, :class => :title
 

@@ -11,4 +11,4 @@
 
   - if recurse
     %ol
-      = render :partial => home.children.positioned, :locals => { :recurse => recurse }
+      = render :partial => home.sorted_children, :locals => { :recurse => recurse }

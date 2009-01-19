@@ -1,5 +1,5 @@
 %li[gallery]
-  - if recurse
+  - if recurse && gallery.parent.sort_children_by_position?
     = link_to '&uarr;', admin_gallery_path(gallery, :gallery => { :move_higher => true }), :method => :put
     = link_to '&darr;', admin_gallery_path(gallery, :gallery => { :move_lower => true }), :method => :put
 
@@ -14,4 +14,4 @@
 
   - if recurse
     %ol
-      = render :partial => gallery.children.positioned, :locals => { :recurse => recurse }
+      = render :partial => gallery.sorted_children, :locals => { :recurse => recurse }
