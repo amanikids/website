@@ -1,15 +1,25 @@
 @import constants.sass
 
 #donation_page
-  :padding 0 216px
+  :border-collapse collapse
+  :margin-bottom 1em
+  :position relative
+  :left 0
+  :right 0
 
-  .column
-    :float left
-    :position relative
-    :margin-bottom 16px
+  td
+    :padding 0
+    :vertical-align top
 
-  #middle
-    :width 100%
+  td.left
+    :background-color #eee
+    :font-size 0.9em
+    :width 200px
+    .padding
+      :padding 1em
+
+  td.middle
+    :padding 0 1em
     .donation_buttons
       :background-color = !light_yellow
       :padding 1em
@@ -21,21 +31,7 @@
         :clear left
         :margin-bottom 0em
 
-  #left
-    :background-color #eee
-    :font-size 0.9em
-    :margin-left -100%
-    :right 216px
+  td.right
     :width 200px
-    .padding
-      :padding 1em
-
-  #right
-    :text-align right
-    :margin-right -216px
-    :width 216px
     .photo
       :margin-bottom 8px
-
-* html #left
-  :left 216px
