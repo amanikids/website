@@ -18,7 +18,7 @@
     = form.text_field :slug
   .field
     = form.label :body
-    = form.text_area :body
+    = form.textile_area :body
   .field
     = form.submit 'Save and Continue Editing', :name => 'gallery[continue_editing]'
     = form.submit 'Save and Close'
