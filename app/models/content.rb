@@ -50,11 +50,19 @@ class Content < ActiveRecord::Base
   def next_page
     return if hide_next_page?
 
+    if sorted_children.any?
+      sorted_children.first
+    else
+      in_order_traversal
+    end
+  end
+
+  def in_order_traversal
     case next_sibling
     when NilClass
-      parent ? parent.next_page : nil
+      parent ? parent.in_order_traversal : nil
     when Section
-      next_sibling.sorted_children.first
+      next_sibling.next_page
     else
       next_sibling
     end
