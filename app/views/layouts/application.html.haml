@@ -2,7 +2,11 @@
 !!!
 %html{html_attrs}
   %head
-    %title Amani Children's Home | Moshi, Tanzania
+    %title
+      - if @content
+        = "#{@content.title} &mdash; Amani Children's Home | Moshi, Tanzania"
+      - else
+        Amani Children's Home | Moshi, Tanzania
     = stylesheet_link_tag 'content', 'document', 'donation_page', 'form', 'header', 'navigation', '/facebox/facebox', 'facebox', :cache => true
     = javascript_include_tag 'jquery', '/facebox/facebox', 'application', :cache => true
     = auto_discovery_link_tag :atom, formatted_feed_path(:atom)
