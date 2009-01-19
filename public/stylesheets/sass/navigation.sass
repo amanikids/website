@@ -18,19 +18,20 @@
     :margin 0
     :padding 0
 
-    .top.first
-      :border-left none
     .top
       :border-left = 1px solid !medium_yellow
       :float left
       :margin 0
       :padding 0
+      :position relative
 
       .title
         :color = #fff
         :display block
+        :margin 0
         :padding 0.5em 1em
         :text-decoration none
+        :white-space nowrap
 
         &:hover
           :background-color = !medium_yellow
@@ -39,13 +40,22 @@
       .children
         :background-color = !orange
         :display none
+        :list-style none
         :margin 0
         :padding 0
         :position absolute
 
         .child
-          :border-top = 1px solid !medium_yellow
+          :display inline
           :font-weight normal
-          :list-style none
           :margin 0
           :padding 0
+
+          .title
+            :border-top = 1px solid !medium_yellow
+            :position relative
+            :left 0
+            :right 0
+
+    .top.first
+      :border-left none
