@@ -19,3 +19,7 @@
 
   %h2= content.title
   = textilize content.body
+
+  - if content.next_page
+    .next_link
+      = link_to "#{content.next_page.title} &#x25ba;", content.next_page.path, :class => 'button'

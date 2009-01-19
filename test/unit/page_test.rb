@@ -66,8 +66,8 @@ class PageTest < ActiveSupport::TestCase
           @next_section = Factory(:page, :parent => @home)
           @next_page    = Factory(:page, :parent => @next_section)
         end
-        should 'return nil as next_page' do
-          assert_nil @page.next_page
+        should 'return that "section" itself as next_page' do
+          assert_equal @next_section, @page.next_page
         end
       end
     end

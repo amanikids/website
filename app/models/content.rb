@@ -46,6 +46,12 @@ class Content < ActiveRecord::Base
     children
   end
 
+  def next_page
+    unless hide_next_page?
+      lower_item || (parent.lower_item.is_a?(Section) ? parent.lower_item.children.positioned.first : parent.lower_item)
+    end
+  end
+
   def path
     '/' + slugs.join('/') if slugs.any?
   end
