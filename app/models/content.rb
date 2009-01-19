@@ -31,7 +31,7 @@ class Content < ActiveRecord::Base
   end
 
   def generation
-    parent ? parent.children.positioned: [self]
+    parent ? parent.sorted_children: [self]
   end
 
   def move_higher=(*args)
@@ -48,9 +48,20 @@ class Content < ActiveRecord::Base
   end
 
   def next_page
-    unless hide_next_page?
-      lower_item || (parent.lower_item.is_a?(Section) ? parent.lower_item.sorted_children.first : parent.lower_item)
+    return if hide_next_page?
+
+    case next_sibling
+    when NilClass
+      parent ? parent.next_page : nil
+    when Section
+      next_sibling.sorted_children.first
+    else
+      next_sibling
     end
+  end
+
+  def next_sibling
+    @next_sibling ||= generation[generation.index(self) + 1]
   end
 
   def path
