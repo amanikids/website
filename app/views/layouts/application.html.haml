@@ -56,3 +56,5 @@
           .line Adam Smith, Colby Anderson, Libby Ventura, Joachim Mangilima, and Matthew Todd.
         %p.edit
           = link_to('Edit this Page', [:edit, :admin, @content], :class => 'edit_this_page', :style => 'display: none') if @content
+
+    = render :partial => 'layouts/google_analytics'
