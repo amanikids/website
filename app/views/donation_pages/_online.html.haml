@@ -25,7 +25,7 @@
       - donation_page.monthly_donation_amounts_with_level_names.each do |amount, level_name|
         - donation_form_for(donation_page, :kind => :monthly, :amount => amount, :class => :inline) do |form|
           .single_field
-            = image_submit_tag "#{level_name.downcase}.png"
+            = image_submit_tag "#{level_name.downcase}.png", :class => 'helping-hands-image'
           .single_field
             = form.submit "#{donation_page.currency_symbol}#{amount} Monthly"
 
