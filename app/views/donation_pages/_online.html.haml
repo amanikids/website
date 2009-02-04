@@ -27,7 +27,7 @@
           .single_field
             = image_submit_tag "#{level_name.downcase}.png"
           .single_field
-            = form.submit "#{level_name.titleize}: #{donation_page.currency_symbol}#{amount} Monthly"
+            = form.submit "#{donation_page.currency_symbol}#{amount} Monthly"
 
       - donation_form_for(donation_page, :kind => :monthly, :class => :block) do |form|
         .label Or, specify a custom amount:
