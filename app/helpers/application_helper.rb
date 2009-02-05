@@ -110,15 +110,15 @@ module ApplicationHelper
     private
 
     def shared_hidden_fields
-      { :business => @donation_page.paypal_account, :currency_code => @donation_page.currency, :no_note => 1, :no_shipping => 1, :rm => 1 }
+      { :business => @donation_page.paypal_account, :currency_code => @donation_page.currency, :no_shipping => 1, :rm => 1 }
     end
 
     def specific_hidden_fields
       case @kind
       when :one_time
-        { :cmd => '_donations', :item_name => "One-time Donation to Amani Children's Home", :amount => @amount }
+        { :cmd => '_donations', :item_name => "One-time Donation to Amani Children's Home", :amount => @amount, :cn => 'Are you making this donation in honor of a friend or loved one? Please let us know.', :no_note => 0 }
       when :monthly
-        { :cmd => '_xclick-subscriptions', :item_name => "Monthly Donation to Amani Children's Home", :a3 => @amount, :p3 => 1, :src => 1, :t3 => 'M' }
+        { :cmd => '_xclick-subscriptions', :item_name => "Monthly Donation to Amani Children's Home", :a3 => @amount, :no_note => 1, :p3 => 1, :src => 1, :t3 => 'M' }
       end
     end
 
