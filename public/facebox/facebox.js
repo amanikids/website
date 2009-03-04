@@ -213,7 +213,7 @@
       xScroll = document.documentElement.scrollLeft;
     } else if (document.body) {// all other Explorers
       yScroll = document.body.scrollTop;
-      xScroll = document.body.scrollLeft;	
+      xScroll = document.body.scrollLeft;
     }
     return new Array(xScroll,yScroll)
   }
@@ -227,7 +227,7 @@
       windowHeight = document.documentElement.clientHeight;
     } else if (document.body) { // other Explorers
       windowHeight = document.body.clientHeight;
-    }	
+    }
     return windowHeight
   }
 
