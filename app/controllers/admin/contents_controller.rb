@@ -18,7 +18,7 @@ class Admin::ContentsController < Admin::ApplicationController
   end
 
   def expression
-    @expression ||= params[:expression] || ''
+    @expression ||= params[:expression] || 'todo'
   end
 
   helper_method :pages_without_text, :pages_without_photos, :pages_matching_expression, :expression
