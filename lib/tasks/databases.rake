@@ -8,6 +8,17 @@ namespace :db do
     end
   end
 
+  task :children => :environment do
+    children = Content.find_by_slugs('children-at-amani').children
+    children.map! do |child|
+      {}.tap do |attributes|
+        attributes[:name] = child.title
+        attributes[:url]  = child.photos.first.url(:large) if child.photos.any?
+      end
+    end
+    puts children.to_yaml
+  end
+
   desc 'Reset migrations, cloning structure to test, and populate database with real data.'
   task :refresh => ['db:migrate:reset', 'db:test:clone', 'db:bootstrap']
 end
