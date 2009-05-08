@@ -13,7 +13,7 @@ namespace :db do
     children.map! do |child|
       {}.tap do |attributes|
         attributes[:name] = child.title
-        attributes[:url]  = child.photos.first.url(:large) if child.photos.any?
+        attributes[:url]  = child.photo.url(:large)
       end
     end
     puts children.to_yaml
