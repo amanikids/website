@@ -36,11 +36,8 @@ module ApplicationHelper
     concat("\n</form>\n")
   end
 
-  def slideshow_tag(content, options = {})
-    if content.photos.any?
-      options.reverse_merge! :size => '500x500', :style => :large
-      render :partial => content.photos, :locals => { :style => options[:style], :size => options[:size], :slideshow => true }
-    end
+  def slideshow_tag(photos, options = {})
+    render :partial => photos, :locals => { :style => :large, :size => '500x500', :slideshow => true }.merge(options)
   end
 
   private

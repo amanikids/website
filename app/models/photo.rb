@@ -4,6 +4,10 @@ class Photo < ActiveRecord::Base
   has_attached_file :photo, :styles => { :large => '500x500#', :gallery => '368x500#', :small => '200x200#', :thumbnail => '120x120#' }, :default_style => :large, :whiny_thumbnails => true
   validates_attachment_presence :photo
 
+  def self.random(number)
+    all.shuffle.first(number)
+  end
+
   def move_higher=(*args)
     move_higher
   end

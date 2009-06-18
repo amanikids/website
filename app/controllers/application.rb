@@ -14,4 +14,12 @@ class ApplicationController < ActionController::Base
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password").
   # filter_parameter_logging :password
+
+  def rescue_action_in_public(exception)
+    if response_code_for_rescue(exception) == :not_found
+      render :template => 'exceptions/not_found', :status => :not_found
+    else
+      super
+    end
+  end
 end
