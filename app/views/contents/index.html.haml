@@ -8,7 +8,7 @@
   - Blog.all.each do |blog|
     - if blog.sorted_children.any?
       .blog.box
-        %h3= link_to blog.title, blog.path
+        %h2= link_to blog.title, blog.path
         %ul
           - blog.sorted_children.recent.each do |post|
             %li= link_to post.title, post.path

@@ -5,7 +5,7 @@
 
   - blog.sorted_children.recent.each do |post|
     .post
-      %h3= link_to post.title, post.path
+      %h2= link_to post.title, post.path
       .timestamp
         Posted on
         = post.created_at.to_date.to_s(:long_ordinal) + '.'

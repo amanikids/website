@@ -1,6 +1,6 @@
 - if donation_page.show_one_time_donations?
   .online
-    %h3= donation_page.one_time_donation_title
+    %h2= donation_page.one_time_donation_title
     = textilize(donation_page.one_time_donation_text)
 
     .donation_buttons
@@ -19,7 +19,7 @@
 
 - if donation_page.show_monthly_donations?
   .online
-    %h3= donation_page.monthly_donation_title
+    %h2= donation_page.monthly_donation_title
     = textilize(donation_page.monthly_donation_text)
 
     .donation_buttons
