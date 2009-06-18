@@ -10,8 +10,12 @@
     = stylesheet_link_tag 'content', 'document', 'donation_page', 'form', 'header', 'navigation', '/facebox/facebox', 'facebox', :cache => true
     = javascript_include_tag 'jquery', '/facebox/facebox', 'application', :cache => true
     = auto_discovery_link_tag :atom, formatted_feed_path(:atom)
-    %meta{:name => 'keywords', :content => 'AIDS orphans, street-children, orphanage, volunteer, Moshi, street-kids, Kilimanjaro, street-children, orphans, Africa, sponsor-a-child, Tanzania, AIDS kids'}
-    %meta{:name => 'description', :content => "Amani Children's Home, a non-profit home for orphans and street-children in Tanzania"}
+    - if @content
+      %meta{:name => 'keywords', :content => @content.keywords}
+      %meta{:name => 'description', :content => @content.description}
+    - else
+      %meta{:name => 'keywords', :content => Content::DEFAULT_KEYWORDS}
+      %meta{:name => 'description', :content => Content::DEFAULT_DESCRIPTION}
     %meta{:name => 'verify-v1', :content => 'Os/TJcjqoDK1ZeijfwOnR54iwtIojmFR8OB0rgHYxk0=' }
     %meta{:name => 'verify-v1', :content => 'xW7hK3nESF60mL2t+kykYkQJKvLTUhxd+ZNexNazfjw=' }
   %body

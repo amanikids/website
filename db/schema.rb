@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090119104646) do
+ActiveRecord::Schema.define(:version => 20090618090227) do
 
   create_table "address_lists", :force => true do |t|
     t.text     "addresses"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(:version => 20090119104646) do
     t.text     "right_column"
     t.string   "monthly_donation_amounts",     :default => ""
     t.string   "monthly_donation_level_names", :default => ""
+    t.text     "raw_description",              :default => ""
+    t.text     "raw_keywords",                 :default => ""
   end
 
   create_table "documents", :force => true do |t|

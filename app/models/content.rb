@@ -1,4 +1,7 @@
 class Content < ActiveRecord::Base
+  DEFAULT_DESCRIPTION = "Amani Children's Home, a non-profit home for orphans and street-children in Tanzania."
+  DEFAULT_KEYWORDS    = 'AIDS orphans, street-children, orphanage, volunteer, Moshi, street-kids, Kilimanjaro, street-children, orphans, Africa, sponsor-a-child, Tanzania, AIDS kids'
+
   named_scope :sorted_by_date, :order => 'created_at DESC'
   named_scope :sorted_by_position, :order => :position
   named_scope :sorted_by_title, :order => :title
@@ -27,11 +30,27 @@ class Content < ActiveRecord::Base
   end
 
   def any_text_matches?(expression)
-    [body, footer, sidebar, one_time_donation_text, monthly_donation_text, left_column, right_column].grep(expression).any?
+    self.class.columns.select { |c| c.type == :text }.map { |c| self.send(c.name) }.grep(expression).any?
+  end
+
+  def description
+    if raw_description.blank?
+      parent ? parent.description : DEFAULT_DESCRIPTION
+    else
+      raw_description
+    end
   end
 
   def generation
-    parent ? parent.sorted_children: [self]
+    parent ? parent.sorted_children : [self]
+  end
+
+  def keywords
+    if raw_keywords.blank?
+      parent ? parent.keywords : DEFAULT_KEYWORDS
+    else
+      parent ? "#{raw_keywords}, #{parent.keywords}" : raw_keywords
+    end
   end
 
   def move_higher=(*args)
