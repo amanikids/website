@@ -1,5 +1,6 @@
 # See http://www.robotstxt.org/wc/norobots.html for documentation on how to use the robots.txt file
 #
-# To ban all spiders from the entire site uncomment the next two lines:
-# User-Agent: *
-# Disallow: /
+User-Agent: *
+Disallow: /admin
+Disallow: /contents       # Website contents are accessed by slug; this is just for shares, as in: /contents/42/shares/new
+Disallow: /subscriptions
