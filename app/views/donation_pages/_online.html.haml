@@ -4,7 +4,7 @@
     = textilize(donation_page.one_time_donation_text)
 
     .donation_buttons
-      %h4 Make your donation online
+      %h3 Make your donation online
       - donation_page.one_time_donation_amounts_list.each do |amount|
         - donation_form_for(donation_page, :kind => :one_time, :amount => amount, :class => :inline) do |form|
           .single_field
