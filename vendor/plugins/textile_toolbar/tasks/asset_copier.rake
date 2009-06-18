@@ -5,7 +5,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../lib/textile_toolbar/asset
 
 namespace :textile_toolbar do
   desc "Install files required by textile_toolbar"
-  task :install do  
+  task :install do
     TextileToolbar::AssetCopier.copy "textile_toolbar"
   end
 end

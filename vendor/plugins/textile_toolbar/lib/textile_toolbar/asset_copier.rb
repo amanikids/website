@@ -12,10 +12,10 @@ module TextileToolbar
     class << self
       attr_accessor :source, :destination, :deleted_files
     end
-  
+
     def self.copy(plugin_name)
       begin
-        each_path do |path, dest_path, short_path| 
+        each_path do |path, dest_path, short_path|
           if File.directory?(path)
             unless File.exists?(dest_path)
               FileUtils.mkdir_p(dest_path)
@@ -32,7 +32,7 @@ module TextileToolbar
       end
       print_deletion_warnings(plugin_name)
     end
-  
+
     def self.warn(plugin_name)
       each_path do |path, dest_path, short_path|
         next if File.directory?(path)
@@ -50,12 +50,12 @@ module TextileToolbar
       end
       print_deletion_warnings(plugin_name)
     end
-  
+
     def self.compare(file1, file2)
       File.exists?(file1) && File.exists?(file2) &&
         Digest::MD5.hexdigest(File.read(file1)) == Digest::MD5.hexdigest(File.read(file2))
     end
-  
+
     def self.print_deletion_warnings(plugin_name)
       File.open(deleted_files, "r") do |f|
         f.readlines.reject { |l| l =~ /^#/ || l.strip.blank? }.each do |l|
@@ -64,7 +64,7 @@ module TextileToolbar
         end
       end
     end
-  
+
     def self.paths
       returning [] do |paths|
         Find.find(source) do |path|
@@ -74,7 +74,7 @@ module TextileToolbar
         end
       end
     end
-  
+
     def self.each_path
       paths.each do |path|
         dest_path = path.gsub(source, destination)
@@ -82,7 +82,7 @@ module TextileToolbar
         yield path, dest_path, short_path
       end
     end
-    
+
     def self.log(msg)
       puts msg
     end

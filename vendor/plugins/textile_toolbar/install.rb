@@ -2,14 +2,14 @@
 # http://github.com/pelargir/asset_copier
 
 require 'rake'
- 
+
 begin
   puts "============================================================="
   puts "Attempting to install required files into your application..."
   puts "============================================================="
   RAKE_FILE = File.expand_path(File.join(File.dirname(__FILE__), 'tasks', 'asset_copier.rake'))
   load RAKE_FILE
-  
+
   Rake::Task['textile_toolbar:install'].invoke
   puts "=========================================================="
   puts "Success!"

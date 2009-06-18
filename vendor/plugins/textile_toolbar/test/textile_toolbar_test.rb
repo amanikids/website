@@ -7,7 +7,7 @@ class TextileToolbarTest < Test::Unit::TestCase
   include ActionView::Helpers::JavaScriptHelper
   include ActionView::Helpers::UrlHelper
   include ActionView::Helpers::FormHelper
-  
+
   context "textile_area" do
     should "render text area" do
       assert textile_area(:article, :body).include?("<textarea")
