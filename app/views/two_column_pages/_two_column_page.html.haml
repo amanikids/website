@@ -2,7 +2,7 @@
   .breadcrumbs
     = breadcrumbs(two_column_page)
 
-  %h2= two_column_page.title
+  %h1= two_column_page.title
 
   - if two_column_page.show_children_at?(:top)
     = render :partial => 'pages/child_links', :locals => { :page => two_column_page }

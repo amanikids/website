@@ -1,7 +1,7 @@
 = render :partial => 'blogs/archive', :locals => { :blog => blog }
 
 .blog_text
-  %h2= blog.title
+  %h1= blog.title
 
   - blog.sorted_children.recent.each do |post|
     .post

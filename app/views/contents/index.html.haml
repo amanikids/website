@@ -2,7 +2,7 @@
   = slideshow_tag(@content)
 
 .text
-  %h2= @content.title
+  %h1= @content.title
   = textilize @content.body
 
   - Blog.all.each do |blog|

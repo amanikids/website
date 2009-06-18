@@ -6,7 +6,7 @@
           = textilize donation_page.sidebar
       %td.middle
         .breadcrumbs= breadcrumbs(donation_page)
-        %h2= donation_page.title
+        %h1= donation_page.title
         = textilize donation_page.body
         = render :partial => 'donation_pages/online', :locals => { :donation_page => donation_page }
         = textilize donation_page.footer
