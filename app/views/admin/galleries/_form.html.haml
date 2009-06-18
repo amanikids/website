@@ -19,9 +19,11 @@
   .field
     = form.label :raw_keywords, 'Keywords'
     = form.text_field :raw_keywords
+    .annotation= @gallery.keywords
   .field
     = form.label :raw_description, 'Description'
     = form.text_field :raw_description
+    .annotation= @gallery.description
   .field
     = form.label :body
     = form.textile_area :body

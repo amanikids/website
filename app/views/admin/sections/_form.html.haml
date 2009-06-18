@@ -16,9 +16,11 @@
   .field
     = form.label :raw_keywords, 'Keywords'
     = form.text_field :raw_keywords
+    .annotation= @section.keywords
   .field
     = form.label :raw_description, 'Description'
     = form.text_field :raw_description
+    .annotation= @section.description
   .field
     = form.submit 'Save and Continue Editing', :name => 'section[continue_editing]'
     = form.submit 'Save and Close'

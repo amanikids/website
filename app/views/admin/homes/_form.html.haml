@@ -7,9 +7,11 @@
   .field
     = form.label :raw_keywords, 'Keywords'
     = form.text_field :raw_keywords
+    .annotation= @home.keywords
   .field
     = form.label :raw_description, 'Description'
     = form.text_field :raw_description
+    .annotation= @home.description
   .field
     = form.label :body
     = form.textile_area :body

@@ -19,9 +19,11 @@
   .field
     = form.label :raw_keywords, 'Keywords'
     = form.text_field :raw_keywords
+    .annotation= @blog.keywords
   .field
     = form.label :raw_description, 'Description'
     = form.text_field :raw_description
+    .annotation= @blog.description
   .field
     = form.submit 'Save and Continue Editing', :name => 'blog[continue_editing]'
     = form.submit 'Save and Close'

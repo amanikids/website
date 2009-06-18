@@ -32,11 +32,17 @@
   <div class="field">
     <%= form.label :raw_keywords, 'Keywords' %>
     <%= form.text_field :raw_keywords %>
+    <div class="annotation">
+      <%= @page.keywords %>
+    </div>
   </div>
 
   <div class="field">
     <%= form.label :raw_description, 'Description' %>
     <%= form.text_field :raw_description %>
+    <div class="annotation">
+      <%= @page.description %>
+    </div>
   </div>
 
   <div class="field">

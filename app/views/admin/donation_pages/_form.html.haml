@@ -19,9 +19,11 @@
   .field
     = form.label :raw_keywords, 'Keywords'
     = form.text_field :raw_keywords
+    .annotation= @donation_page.keywords
   .field
     = form.label :raw_description, 'Description'
     = form.text_field :raw_description
+    .annotation= @donation_page.description
   .field
     = form.label :body
     = form.textile_area :body
