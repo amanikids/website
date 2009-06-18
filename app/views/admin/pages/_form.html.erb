@@ -30,6 +30,16 @@
   </div>
 
   <div class="field">
+    <%= form.label :raw_keywords, 'Keywords' %>
+    <%= form.text_field :raw_keywords %>
+  </div>
+
+  <div class="field">
+    <%= form.label :raw_description, 'Description' %>
+    <%= form.text_field :raw_description %>
+  </div>
+
+  <div class="field">
     <%= form.label :show_child_links_at %>
     <%= form.select :show_child_links_at, ['', 'top', 'bottom'] %>
   </div>
