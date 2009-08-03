@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
     admin.root :controller => 'contents', :action => 'index'
-    admin.resources :address_lists, :blogs, :documents, :donation_pages, :galleries, :homes, :newsletters, :pages, :photos, :posts, :sections, :two_column_pages
+    admin.resources :address_lists, :articles, :blogs, :documents, :donation_pages, :galleries, :homes, :newsletters, :pages, :photos, :posts, :sections, :two_column_pages
     admin.resource :user_session
   end
 

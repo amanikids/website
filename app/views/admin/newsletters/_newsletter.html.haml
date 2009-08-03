@@ -1,5 +1,9 @@
 %li
   = newsletter.title
+  = link_to 'New Article', new_admin_article_path(:article => { :newsletter_id => newsletter.id })
   = link_to 'View', newsletter.path
   = link_to 'Edit', edit_admin_newsletter_path(newsletter)
   = link_to 'Delete', admin_newsletter_path(newsletter), :method => :delete, :confirm => 'Are you sure you want to delete this Newsletter?'
+
+  - unless newsletter.articles.empty?
+    %ol= render :partial => newsletter.articles

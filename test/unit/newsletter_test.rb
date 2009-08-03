@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class NewsletterTest < ActiveSupport::TestCase
+  should_have_many :articles
   should_require_attributes :published_on
 
   context 'create' do

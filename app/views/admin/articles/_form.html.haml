@@ -1,0 +1,26 @@
+%h1
+  - if @article.new_record?
+    New Article
+  - else
+    = link_to @article.title, @article.newsletter.path
+
+- form_for [:admin, @article] do |form|
+  = form.error_messages
+  .field
+    = form.label :newsletter_id
+    = form.hidden_field :newsletter_id
+    = link_to @article.newsletter.title, @article.newsletter.path
+  .field
+    = form.label :title
+    = form.text_field :title
+  .field
+    = form.label :subtitle
+    = form.text_field :subtitle
+  .field
+    = form.label :body
+    = form.textile_area :body
+  .field
+    = form.submit 'Save and Continue Editing', :name => 'article[continue_editing]'
+    = form.submit 'Save and Close'
+    or
+    = link_to 'Cancel', admin_root_path

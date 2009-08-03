@@ -9,10 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090803064051) do
+ActiveRecord::Schema.define(:version => 20090803081939) do
 
   create_table "address_lists", :force => true do |t|
     t.text     "addresses"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "articles", :force => true do |t|
+    t.integer  "newsletter_id"
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "body"
+    t.integer  "position",      :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

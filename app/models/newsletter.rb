@@ -1,4 +1,5 @@
 class Newsletter < ActiveRecord::Base
+  has_many                :articles, :order => :position, :dependent => :destroy
   named_scope             :by_published_on, :order => :published_on
 
   before_validation       :adjust_published_on_to_the_first_of_the_month, :if => :published_on?
