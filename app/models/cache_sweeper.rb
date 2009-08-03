@@ -1,5 +1,5 @@
 class CacheSweeper < ActiveRecord::Observer
-  observe :content
+  observe :content, :newsletter, :article, :photo
 
   def after_save(record)
     expire_entire_cache
