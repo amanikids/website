@@ -4,7 +4,7 @@ class Admin::ArticlesController < Admin::ApplicationController
 
   def create
     if @article.save
-      redirect_to @article.continue_editing ? edit_admin_article_path(@article) : admin_root_path
+      redirect_to @article.continue_editing ? edit_admin_article_path(@article) : edit_admin_newsletter_path(@article.newsletter)
     else
       render :action => 'new'
     end
@@ -12,7 +12,7 @@ class Admin::ArticlesController < Admin::ApplicationController
 
   def update
     if @article.update_attributes(params[:article])
-      redirect_to @article.continue_editing ? edit_admin_article_path(@article) : admin_root_path
+      redirect_to @article.continue_editing ? edit_admin_article_path(@article) : edit_admin_newsletter_path(@article.newsletter)
     else
       render :action => 'edit'
     end
@@ -20,7 +20,7 @@ class Admin::ArticlesController < Admin::ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to admin_root_path
+    redirect_to edit_admin_newsletter_path(@article.newsletter)
   end
 
   private
