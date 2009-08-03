@@ -10,7 +10,7 @@ class Content < ActiveRecord::Base
   acts_as_list :scope => :parent
   belongs_to :parent, :class_name => 'Content'
   has_many :children, :class_name => 'Content', :foreign_key => 'parent_id', :dependent => :destroy
-  has_many :photos, :order => :position
+  has_many :photos, :order => :position, :as => :content
   has_many :shares
   validates_uniqueness_of :slug, :allow_nil => true
 
