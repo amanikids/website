@@ -2,7 +2,7 @@
   - if @article.new_record?
     New Article
   - else
-    = link_to @article.title, @article.newsletter.path
+    = @article.title
 
 - form_for [:admin, @article] do |form|
   = form.error_messages
@@ -23,4 +23,4 @@
     = form.submit 'Save and Continue Editing', :name => 'article[continue_editing]'
     = form.submit 'Save and Close'
     or
-    = link_to 'Cancel', admin_root_path
+    = link_to 'Cancel', edit_admin_newsletter_path(@article.newsletter)
