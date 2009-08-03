@@ -1,0 +1,16 @@
+%h1
+  - if @newsletter.new_record?
+    New Newsletter
+  - else
+    = link_to @newsletter.title, @newsletter.path
+
+- form_for [:admin, @newsletter] do |form|
+  = form.error_messages
+  .field
+    = form.label :published_on
+    = form.date_select :published_on, :discard_day => true
+  .field
+    = form.submit 'Save and Continue Editing', :name => 'newsletter[continue_editing]'
+    = form.submit 'Save and Close'
+    or
+    = link_to 'Cancel', admin_root_path

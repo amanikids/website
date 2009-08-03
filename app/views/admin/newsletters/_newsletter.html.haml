@@ -1,0 +1,5 @@
+%li
+  = newsletter.title
+  = link_to 'View', newsletter.path
+  = link_to 'Edit', edit_admin_newsletter_path(newsletter)
+  = link_to 'Delete', admin_newsletter_path(newsletter), :method => :delete, :confirm => 'Are you sure you want to delete this Newsletter?'

@@ -16,6 +16,10 @@ Factory.define(:home) do |home|
   home.body 'Hi there, and welcome.'
 end
 
+Factory.define(:newsletter) do |newsletter|
+  newsletter.published_on Date.today
+end
+
 Factory.define(:page) do |page|
   page.association :parent, :factory => :section
   page.title 'Page'
