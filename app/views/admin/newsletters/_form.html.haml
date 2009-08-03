@@ -10,6 +10,9 @@
     = form.label :published_on
     = form.date_select :published_on, :discard_day => true
   .field
+    = form.label :unsubscribe_url
+    = form.text_field :unsubscribe_url
+  .field
     = form.submit 'Save and Continue Editing', :name => 'newsletter[continue_editing]'
     = form.submit 'Save and Close'
     or

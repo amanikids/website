@@ -4,6 +4,9 @@ class NewsletterTest < ActiveSupport::TestCase
   should_have_many :articles
   should_require_attributes :published_on
 
+  should_allow_values_for     :unsubscribe_url, 'http://example.com', '', nil
+  should_not_allow_values_for :unsubscribe_url, 'example.com'
+
   context 'create' do
     setup do
       @newsletter = Factory.create(:newsletter, :published_on => Date.new(2009, 8, 5))

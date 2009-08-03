@@ -5,6 +5,7 @@ class Newsletter < ActiveRecord::Base
   before_validation       :adjust_published_on_to_the_first_of_the_month, :if => :published_on?
   validates_presence_of   :published_on
   validates_uniqueness_of :published_on
+  validates_format_of     :unsubscribe_url, :with => %r{^http://}, :allow_blank => true
 
   attr_accessor           :continue_editing
 

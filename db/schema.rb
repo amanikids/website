@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090803081939) do
+ActiveRecord::Schema.define(:version => 20090803090220) do
 
   create_table "address_lists", :force => true do |t|
     t.text     "addresses"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20090803081939) do
 
   create_table "newsletters", :force => true do |t|
     t.date     "published_on"
+    t.string   "unsubscribe_url", :default => "http://www.able-travel.com/amani/leave.htm"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -83,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20090803081939) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "caption"
+    t.string   "content_type"
   end
 
   create_table "shares", :force => true do |t|
