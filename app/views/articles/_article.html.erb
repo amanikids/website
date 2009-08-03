@@ -10,7 +10,7 @@
   <%- end -%>
   <tr>
     <td valign="top" class="text">
-      <%- if article.photos.count > 0 -%><%= image_tag(article.photos.first.photo.url(:newsletter), :align => cycle(:right, :left)) %><%- end -%>
+      <%- if article.photos.count > 0 -%><%= image_tag(article.photos.first.url(:newsletter), :align => cycle(:right, :left), :alt => article.photos.first.caption, :title => article.photos.first.caption) %><%- end -%>
       <%= textilize article.body %>
     </td>
   </tr>

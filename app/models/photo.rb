@@ -13,6 +13,7 @@ class Photo < ActiveRecord::Base
   }, :default_style => :large, :whiny_thumbnails => true
 
   validates_attachment_presence :photo
+  delegate :url, :to => :photo
 
   def self.random(number)
     all.shuffle.first(number)
