@@ -18,8 +18,8 @@
     or
     = link_to 'Cancel', admin_root_path
 
-%h2
-  = 'Articles'
-  = link_to 'Start a new Article', new_admin_article_path(:article => { :newsletter_id => @newsletter.id })
-
-%ol= render :partial => @newsletter.articles
+- unless @newsletter.new_record?
+  %h2
+    = 'Articles'
+    = link_to 'Start a new Article', new_admin_article_path(:article => { :newsletter_id => @newsletter.id })
+  %ol= render :partial => @newsletter.articles
