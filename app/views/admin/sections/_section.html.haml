@@ -7,6 +7,7 @@
 
   - if recurse
     = link_to 'New Page', new_admin_page_path(:page => {:parent_id => section})
+    = link_to 'New Composite Page', new_admin_composite_page_path(:composite_page => {:parent_id => section})
     = link_to 'New Two Column Page', new_admin_two_column_page_path(:two_column_page => {:parent_id => section})
     = link_to 'New Gallery', new_admin_gallery_path(:gallery => {:parent_id => section})
 

@@ -1,0 +1,34 @@
+%h1
+  - if @composite_page.new_record?
+    New Composite Page
+  - else
+    = link_to @composite_page.title, @composite_page.path
+
+- form_for [:admin, @composite_page] do |form|
+  = form.error_messages
+  .field
+    = form.label :parent_id
+    = form.hidden_field :parent_id
+    = @composite_page.parent.title
+  .field
+    = form.label :title
+    = form.text_field :title
+  .field
+    = form.label :slug
+    = form.text_field :slug
+  .field
+    = form.label :raw_keywords, 'Keywords'
+    = form.text_field :raw_keywords
+    .annotation= @composite_page.keywords
+  .field
+    = form.label :raw_description, 'Description'
+    = form.text_field :raw_description
+    .annotation= @composite_page.description
+  .field
+    = form.label :body
+    = form.textile_area :body
+  .field
+    = form.submit 'Save and Continue Editing', :name => 'composite_page[continue_editing]'
+    = form.submit 'Save and Close'
+    or
+    = link_to 'Cancel', admin_root_path

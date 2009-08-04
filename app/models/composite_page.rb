@@ -1,0 +1,2 @@
+class CompositePage < Page
+end

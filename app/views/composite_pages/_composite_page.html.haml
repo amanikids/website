@@ -1,0 +1,16 @@
+.two_column_text
+  .breadcrumbs
+    = breadcrumbs(composite_page)
+
+  %h1= composite_page.title
+  = textilize composite_page.body
+
+  / %table
+  /   %tbody
+  /     %tr
+  /       %td.left= textilize two_column_page.left_column
+  /       %td.right= textilize two_column_page.right_column
+
+  - if composite_page.next_page
+    .next_link
+      = link_to "#{composite_page.next_page.title} &#x25ba;", composite_page.next_page.path, :class => 'button'
