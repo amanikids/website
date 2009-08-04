@@ -5,11 +5,12 @@
   %h1= composite_page.title
   = textilize composite_page.body
 
-  / %table
-  /   %tbody
-  /     %tr
-  /       %td.left= textilize two_column_page.left_column
-  /       %td.right= textilize two_column_page.right_column
+  %table
+    %tbody
+      - composite_page.children.sorted_by_position.in_groups_of(2) do |left, right|
+        %tr
+          %td.left= render :partial => left
+          %td.right= render :partial => right
 
   - if composite_page.next_page
     .next_link

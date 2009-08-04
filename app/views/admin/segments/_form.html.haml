@@ -1,0 +1,23 @@
+%h1
+  - if @segment.new_record?
+    New Segment
+  - else
+    = @segment.title
+
+- form_for [:admin, @segment] do |form|
+  = form.error_messages
+  .field
+    = form.label :parent_id
+    = form.hidden_field :parent_id
+    = link_to @segment.parent.title, @segment.parent.path
+  .field
+    = form.label :title
+    = form.text_field :title
+  .field
+    = form.label :body
+    = form.textile_area :body
+  .field
+    = form.submit 'Save and Continue Editing', :name => 'segment[continue_editing]'
+    = form.submit 'Save and Close'
+    or
+    = link_to 'Cancel', edit_admin_composite_page_path(@segment.parent)

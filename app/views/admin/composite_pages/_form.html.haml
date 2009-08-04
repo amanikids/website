@@ -32,3 +32,9 @@
     = form.submit 'Save and Close'
     or
     = link_to 'Cancel', admin_root_path
+
+- unless @composite_page.new_record?
+  %h2
+    = 'Segments'
+    = link_to 'Add a New Segment', new_admin_segment_path(:segment => { :parent_id => @composite_page.id })
+  %ol= render :partial => @composite_page.children

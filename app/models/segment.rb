@@ -1,0 +1,2 @@
+class Segment < Content
+end
