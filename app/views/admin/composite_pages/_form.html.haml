@@ -37,4 +37,4 @@
   %h2
     = 'Segments'
     = link_to 'Add a New Segment', new_admin_segment_path(:segment => { :parent_id => @composite_page.id })
-  %ol= render :partial => @composite_page.children
+  %ol= render :partial => @composite_page.children.sorted_by_position

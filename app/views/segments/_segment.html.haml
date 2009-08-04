@@ -1,6 +1,5 @@
 .segment
   %h2= segment.title
-
   - if segment.photos.size > 0
     .segment_image
       = image_tag segment.photos.first.url(:newsletter)
