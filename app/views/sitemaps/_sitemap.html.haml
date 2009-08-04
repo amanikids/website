@@ -1,0 +1,5 @@
+%li[sitemap]
+  = link_to sitemap.title, sitemap.path
+
+  - if sitemap.children.count > 0
+    %ul= render :partial => 'sitemap', :collection => sitemap.sorted_children

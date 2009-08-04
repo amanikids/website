@@ -59,6 +59,7 @@
         %p.thanks
           .line This website was made possible through the volunteer efforts of Patricia Tollenaar,
           .line Adam Smith, Colby Anderson, Libby Ventura, Joachim Mangilima, and Matthew Todd.
+        %p= link_to 'Sitemap', sitemap_path
         %p.edit
           = link_to('Edit this Page', [:edit, :admin, @content], :class => 'edit_this_page', :style => 'display: none') if @content
 
