@@ -83,7 +83,7 @@ home and in the local community.</font></p>
       <table width="100%" border="0" cellspacing="0" cellpadding="2">
         <tr class="footer">
           <th width="70%" class="footer" scope="col"><%- if @newsletter.unsubscribe_url? -%><font size="1" face="Tahoma" class="footer">If you'd like to unsubscribe from this quarterly newsletter, click <%= link_to 'here', @newsletter.unsubscribe_url %>.</font><%- end -%></th>
-          <th width="30%" scope="col"><%= link_to root_url, root_url %></th>
+          <th width="30%" scope="col"><%= link_to request.host_with_port, root_url %></th>
         </tr>
     </table></td>
   </tr>
