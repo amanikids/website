@@ -19,23 +19,3 @@
 %ol.sections
   = render :partial => Home.first, :locals => { :recurse => true }
 
-%h2 Documents
-- form_for [:admin, Document.new], :html => { :multipart => true } do |form|
-  .field
-    = form.file_field :document
-    = form.submit 'Upload'
-
-%ul.documents
-  - Document.all.each do |document|
-    %li
-      .links
-        = link_to document.document.original_filename, document.document.url
-        = link_to 'Delete', admin_document_path(document), :method => :delete, :confirm => 'Are you sure you want to delete this document? Other pages may still be linking to it.'
-      .help
-        %code= "\"Link Text\":#{document.document.url}"
-
-%h2
-  = 'Newsletters'
-  = link_to 'Start a New Newsletter', new_admin_newsletter_path
-%ul.newsletters
-  = render :partial => Newsletter.by_published_on

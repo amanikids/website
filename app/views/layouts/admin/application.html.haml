@@ -10,6 +10,8 @@
       %ul
         %li= link_to_unless_current 'Address Lists', admin_address_lists_path
         %li= link_to_unless_current 'Contents', admin_root_path
+        %li= link_to_unless_current 'Documents', admin_documents_path
+        %li= link_to_unless_current 'Newsletters', admin_newsletters_path
         %li
           Logged in as
           = @current_user.login

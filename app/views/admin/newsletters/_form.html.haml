@@ -16,7 +16,7 @@
     = form.submit 'Save and Continue Editing', :name => 'newsletter[continue_editing]'
     = form.submit 'Save and Close'
     or
-    = link_to 'Cancel', admin_root_path
+    = link_to 'Cancel', admin_newsletters_path
 
 - unless @newsletter.new_record?
   %h2

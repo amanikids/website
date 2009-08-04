@@ -1,0 +1,5 @@
+%h2
+  = 'Newsletters'
+  = link_to 'Start a New Newsletter', new_admin_newsletter_path
+%ul.newsletters
+  = render :partial => @newsletters
