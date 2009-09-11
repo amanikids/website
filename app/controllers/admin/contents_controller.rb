@@ -10,7 +10,7 @@ class Admin::ContentsController < Admin::ApplicationController
   end
 
   def pages_without_photos
-    @pages_without_photos ||= pages.reject { |content| content.class == Post || content.class == TwoColumnPage }.select { |content| content.photos.count.zero? }
+    @pages_without_photos ||= pages.reject { |content| [CompositePage, Post, TwoColumnPage].include?(content.class) }.select { |content| content.photos.count.zero? }
   end
 
   def pages_matching_expression
