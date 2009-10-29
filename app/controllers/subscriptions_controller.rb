@@ -1,6 +1,5 @@
 class SubscriptionsController < ApplicationController
   before_filter :build_subscription
-  session :on
 
   def create
     if @subscription.save

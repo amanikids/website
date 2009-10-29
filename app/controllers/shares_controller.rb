@@ -1,6 +1,5 @@
 class SharesController < ApplicationController
   before_filter :load_new_share
-  session :on
 
   def create
     if @share.save

@@ -12,6 +12,7 @@ config.whiny_nils = true
 # Show full error reports and disable caching
 config.action_controller.consider_all_requests_local = true
 config.action_controller.perform_caching             = false
+config.action_view.cache_template_loading            = true
 
 # Disable request forgery protection in test environment
 config.action_controller.allow_forgery_protection    = false
@@ -25,6 +26,11 @@ config.action_mailer.default_url_options = { :host => 'shoes.local:3000' }
 # Specify gems that this application depends on for testing.
 # They can then be installed with "RAILS_ENV=test rake gems:install" on new installations.
 config.gem 'jeremymcanally-matchy',     :lib => 'matchy',         :source => 'http://gems.github.com/'
+config.gem 'mocha',                     :lib => false
 config.gem 'thoughtbot-factory_girl',   :lib => 'factory_girl',   :source => 'http://gems.github.com/'
-config.gem 'thoughtbot-quietbacktrace', :lib => 'quietbacktrace', :source => 'http://gems.github.com/'
 config.gem 'thoughtbot-shoulda',        :lib => 'shoulda/rails',  :source => 'http://gems.github.com/'
+
+# Use SQL instead of Active Record's schema dumper when creating the test database.
+# This is necessary if your schema can't be completely dumped by the schema dumper,
+# like if you have constraints or database-specific column types
+# config.active_record.schema_format = :sql
