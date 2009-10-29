@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class SubscriptionTest < ActiveSupport::TestCase
-  should_require_attributes :name
+  should_validate_presence_of :name
   should_validate_email_veracity_of :email
 
   should 'validate confirmation of email' do

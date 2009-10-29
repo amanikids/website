@@ -3,7 +3,7 @@ require 'test_helper'
 class ShareTest < ActiveSupport::TestCase
   should_belong_to :content
 
-  should_require_attributes :from_name, :to_name
+  should_validate_presence_of :from_name, :to_name
   should_validate_email_veracity_of :from_address, :to_address
   should_have_instance_methods :message, :message=
 

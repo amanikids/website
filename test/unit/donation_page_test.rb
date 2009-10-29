@@ -1,20 +1,20 @@
 require 'test_helper'
 
 class DonationPageTest < ActiveSupport::TestCase
-  should_require_attributes :title, :body, :sidebar, :footer, :one_time_donation_title, :monthly_donation_title
+  should_validate_presence_of :title, :body, :sidebar, :footer, :one_time_donation_title, :monthly_donation_title
 
   should_allow_values_for :paypal_account, 'foo@example.com', '', nil
   should_not_allow_values_for :paypal_account, 'this is not an email address'
 
   context 'without an online_donation_method' do
-    setup { @donation_page = Factory.build(:donation_page, :online_donation_method => nil) }
+    subject { Factory.build(:donation_page, :online_donation_method => nil) }
     should_allow_values_for :currency, '', nil
     should_allow_values_for :monthly_donation_amounts, '', nil
     should_allow_values_for :one_time_donation_amounts, '', nil
   end
 
   context 'with online_donation_method ANYTHING' do
-    setup { @donation_page = Factory.build(:donation_page, :online_donation_method => 'ANYTHING') }
+    subject { Factory.build(:donation_page, :online_donation_method => 'ANYTHING') }
     should_allow_values_for :paypal_account, '', nil
     should_allow_values_for :currency, 'GBP'
     should_not_allow_values_for :currency, 'gbp', 'GB', '123', '', nil, :message => 'should be 3 capital letters, like USD'
@@ -25,7 +25,7 @@ class DonationPageTest < ActiveSupport::TestCase
   end
 
   context 'with online_donation_method paypal' do
-    setup { @donation_page = Factory.build(:donation_page, :online_donation_method => 'paypal') }
+    subject { Factory.build(:donation_page, :online_donation_method => 'paypal') }
     should_validate_email_veracity_of :paypal_account
   end
 

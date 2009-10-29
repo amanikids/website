@@ -2,7 +2,7 @@ require 'test_helper'
 
 class NewsletterTest < ActiveSupport::TestCase
   should_have_many :articles
-  should_require_attributes :published_on
+  should_validate_presence_of :published_on
 
   should_allow_values_for     :unsubscribe_url, 'http://example.com', '', nil
   should_not_allow_values_for :unsubscribe_url, 'example.com'
@@ -27,7 +27,7 @@ class NewsletterTest < ActiveSupport::TestCase
 
   context 'with an existing newsletter' do
     setup { Factory.create(:newsletter) }
-    should_require_unique_attributes :published_on
+    should_validate_uniqueness_of :published_on
   end
 
   should 'return the appropriate newsletter from find_by_slug!' do

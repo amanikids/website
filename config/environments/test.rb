@@ -28,7 +28,7 @@ config.action_mailer.default_url_options = { :host => 'shoes.local:3000' }
 config.gem 'factory_girl'
 config.gem 'jeremymcanally-matchy',     :lib => 'matchy',         :source => 'http://gems.github.com/'
 config.gem 'mocha',                     :lib => false
-config.gem 'thoughtbot-shoulda',        :lib => 'shoulda/rails',  :source => 'http://gems.github.com/'
+config.gem 'shoulda'
 
 # Use SQL instead of Active Record's schema dumper when creating the test database.
 # This is necessary if your schema can't be completely dumped by the schema dumper,

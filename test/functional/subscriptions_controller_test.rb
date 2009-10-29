@@ -13,13 +13,13 @@ class SubscriptionsControllerTest < ActionController::TestCase
   context 'create' do
     context 'valid' do
       setup { post :create, :subscription => Factory.attributes_for(:subscription) }
-      should_change 'Subscription.count'
-      should_redirect_to 'root_path'
+      should_change('Subscription.count') { Subscription.count }
+      should_redirect_to('the homepage') { root_path }
     end
 
     context 'invalid' do
       setup { post :create }
-      should_not_change 'Subscription.count'
+      should_not_change('Subscription.count') { Subscription.count }
       should_render_template 'new'
     end
   end

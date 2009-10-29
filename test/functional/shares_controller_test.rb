@@ -15,13 +15,13 @@ class SharesControllerTest < ActionController::TestCase
 
     context 'create valid' do
       setup { post :create, :content_id => @content.id, :share => Factory.attributes_for(:share) }
-      should_change 'Share.count', :by => 1
-      should_redirect_to 'content_path(assigns(:share).content.slugs)'
+      should_change('Share.count', :by => 1) { Share.count }
+      should_redirect_to('the shared page') { content_path(assigns(:share).content.slugs) }
     end
 
     context 'create invalid' do
       setup { post :create, :content_id => @content.id }
-      should_not_change 'Share.count'
+      should_not_change('Share.count') { Share.count }
       should_render_template 'new'
     end
   end
