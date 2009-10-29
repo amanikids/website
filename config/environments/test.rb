@@ -26,8 +26,7 @@ config.action_mailer.default_url_options = { :host => 'shoes.local:3000' }
 # Specify gems that this application depends on for testing.
 # They can then be installed with "RAILS_ENV=test rake gems:install" on new installations.
 config.gem 'factory_girl'
-config.gem 'jeremymcanally-matchy',     :lib => 'matchy',         :source => 'http://gems.github.com/'
-config.gem 'mocha',                     :lib => false
+config.gem 'mocha', :lib => false
 config.gem 'shoulda'
 
 # Use SQL instead of Active Record's schema dumper when creating the test database.
