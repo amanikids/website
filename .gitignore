@@ -1,3 +1,4 @@
+*~
 .DS_Store
 config/database.yml
 config/secret.txt
@@ -5,5 +6,5 @@ db/*.sqlite3
 log/*.log
 public/documents
 public/photos
-*~
 public/stylesheets/*.css
+tmp/sass-output
