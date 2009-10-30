@@ -5,3 +5,14 @@
 
 # You can also remove all the silencers if you're trying do debug a problem that might steem from framework code.
 # Rails.backtrace_cleaner.remove_silencers!
+
+# It's nice to remove the filters when running in TextMate so that we get clickable stack traces.
+class ActiveSupport::BacktraceCleaner
+  def remove_filters!
+    @filters = []
+  end
+end
+
+if ENV['TM_PROJECT_DIRECTORY']
+  Rails.backtrace_cleaner.remove_filters!
+end
