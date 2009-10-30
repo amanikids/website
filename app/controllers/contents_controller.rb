@@ -1,5 +1,5 @@
 class ContentsController < ApplicationController
-  caches_page :index, :show
+  before_filter :setup_cache_headers
 
   def index
     respond_to do |format|
@@ -10,5 +10,11 @@ class ContentsController < ApplicationController
 
   def show
     @content = Content.find_by_slugs(*params[:slugs])
+  end
+
+  private
+
+  def setup_cache_headers
+    setup_cache_headers_for(Home.first)
   end
 end

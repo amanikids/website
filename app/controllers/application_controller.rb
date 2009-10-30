@@ -15,4 +15,11 @@ class ApplicationController < ActionController::Base
       super
     end
   end
+
+  protected
+
+  def setup_cache_headers_for(record)
+    fresh_when(:etag => record, :last_modified => record.updated_at)
+    expires_in(15.minutes, :public => true)
+  end
 end

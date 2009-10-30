@@ -1,7 +1,6 @@
 class SitemapsController < ApplicationController
-  caches_page :show
-
   def show
     @root = Home.first
+    setup_cache_headers_for(@root)
   end
 end

@@ -30,7 +30,7 @@ Rails::Initializer.run do |config|
   config.frameworks -= [ :active_resource ]
 
   # Activate observers that should always be running
-  config.active_record.observers= :cache_sweeper
+  # config.active_record.observers= :cache_sweeper
 
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
   # Run "rake -D time" for a list of tasks for finding time zone names.
