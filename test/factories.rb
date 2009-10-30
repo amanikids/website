@@ -27,6 +27,11 @@ Factory.define(:page) do |page|
   page.body 'This is a page.'
 end
 
+Factory.define(:photo) do |photo|
+  photo.association :content, :factory => :page
+  photo.photo ActionController::TestUploadedFile.new(Rails.root.join('test', 'data', 'photo.jpg').to_s, 'image/jpeg', :binary)
+end
+
 Factory.define(:section) do |section|
   section.title 'Section'
   section.slug { Factory.next(:slug) }
