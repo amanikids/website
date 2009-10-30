@@ -1,6 +1,6 @@
 class Photo < ActiveRecord::Base
   acts_as_list :scope => :content
-  belongs_to :content, :polymorphic => true
+  belongs_to :content, :polymorphic => true, :touch => true
 
   has_attached_file :photo, :styles => {
     :large      => '500x500#',
