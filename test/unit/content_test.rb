@@ -3,6 +3,29 @@ require 'test_helper'
 class ContentTest < ActiveSupport::TestCase
   should_have_many :photos
 
+  context 'touch' do
+    setup do
+      @top    = Factory.create(:page)
+      @middle = Factory.create(:page, :parent => @top)
+      @bottom = Factory.create(:page, :parent => @middle)
+    end
+
+    context 'touching the bottom page' do
+      setup do
+        # I can't set updated_at in the Factory.create calls above, because
+        # creating a child page automatically touches the parent, overwriting
+        # whatever updated_at timestamp I would have set. So, sleep a little
+        # bit. BUMMER.
+        sleep 1
+        @bottom.touch
+      end
+
+      should_change("the top page's timestamp") do
+        @top.reload.updated_at
+      end
+    end
+  end
+
   context 'without a parent' do
     setup { @content = Factory.create(:home) }
 

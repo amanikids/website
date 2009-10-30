@@ -8,7 +8,7 @@ class Content < ActiveRecord::Base
   named_scope :recent, :limit => 5
 
   acts_as_list :scope => :parent
-  belongs_to :parent, :class_name => 'Content'
+  belongs_to :parent, :class_name => 'Content', :touch => true
   has_many :children, :class_name => 'Content', :foreign_key => 'parent_id', :dependent => :destroy
   has_many :photos, :order => :position, :as => :content
   has_many :shares
