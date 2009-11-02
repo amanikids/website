@@ -7,5 +7,5 @@ namespace :db do
     end
   end
 
-  task :pull => 'db:pull:files'
+  # task :pull => 'db:pull:files'
 end
