@@ -20,7 +20,7 @@ namespace :deploy do
 end
 
 after 'deploy:finalize_update' do
-  shared_resources = ['config/database.yml', 'config/secret.txt', 'public/documents', 'public/photos']
+  shared_resources = ['config/database.yml', 'config/secret.txt', 'config/tapsuey.txt', 'public/documents', 'public/photos']
   symlink_commands = shared_resources.map { |path| "rm -rf #{latest_release}/#{path}; ln -s #{shared_path}/#{path} #{latest_release}/#{path}" }
   run symlink_commands.join(';')
 end
