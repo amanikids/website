@@ -8,3 +8,4 @@ public/documents
 public/photos
 public/stylesheets/*.css
 tmp/sass-output
+tmp/sessions/*
