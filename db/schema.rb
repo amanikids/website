@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090803090220) do
+ActiveRecord::Schema.define(:version => 20091103121738) do
 
   create_table "address_lists", :force => true do |t|
     t.text     "addresses"
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(:version => 20090803090220) do
     t.text     "right_column"
     t.string   "monthly_donation_amounts",     :default => ""
     t.string   "monthly_donation_level_names", :default => ""
-    t.text     "raw_description",              :default => ""
-    t.text     "raw_keywords",                 :default => ""
+    t.text     "raw_description"
+    t.text     "raw_keywords"
   end
 
   create_table "documents", :force => true do |t|
@@ -93,6 +93,11 @@ ActiveRecord::Schema.define(:version => 20090803090220) do
     t.datetime "updated_at"
   end
 
+  create_table "sites", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "subscriptions", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -101,10 +106,10 @@ ActiveRecord::Schema.define(:version => 20090803090220) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "login",            :null => false
-    t.string   "crypted_password", :null => false
-    t.string   "password_salt",    :null => false
-    t.string   "remember_token",   :null => false
+    t.string   "login",             :null => false
+    t.string   "crypted_password",  :null => false
+    t.string   "password_salt",     :null => false
+    t.string   "persistence_token", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
