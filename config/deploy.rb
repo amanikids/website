@@ -2,6 +2,7 @@ set :application, 'website'
 set :repository,  "git://github.com/amanikids/#{application}.git"
 
 set(:deploy_to) { "/var/www/apps/#{application}/#{rails_env}" }
+set :shared_children, %w(system log pids config public)
 set :user, 'deploy'
 set :use_sudo, false
 
