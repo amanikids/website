@@ -6,6 +6,4 @@ namespace :db do
       system 'rsync -rP --delete deploy@amanikids.org:website/production/shared/public/photos/    public/photos'
     end
   end
-
-  task :pull => 'db:pull:files'
 end

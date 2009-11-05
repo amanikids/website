@@ -33,3 +33,24 @@ after 'deploy:finalize_update' do
 end
 
 after 'deploy:update_code', 'tapsuey:db:pull'
+after 'deploy:update_code', 'db:pull:files'
+
+namespace :db do
+  namespace :pull do
+    # I'd rather just have `rake db:pull` depend on `rake db:pull:files`, but I
+    # don't have enough memory in production the rsync/ssh overhead. Sigh. Eagerly
+    # awaing the move to Heroku!
+    desc 'Pull production files to the latest release.'
+    task :files do
+      rails_env = fetch(:rails_env, 'production')
+      unless rails_env == 'production'
+        run <<-CMD
+          rm -rf #{shared_path}/public/documents/* &&
+          rm -rf #{shared_path}/public/photos/*    &&
+          cp -r /var/www/apps/#{application}/production/shared/public/documents/* #{shared_path}/public/documents/ &&
+          cp -r /var/www/apps/#{application}/production/shared/public/photos/*    #{shared_path}/public/photos/
+        CMD
+      end
+    end
+  end
+end
