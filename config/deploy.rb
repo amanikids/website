@@ -27,9 +27,12 @@ namespace :deploy do
 end
 
 after 'deploy:finalize_update' do
-  shared_resources = ['config/database.yml', 'config/secret.txt', 'config/tapsuey.txt']
-  symlink_commands = shared_resources.map { |path| "rm -rf #{latest_release}/#{path}; ln -s #{shared_path}/#{path} #{latest_release}/#{path}" }
-  run symlink_commands.join(';')
+  run <<-CMD
+    rm -rf #{latest_release}/config/database.yml &&
+    rm -rf #{latest_release}/config/environment_variables.rb &&
+    ln -s #{shared_path}/config/database.yml             #{latest_release}/config/database.yml &&
+    ln -s #{shared_path}/config/environment_variables.rb #{latest_release}/config/environment_variables.rb
+  CMD
 end
 
 after 'deploy:update_code', 'tapsuey:db:pull'

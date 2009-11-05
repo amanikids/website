@@ -1,11 +1,7 @@
 *~
-.DS_Store
-config/database.yml
-config/secret.txt
-config/tapsuey.txt
+config/environment_variables.rb
 db/*.sqlite3
 log/*.log
 public/stylesheets/*.css
 public/system
-tmp/sass-output
-tmp/sessions/*
+tmp/*

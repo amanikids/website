@@ -6,7 +6,7 @@
 # no regular words or you'll be exposed to dictionary attacks.
 ActionController::Base.session = {
   :key         => '_amanikids_org_session',
-  :secret      => File.read("#{Rails.root}/config/secret.txt")
+  :secret      => ENV['SESSION_SECRET']
 }
 
 # Use the database for sessions instead of the cookie-based default,

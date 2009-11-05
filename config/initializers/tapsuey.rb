@@ -2,12 +2,12 @@
 # (Taps will attempt to pull data from http://amanikids.org/tapsuey.)
 Tapsuey.host = 'amanikids.org'
 
-# Will need to be the *same* for development and production, but should not be
-# checked into version control, of course. Arrange for your deployment scripts
-# to symlink config/tapsuey.txt in the current release.
-# Alternatively, you could also use something like ENV['TAPSUEY_PASSWORD'].
-# But you know how to do this kind of thing.
-Tapsuey.password = Rails.root.join('config', 'tapsuey.txt').read.strip
+# Will need to be the *same* for development and production. I like to load
+# config/environment_variables.rb from config/preinitializer.rb, keeping
+# environment_variables.rb out of version control and symlinking it back into
+# the app on deploy. Inspired by
+# http://tammersaleh.com/posts/managing-heroku-environment-variables-for-local-development
+Tapsuey.password = ENV['TAPSUEY_SECRET']
 
 # You can also set the following. (Defaults are shown.)
 # Tapsuey.scheme     = 'http'    # or 'https'
