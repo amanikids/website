@@ -45,23 +45,10 @@ namespace :db do
       rails_env = fetch(:rails_env, 'production')
       unless rails_env == 'production'
         run <<-CMD
-          rm -rf #{shared_path}/public/documents/* &&
-          rm -rf #{shared_path}/public/photos/*    &&
-          cp -r /var/www/apps/#{application}/production/shared/public/documents/* #{shared_path}/public/documents/ &&
-          cp -r /var/www/apps/#{application}/production/shared/public/photos/*    #{shared_path}/public/photos/
+          rm -rf #{shared_path}/system &&
+          cp -r /var/www/apps/#{application}/production/shared/system #{shared_path}
         CMD
       end
     end
-  end
-end
-
-namespace :move do
-  task :attachments do
-    run <<-CMD
-      cd #{latest_release}; RAILS_ENV=#{rails_env} rake move:attachments &&
-      mv #{shared_path}/public/documents #{shared_path}/system &&
-      mv #{shared_path}/public/photos #{shared_path}/system &&
-      rmdir #{shared_path}/public
-    CMD
   end
 end

@@ -5,8 +5,7 @@ config/secret.txt
 config/tapsuey.txt
 db/*.sqlite3
 log/*.log
-public/documents
-public/photos
 public/stylesheets/*.css
+public/system
 tmp/sass-output
 tmp/sessions/*
