@@ -30,7 +30,7 @@ class Content < ActiveRecord::Base
   end
 
   def any_text_matches?(expression)
-    self.class.columns.select { |c| c.type == :text }.map { |c| self.send(c.name) }.grep(expression).any?
+    text_columns.map { |c| self.send(c) }.grep(expression).any?
   end
 
   def description
@@ -110,5 +110,9 @@ class Content < ActiveRecord::Base
 
   def sorted_children
     children.sorted_by_position
+  end
+
+  def text_columns
+    self.class.columns.select { |c| c.type == :text }.map { |c| c.name }
   end
 end

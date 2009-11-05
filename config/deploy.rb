@@ -2,7 +2,7 @@ set :application, 'website'
 set :repository,  "git://github.com/amanikids/#{application}.git"
 
 set(:deploy_to) { "/var/www/apps/#{application}/#{rails_env}" }
-set :shared_children, %w(system log pids config public)
+set :shared_children, %w(system log pids config)
 set :user, 'deploy'
 set :use_sudo, false
 
@@ -27,7 +27,7 @@ namespace :deploy do
 end
 
 after 'deploy:finalize_update' do
-  shared_resources = ['config/database.yml', 'config/secret.txt', 'config/tapsuey.txt', 'public/documents', 'public/photos']
+  shared_resources = ['config/database.yml', 'config/secret.txt', 'config/tapsuey.txt']
   symlink_commands = shared_resources.map { |path| "rm -rf #{latest_release}/#{path}; ln -s #{shared_path}/#{path} #{latest_release}/#{path}" }
   run symlink_commands.join(';')
 end
@@ -52,5 +52,16 @@ namespace :db do
         CMD
       end
     end
+  end
+end
+
+namespace :move do
+  task :attachments do
+    run <<-CMD
+      cd #{latest_release}; RAILS_ENV=#{rails_env} rake move:attachments &&
+      mv #{shared_path}/public/documents #{shared_path}/system &&
+      mv #{shared_path}/public/photos #{shared_path}/system &&
+      rmdir #{shared_path}/public
+    CMD
   end
 end
