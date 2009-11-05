@@ -1,9 +1,15 @@
 set :application, 'website'
 set :repository,  "git://github.com/amanikids/#{application}.git"
 
-set :deploy_to, "/var/www/apps/#{application}"
+set(:deploy_to) { "/var/www/apps/#{application}/#{rails_env}" }
 set :user, 'deploy'
 set :use_sudo, false
+
+set :rails_env, 'staging'
+
+task :production do
+  set :rails_env, 'production'
+end
 
 set :scm, :git
 set :branch, 'master'
