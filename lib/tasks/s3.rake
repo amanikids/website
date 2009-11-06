@@ -5,7 +5,7 @@ namespace :s3 do
     bucket_name = ENV['S3_BUCKET']
     begin
       puts 'Reading buckets...'
-      AWS::S3::Bucket.find
+      AWS::S3::Bucket.find(bucket_name)
     rescue AWS::S3::NoSuchBucket
       puts "Creating #{bucket_name} bucket..."
       AWS::S3::Bucket.create(bucket_name, :access => :public_read)
