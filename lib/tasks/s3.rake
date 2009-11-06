@@ -50,8 +50,8 @@ namespace :s3 do
   task :renamespace_documents => :connect do
     bucket = AWS::S3::Bucket.find(ENV['S3_BUCKET'])
 
-    OLD_PATTERN = %r{/documents/(\d+)/(.+)}
-    NEW_REPLACE = '/documents/\1/original/\2'
+    OLD_PATTERN = %r{^documents/(\d+)/([^/]+)$}
+    NEW_REPLACE = 'documents/\1/original/\2'
 
     bucket.objects(:prefix => 'documents').each do |object|
       old_key = object.key
