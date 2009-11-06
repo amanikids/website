@@ -48,8 +48,10 @@ namespace :db do
       rails_env = fetch(:rails_env, 'production')
       unless rails_env == 'production'
         run <<-CMD
-          rm -rf #{shared_path}/system &&
-          cp -rp /var/www/apps/#{application}/production/shared/system #{shared_path}
+          rm -rf #{shared_path}/system/documents &&
+          rm -rf #{shared_path}/system/photos &&
+          cp -rp /var/www/apps/#{application}/production/shared/system/documents #{shared_path}/system &&
+          cp -rp /var/www/apps/#{application}/production/shared/system/photos    #{shared_path}/system
         CMD
       end
     end
