@@ -5,10 +5,10 @@ namespace :s3 do
     bucket = ENV['S3_BUCKET']
 
     begin
-      puts 'Reading buckets...'
+      puts 'Reading buckets.'
       AWS::S3::Bucket.find(bucket)
     rescue AWS::S3::NoSuchBucket
-      puts "Creating #{bucket} bucket..."
+      puts "Creating #{bucket} bucket."
       AWS::S3::Bucket.create(bucket, :access => :public_read)
     end
   end
@@ -25,42 +25,32 @@ namespace :s3 do
       next if     path.basename.to_s == 'maintenance.html'
 
       key = path.relative_path_from(public_system).to_s
+      key = key.sub(%r{^documents/(\d+)/([^/]+)$}, 'documents/\1/original/\2')
 
-      STDOUT.write "[#{bucket}] Looking for #{key}... "; STDOUT.flush
+      puts "[#{bucket}] EXISTS? #{key}"
       if AWS::S3::S3Object.exists?(key, bucket)
         about = AWS::S3::S3Object.about(key, bucket)
 
         if about['last-modified'].to_time < path.mtime
-          puts 'STALE.'
+          puts "[#{bucket}] STALE #{key}"
         else
-          puts 'ok.'
+          puts "[#{bucket}] ACCESS #{key}"
+          public_read = AWS::S3::ACL::Grant.grant(:public_read)
+          policy      = AWS::S3::S3Object.acl(key, bucket)
+          unless policy.grants.include?(public_read)
+            policy.grants << public_read
+            AWS::S3::S3Object.acl(key, bucket, policy)
+          end
+
           next
         end
       else
-        puts 'NIL.'
+        puts "[#{bucket}] NONEXISTENT #{key}"
       end
 
-      puts "Storing #{key}..."
+      puts "[#{bucket}] STORE #{key}"
       path.open do |stream|
         AWS::S3::S3Object.store(key, stream, bucket, :access => :public_read, :cache_control => "public, max-age=#{10.years.to_i}")
-      end
-    end
-  end
-
-  desc 'Renamespace documents.'
-  task :renamespace_documents => :connect do
-    bucket = ENV['S3_BUCKET']
-
-    OLD_PATTERN = %r{^documents/(\d+)/([^/]+)$}
-    NEW_REPLACE = 'documents/\1/original/\2'
-
-    AWS::S3::Bucket.objects(bucket, :prefix => 'documents').each do |object|
-      old_key = object.key
-      new_key = old_key.sub(OLD_PATTERN, NEW_REPLACE)
-
-      unless old_key == new_key
-        puts "[#{bucket}] Renaming #{old_key} -> #{new_key}..."
-        object.rename(new_key)
       end
     end
   end
