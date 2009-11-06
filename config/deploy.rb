@@ -56,10 +56,10 @@ namespace :db do
   end
 end
 
-namespace :contents do
-  task :update_document_links do
+namespace :s3 do
+  task :transition do
     rake      = fetch(:rake, 'rake')
     rails_env = fetch(:rails_env, 'production')
-    run "cd #{latest_release}; #{rake} RAILS_ENV=#{rails_env} contents:update_document_links"
+    run "cd #{latest_release}; #{rake} RAILS_ENV=#{rails_env} s3:push contents:update_document_links"
   end
 end
