@@ -55,3 +55,11 @@ namespace :db do
     end
   end
 end
+
+namespace :contents do
+  task :fix_image_links do
+    rake      = fetch(:rake, 'rake')
+    rails_env = fetch(:rails_env, 'production')
+    run "cd #{latest_release}; #{rake} RAILS_ENV=#{rails_env} contents:fix_image_links"
+  end
+end
