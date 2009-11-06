@@ -49,7 +49,7 @@ namespace :db do
       unless rails_env == 'production'
         run <<-CMD
           rm -rf #{shared_path}/system &&
-          cp -r /var/www/apps/#{application}/production/shared/system #{shared_path}
+          cp -rp /var/www/apps/#{application}/production/shared/system #{shared_path}
         CMD
       end
     end
