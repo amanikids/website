@@ -18,6 +18,7 @@ namespace :s3 do
     public_system = Rails.root.join('public', 'system')
     public_system.find do |path|
       next unless path.file?
+      next if     path.basename.to_s == 'maintenance.html'
 
       key    = path.relative_path_from(public_system).to_s
       object = bucket[key] || bucket.new_object
