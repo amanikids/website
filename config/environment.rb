@@ -17,6 +17,7 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on and have them installed with rake gems:install
   config.gem 'RedCloth'
   config.gem 'authlogic'
+  config.gem 'aws-s3', :lib => 'aws/s3'
   config.gem 'fastercsv'
   config.gem 'haml'
   config.gem 'paperclip'
