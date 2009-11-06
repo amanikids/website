@@ -16,6 +16,8 @@ namespace :s3 do
     bucket = AWS::S3::Bucket.find(ENV['S3_BUCKET'])
 
     public_system = Rails.root.join('public', 'system')
+    public_system = public_system.readlink while public_system.symlink?
+
     public_system.find do |path|
       next unless path.file?
       next if     path.basename.to_s == 'maintenance.html'
