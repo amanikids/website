@@ -45,4 +45,22 @@ namespace :s3 do
       end
     end
   end
+
+  desc 'Renamespace documents.'
+  task :renamespace_documents => :connect do
+    bucket = AWS::S3::Bucket.find(ENV['S3_BUCKET'])
+
+    OLD_PATTERN = %r{/documents/(\d+)/(.+)}
+    NEW_REPLACE = '/documents/\1/original/\2'
+
+    bucket.objects(:prefix => 'documents').each do |object|
+      old_key = object.key
+      new_key = old_key.sub(OLD_PATTERN, NEW_REPLACE)
+
+      unless old_key == new_key
+        puts "[#{bucket.name}] Renaming #{old_key} -> #{new_key}..."
+        object.rename(new_key)
+      end
+    end
+  end
 end
