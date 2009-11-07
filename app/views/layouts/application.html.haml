@@ -8,7 +8,8 @@
       - else
         Amani Children's Home | Moshi, Tanzania
     = stylesheet_link_tag '/facebox/facebox', 'all'
-    = javascript_include_tag 'jquery', '/facebox/facebox', 'application'
+    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'
+    = javascript_include_tag '/facebox/facebox', 'application'
     = auto_discovery_link_tag :atom, formatted_feed_path(:atom)
     - if @content
       %meta{:name => 'keywords', :content => @content.keywords}
