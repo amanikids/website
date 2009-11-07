@@ -45,4 +45,6 @@ after 'deploy:finalize_update' do
 end
 
 after 'deploy:update_code', 'tapsuey:db:pull'
-after 'deploy:update_code', 's3:pull'
+
+# I'm leaving this one commented out by default since it takes an annoying-long amount of time.
+# after 'deploy:update_code', 's3:pull'
