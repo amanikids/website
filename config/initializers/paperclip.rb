@@ -3,7 +3,7 @@
 Paperclip.options[:command_path] = '/opt/local/bin'
 
 # S3 configuration!
-if ENV['S3_BUCKET']
+if ENV['S3_BUCKET'] && !Rails.env.test?
   Paperclip::Attachment.default_options[:storage]    = :s3
   Paperclip::Attachment.default_options[:bucket]     = ENV['S3_BUCKET']
   Paperclip::Attachment.default_options[:url]        = ':s3_domain_url'
