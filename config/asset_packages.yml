@@ -1,0 +1,15 @@
+---
+javascripts:
+- base:
+  - ../facebox/facebox
+  - application
+stylesheets:
+- base:
+  - ../facebox/facebox
+  - content
+  - document
+  - donation_page
+  - facebox
+  - form
+  - header
+  - navigation

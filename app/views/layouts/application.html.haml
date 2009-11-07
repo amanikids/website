@@ -7,9 +7,9 @@
         = "#{@content.title} &mdash; Amani Children's Home | Moshi, Tanzania"
       - else
         Amani Children's Home | Moshi, Tanzania
-    = stylesheet_link_tag '/facebox/facebox', 'all'
+    = stylesheet_link_merged :base
     = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'
-    = javascript_include_tag '/facebox/facebox', 'application'
+    = javascript_include_merged :base
     = auto_discovery_link_tag :atom, formatted_feed_path(:atom)
     - if @content
       %meta{:name => 'keywords', :content => @content.keywords}
