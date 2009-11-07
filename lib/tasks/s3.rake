@@ -34,14 +34,6 @@ namespace :s3 do
         if about['last-modified'].to_time < path.mtime
           puts "[#{bucket}] STALE #{key}"
         else
-          puts "[#{bucket}] ACCESS #{key}"
-          public_read = AWS::S3::ACL::Grant.grant(:public_read)
-          policy      = AWS::S3::S3Object.acl(key, bucket)
-          unless policy.grants.include?(public_read)
-            policy.grants << public_read
-            AWS::S3::S3Object.acl(key, bucket, policy)
-          end
-
           next
         end
       else
