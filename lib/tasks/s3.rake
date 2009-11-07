@@ -1,7 +1,7 @@
 namespace :s3 do
   desc 'Copy s3 production data to current environment.'
   task :pull => :environment do
-    return if Rails.env.production?
+    next if Rails.env.production?
 
     AWS::S3::Base.establish_connection!(
       :access_key_id     => ENV['S3_KEY'],
