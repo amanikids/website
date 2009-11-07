@@ -34,34 +34,3 @@ after 'deploy:finalize_update' do
     ln -s #{shared_path}/config/environment_variables.rb #{latest_release}/config/environment_variables.rb
   CMD
 end
-
-after 'deploy:update_code', 'tapsuey:db:pull'
-after 'deploy:update_code', 'db:pull:files'
-
-namespace :db do
-  namespace :pull do
-    # I'd rather just have `rake db:pull` depend on `rake db:pull:files`, but I
-    # don't have enough memory in production the rsync/ssh overhead. Sigh. Eagerly
-    # awaing the move to Heroku!
-    desc 'Pull production files to the latest release.'
-    task :files do
-      rails_env = fetch(:rails_env, 'production')
-      unless rails_env == 'production'
-        run <<-CMD
-          rm -rf #{shared_path}/system/documents &&
-          rm -rf #{shared_path}/system/photos &&
-          cp -rp /var/www/apps/#{application}/production/shared/system/documents #{shared_path}/system &&
-          cp -rp /var/www/apps/#{application}/production/shared/system/photos    #{shared_path}/system
-        CMD
-      end
-    end
-  end
-end
-
-namespace :s3 do
-  task :transition do
-    rake      = fetch(:rake, 'rake')
-    rails_env = fetch(:rails_env, 'production')
-    run "cd #{latest_release}; #{rake} RAILS_ENV=#{rails_env} s3:push contents:update_document_links"
-  end
-end
