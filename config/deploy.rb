@@ -26,6 +26,15 @@ namespace :deploy do
   end
 end
 
+namespace :s3 do
+  desc 'Copy s3 production data to current environment.'
+  task :pull do
+    rake      = fetch(:rake, 'rake')
+    rails_env = fetch(:rails_env, 'production')
+    run "cd #{latest_release}; #{rake} RAILS_ENV=#{rails_env} s3:pull"
+  end
+end
+
 after 'deploy:finalize_update' do
   run <<-CMD
     rm -rf #{latest_release}/config/database.yml &&
@@ -34,3 +43,6 @@ after 'deploy:finalize_update' do
     ln -s #{shared_path}/config/environment_variables.rb #{latest_release}/config/environment_variables.rb
   CMD
 end
+
+after 'deploy:update_code', 'tapsuey:db:pull'
+after 'deploy:update_code', 's3:pull'
