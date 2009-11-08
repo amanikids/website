@@ -23,12 +23,6 @@ config.action_controller.allow_forgery_protection    = false
 config.action_mailer.delivery_method = :test
 config.action_mailer.default_url_options = { :host => 'shoes.local:3000' }
 
-# Specify gems that this application depends on for testing.
-# They can then be installed with "RAILS_ENV=test rake gems:install" on new installations.
-config.gem 'factory_girl'
-config.gem 'mocha', :lib => false
-config.gem 'shoulda'
-
 # Use SQL instead of Active Record's schema dumper when creating the test database.
 # This is necessary if your schema can't be completely dumped by the schema dumper,
 # like if you have constraints or database-specific column types

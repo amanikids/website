@@ -19,6 +19,18 @@ set :git_enable_submodules, true
 
 server 'amanikids.joyeurs.com', :web, :app, :db, :primary => true, :user => user
 
+# TODO it would be better to read the Gemfile itself!
+depend :remote, :gem, 'bundler',        '>= 0.7.0'
+depend :remote, :gem, 'rack',           '= 1.0.1'
+depend :remote, :gem, 'rails',          '= 2.3.4'
+depend :remote, :gem, 'rake',           '>= 0.8.3'
+depend :remote, :gem, 'activesupport',  '= 2.3.4'
+depend :remote, :gem, 'activerecord',   '= 2.3.4'
+depend :remote, :gem, 'actionpack',     '= 2.3.4'
+depend :remote, :gem, 'actionmailer',   '= 2.3.4'
+depend :remote, :gem, 'activeresource', '= 2.3.4'
+depend :remote, :gem, 'RedCloth',       '>= 4.0.3'
+
 namespace :deploy do
   desc 'Restart the Application'
   task :restart do
@@ -44,7 +56,10 @@ after 'deploy:finalize_update' do
   CMD
 end
 
-after 'deploy:update_code', 'tapsuey:db:pull'
+after 'deploy:update_code' do
+  run "cd #{latest_release}; gem bundle"
+end
 
+after 'deploy:update_code', 'tapsuey:db:pull'
 # I'm leaving this one commented out by default since it takes an annoying-long amount of time.
 # after 'deploy:update_code', 's3:pull'

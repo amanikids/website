@@ -6,3 +6,5 @@ public/stylesheets/*.css
 !public/stylesheets/*_packaged.css
 public/system
 tmp/*
+vendor/bundler_gems/*
+!vendor/bundler_gems/cache
