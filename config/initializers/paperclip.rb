@@ -1,7 +1,3 @@
-# convert and identify are installed in /opt/local both on my machine (via MacPorts) and in production.
-# FIXME should remove this line before pushing to Heroku
-Paperclip.options[:command_path] = '/opt/local/bin'
-
 # S3 configuration!
 if ENV['S3_BUCKET'] && !Rails.env.test?
   Paperclip::Attachment.default_options[:storage]    = :s3

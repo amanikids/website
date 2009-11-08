@@ -14,11 +14,3 @@ Tapsuey.password = ENV['TAPSUEY_SECRET']
 # Tapsuey.port       = nil       # or 3000, for poking around locally
 # Tapsuey.username   = 'tapsuey'
 # Tapsuey.chunk_size = 1000      # see Taps::ClientSession
-
-# Taps is a little funky in that it calls back out to its own `schema` script,
-# requiring that ruby be in your PATH. If you see "primary key must be unique"
-# kinds of errors when re-pulling from production, try something like this:
-path = ENV['PATH'].split(File::PATH_SEPARATOR)
-path.unshift('/opt/local/bin')
-path.uniq!
-ENV['PATH'] = path.join(File::PATH_SEPARATOR)
