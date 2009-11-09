@@ -13,7 +13,7 @@ task :production do
 end
 
 set :scm, :git
-set :branch, 'master'
+set :branch, 'joyent'
 set :deploy_via, :remote_cache
 set :git_enable_submodules, true
 
