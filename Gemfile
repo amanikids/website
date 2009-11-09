@@ -20,6 +20,7 @@ gem 'fastercsv'
 gem 'haml'
 gem 'matthewtodd-taps'
 gem 'paperclip'
+gem 'rack-canonical-host'
 
 only :test do
   gem 'factory_girl'
