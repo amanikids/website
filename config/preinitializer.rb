@@ -11,7 +11,6 @@ load(environment_variables) if File.exists?(environment_variables)
 # ENV['S3_KEY']         = ''
 # ENV['S3_SECRET']      = ''
 # ENV['SESSION_SECRET'] = ''
-# ENV['TAPSUEY_SECRET'] = ''
 
 # =====================================================================
 # Use bundler.

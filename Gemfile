@@ -18,7 +18,6 @@ gem 'authlogic'
 gem 'aws-s3', :require_as => 'aws/s3'
 gem 'fastercsv'
 gem 'haml'
-gem 'matthewtodd-taps'
 gem 'paperclip'
 gem 'rack-canonical-host'
 

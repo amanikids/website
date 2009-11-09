@@ -1,3 +1,0 @@
-[submodule "vendor/plugins/tapsuey"]
-	path = vendor/plugins/tapsuey
-	url = git://github.com/matthewtodd/tapsuey.git
