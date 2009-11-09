@@ -19,7 +19,7 @@ config.action_view.cache_template_loading            = true
 # config.cache_store = :mem_cache_store
 
 # Enable serving of images, stylesheets, and javascripts from an asset server
-config.action_controller.asset_host = 'http://assets%d.staging.amanikids.org'
+# config.action_controller.asset_host = 'http://assets%d.staging.amanikids.org'
 
 # ActionMailer settings
 config.action_mailer.default_url_options = {
