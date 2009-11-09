@@ -4,7 +4,6 @@ clear_sources
 source 'http://gemcutter.org'
 
 # We can reasonably expect these gems to be installed anywhere, so we don't bundle them.
-gem 'rack',           '= 1.0.1', :bundle => false
 gem 'rails',          '= 2.3.4', :bundle => false
 gem 'rake',           '= 0.8.7', :bundle => false
 gem 'activesupport',  '= 2.3.4', :bundle => false
@@ -19,6 +18,7 @@ gem 'aws-s3', :require_as => 'aws/s3'
 gem 'fastercsv'
 gem 'haml'
 gem 'paperclip'
+gem 'rack'
 gem 'rack-canonical-host'
 
 only :test do

@@ -12,6 +12,8 @@ module Bundler
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/builder-2.1.2/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/factory_girl-1.2.3/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/factory_girl-1.2.3/lib")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rack-1.0.1/bin")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rack-1.0.1/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/mime-types-1.16/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/mime-types-1.16/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/aws-s3-0.6.2/bin")
@@ -20,12 +22,12 @@ module Bundler
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/shoulda-2.10.2/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rack-canonical-host-0.0.1/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rack-canonical-host-0.0.1/lib")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/gems/mocha-0.9.8/bin")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/gems/mocha-0.9.8/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/authlogic-2.1.2/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/authlogic-2.1.2/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/haml-2.2.12/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/haml-2.2.12/lib")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/gems/mocha-0.9.8/bin")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/gems/mocha-0.9.8/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/paperclip-2.3.1.1/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/paperclip-2.3.1.1/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/fastercsv-1.5.0/bin")
@@ -38,13 +40,14 @@ module Bundler
   @bundled_specs = {}
   @bundled_specs["xml-simple"] = eval(File.read("#{dir}/specifications/xml-simple-1.0.12.gemspec"))
   @bundled_specs["xml-simple"].loaded_from = "#{dir}/specifications/xml-simple-1.0.12.gemspec"
-  gem "activesupport", "2.3.4"
   gem "RedCloth", "4.1.9"
+  gem "activesupport", "2.3.4"
   @bundled_specs["builder"] = eval(File.read("#{dir}/specifications/builder-2.1.2.gemspec"))
   @bundled_specs["builder"].loaded_from = "#{dir}/specifications/builder-2.1.2.gemspec"
   @bundled_specs["factory_girl"] = eval(File.read("#{dir}/specifications/factory_girl-1.2.3.gemspec"))
   @bundled_specs["factory_girl"].loaded_from = "#{dir}/specifications/factory_girl-1.2.3.gemspec"
-  gem "rack", "1.0.1"
+  @bundled_specs["rack"] = eval(File.read("#{dir}/specifications/rack-1.0.1.gemspec"))
+  @bundled_specs["rack"].loaded_from = "#{dir}/specifications/rack-1.0.1.gemspec"
   gem "actionpack", "2.3.4"
   gem "actionmailer", "2.3.4"
   @bundled_specs["mime-types"] = eval(File.read("#{dir}/specifications/mime-types-1.16.gemspec"))
@@ -55,13 +58,13 @@ module Bundler
   @bundled_specs["shoulda"].loaded_from = "#{dir}/specifications/shoulda-2.10.2.gemspec"
   @bundled_specs["rack-canonical-host"] = eval(File.read("#{dir}/specifications/rack-canonical-host-0.0.1.gemspec"))
   @bundled_specs["rack-canonical-host"].loaded_from = "#{dir}/specifications/rack-canonical-host-0.0.1.gemspec"
-  gem "rake", "0.8.7"
-  @bundled_specs["mocha"] = eval(File.read("#{dir}/specifications/mocha-0.9.8.gemspec"))
-  @bundled_specs["mocha"].loaded_from = "#{dir}/specifications/mocha-0.9.8.gemspec"
   @bundled_specs["authlogic"] = eval(File.read("#{dir}/specifications/authlogic-2.1.2.gemspec"))
   @bundled_specs["authlogic"].loaded_from = "#{dir}/specifications/authlogic-2.1.2.gemspec"
   @bundled_specs["haml"] = eval(File.read("#{dir}/specifications/haml-2.2.12.gemspec"))
   @bundled_specs["haml"].loaded_from = "#{dir}/specifications/haml-2.2.12.gemspec"
+  gem "rake", "0.8.7"
+  @bundled_specs["mocha"] = eval(File.read("#{dir}/specifications/mocha-0.9.8.gemspec"))
+  @bundled_specs["mocha"].loaded_from = "#{dir}/specifications/mocha-0.9.8.gemspec"
   gem "activerecord", "2.3.4"
   @bundled_specs["paperclip"] = eval(File.read("#{dir}/specifications/paperclip-2.3.1.1.gemspec"))
   @bundled_specs["paperclip"].loaded_from = "#{dir}/specifications/paperclip-2.3.1.1.gemspec"
