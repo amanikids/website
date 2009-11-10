@@ -1,0 +1,7 @@
+.admin .content {position: relative}
+.admin .content form .annotation {color: #777; font-size: 90%}
+.admin .content form textarea {display: block; height: 12em; width: 48%}
+.admin .content .photos {float: right}
+.admin .content .photos h2 {margin-top: 0}
+.admin .content .photos .photo {background-color: #eee; margin-bottom: 1em; padding: 1em}
+.admin .content .photos .photo form {margin: 0}

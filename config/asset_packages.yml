@@ -13,3 +13,5 @@ stylesheets:
   - form
   - header
   - navigation
+- admin:
+  - admin
