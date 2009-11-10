@@ -17,13 +17,13 @@
 .facebox_hide {z-index:-100}
 .facebox_overlayBG {background-color: #000; z-index: 99}
 * html #facebox_overlay { position: absolute; height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px')}
-#content {color: #666666; font-family: Constantia, Georgia, Times New Roman , serif; margin: 1em 80px; position: relative}
+#content {color: #666666; font-family: Constantia, Georgia, Times New Roman, serif; margin: 1em 80px; position: relative}
 #content .gallery .thumbnails {float: left; height: 500px; margin: 0; overflow: hidden; padding: 0; position: relative; width: 136px}
 #content .gallery .thumbnails .arrow {background-color: #fff; color: #ffc614; font-size: 16px; line-height: 24px; height: 24px; text-align: center; width: 120px}
 #content .gallery .thumbnails .arrow:hover {cursor: pointer}
 #content .gallery .thumbnails ul {height: 452px; list-style: none; margin: 0; overflow: hidden; padding: 0}
 #content .gallery .thumbnails li {border-right: 16px solid #fff; line-height: 0; margin: 0; margin-bottom: 16px; padding: 0; position: relative}
-#content .gallery .thumbnails li .caption {background-color: #000000; color: #fff; position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; line-height: 1.3em; padding: 0.5em; font-family: Century Gothic , Verdana, Arial, sans-serif; font-size: 0.9em; font-weight: bold; opacity: 0.7; -moz-opacity: 0.7; filter: alpha(opacity=70)}
+#content .gallery .thumbnails li .caption {background-color: black; color: #fff; position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; line-height: 1.3em; padding: 0.5em; font-family: Century Gothic, Verdana, Arial, sans-serif; font-size: 0.9em; font-weight: bold; opacity: 0.7; -moz-opacity: 0.7; filter: alpha(opacity=70)}
 #content .gallery .thumbnails li img {border-width: 0}
 #content .gallery .thumbnails li.current img {border: 5px solid #de6a2a; width: 110px; height: 110px}
 #content .gallery .image {margin-left: 0px; width: 364px}
@@ -31,7 +31,7 @@
 #content .image .photo {position: absolute; top: 0; left: 0; z-index: 0}
 #content .image.no-captions {height: 500px}
 #content #social_network_links {clear: left; float: left; margin-top: 12px; margin-bottom: 24px; text-align: center; width: 500px}
-#content #social_network_links p {font-family: Century Gothic , Verdana, Arial, sans-serif; font-weight: bold; font-size: .75em; margin: 0; padding: 0.5em 0 0 0}
+#content #social_network_links p {font-family: Century Gothic, Verdana, Arial, sans-serif; font-weight: bold; font-size: .75em; margin: 0; padding: 0.5em 0 0 0}
 #content #social_network_links ul {list-style: none; margin: 0; padding: 0}
 #content #social_network_links li {display: inline}
 #content #social_network_links li img {vertical-align: middle}
@@ -40,18 +40,18 @@
 #content .text {margin-left: 516px}
 #content .two_column_text table {border-collapse: collapse; width: 100%}
 #content .two_column_text table td {vertical-align: top; width: 50%}
-#content .breadcrumbs {color: #de6a2a; font-family: Century Gothic , Verdana, Arial, sans-serif}
-#content h1 {color: #de6a2a; font-family: Century Gothic , Verdana, Arial, sans-serif; margin-top: 0; padding: 0}
-#content h2 {color: #de6a2a; font-family: Century Gothic , Verdana, Arial, sans-serif}
+#content .breadcrumbs {color: #de6a2a; font-family: Century Gothic, Verdana, Arial, sans-serif}
+#content h1 {color: #de6a2a; font-family: Century Gothic, Verdana, Arial, sans-serif; margin-top: 0; padding: 0}
+#content h2 {color: #de6a2a; font-family: Century Gothic, Verdana, Arial, sans-serif}
 #content ul {list-style-type: square; padding-left: 1.25em}
-#content .box {background-color: rgb(252, 222, 127); border: 1px solid #de6a2a; color: black; margin-bottom: 1em; padding: 1em}
+#content .box {background-color: #fcde7f; border: 1px solid #de6a2a; color: black; margin-bottom: 1em; padding: 1em}
 #content .box h2 {margin-top: 0}
 #content .blog h2 {margin-bottom: 0.5em}
 #content .blog h2 a {color: #de6a2a; text-decoration: none}
 #content .blog ul {list-style: none; margin-bottom: 0; margin-top: 0; padding: 0}
 #content .blog li {margin-bottom: 0.5em}
 #content .blog li a {text-decoration: none}
-#content .blog li a .title {font-family: Century Gothic , Verdana, Arial, sans-serif}
+#content .blog li a .title {font-family: Century Gothic, Verdana, Arial, sans-serif}
 #content .blog li a .excerpt {font-size: 0.8em}
 #content .blog li a .excerpt p {margin: 0}
 #content .blog_text {margin-right: 216px}
@@ -61,12 +61,12 @@
 #content .blog_archive ul li {margin-bottom: 1em}
 #content .next_link a {background-color: #de6a2a; border: 1px solid #de6a2a; color: white; float: right; margin-top: 1em}
 #content .next_link a:hover {background-color: white; color: #de6a2a}
-#content a.button {display: block; font-family: Century Gothic , Verdana, Arial, sans-serif; font-size: 14px; font-weight: bold; margin-left: 1em; margin-bottom: 1em; padding: 0.4em 0.5em 0.5em; text-decoration: none}
+#content a.button {display: block; font-family: Century Gothic, Verdana, Arial, sans-serif; font-size: 14px; font-weight: bold; margin-left: 1em; margin-bottom: 1em; padding: 0.4em 0.5em 0.5em; text-decoration: none}
 #content .footer {border-top: 2px solid #ffc614; clear: both; font-size: 0.8em; margin-top: 1em; padding: 1em 0em}
 #content .footer p {margin-top: 0; margin-bottom: 1em}
 #content .footer p.thanks {color: #aaaaaa}
 #content .footer a {color: #666666}
-#content .footer a.share {background-color: rgb(251, 209, 77); border: 1px solid rgb(251, 209, 77); color: #de6a2a; float: right}
+#content .footer a.share {background-color: #fbd14d; border: 1px solid #fbd14d; color: #de6a2a; float: right}
 #content .footer a.share:hover {background-color: white; border-color: #de6a2a; color: #de6a2a}
 body {margin: 0; padding: 0}
 a img {border: 0}
@@ -75,18 +75,18 @@ a img {border: 0}
 #donation_page td.left {background-color: #eee; font-size: 0.9em; width: 200px}
 #donation_page td.left .padding {padding: 1em}
 #donation_page td.middle {padding: 0 1em}
-#donation_page td.middle .donation_buttons {background-color: rgb(252, 222, 127); padding: 1em}
-#donation_page td.middle .donation_buttons h3 {color: #de6a2a; font-family: Century Gothic , Verdana, Arial, sans-serif; font-size: 1em; margin: 0 0 1em 0}
+#donation_page td.middle .donation_buttons {background-color: #fcde7f; padding: 1em}
+#donation_page td.middle .donation_buttons h3 {color: #de6a2a; font-family: Century Gothic, Verdana, Arial, sans-serif; font-size: 1em; margin: 0 0 1em 0}
 #donation_page td.middle .donation_buttons form.inline {float: left; margin-right: 1em; margin-bottom: 1em; text-align: center}
 #donation_page td.middle .donation_buttons form.inline.helping-hands {width: 10em}
 #donation_page td.middle .donation_buttons form.inline.helping-hands input.helping-hands-image {width: 110px; height: 110px}
 #donation_page td.middle .donation_buttons form.block {clear: left; margin-bottom: 0em}
 #donation_page td.right {width: 200px}
 #donation_page td.right .photo {margin-bottom: 8px}
-#facebox {color: #666666; font-family: Constantia, Georgia, Times New Roman , serif}
+#facebox {color: #666666; font-family: Constantia, Georgia, Times New Roman, serif}
 #facebox .body {padding: 0}
 #facebox .padded, #facebox .loading {padding: 16px}
-#facebox h1 {background-color: #ffc614; color: #fff; font-family: Century Gothic , Verdana, Arial, sans-serif; margin: 0; padding: 24px 16px 8px}
+#facebox h1 {background-color: #ffc614; color: #fff; font-family: Century Gothic, Verdana, Arial, sans-serif; margin: 0; padding: 24px 16px 8px}
 #facebox form {margin: 0}
 form label {display: block}
 form .formError {color: #de6a2a; display: block}
@@ -96,18 +96,18 @@ form .field.textarea textarea {width: 100%}
 .header {margin: 1em 80px; height: 5.5em}
 .header .logo {margin: 0; padding: 0}
 .header .logo img {border-width: 0}
-.header .tagline {color: #de6a2a; float: right; font-family: Constantia, Georgia, Times New Roman , serif; font-style: italic; position: absolute; top: 5em; right: 80px}
+.header .tagline {color: #de6a2a; float: right; font-family: Constantia, Georgia, Times New Roman, serif; font-style: italic; position: absolute; top: 5em; right: 80px}
 .header .links {list-style: none; margin: 0; padding: 0; position: absolute; top: 2em; right: 80px}
 .header .links li {display: inline}
-.header .links li a {color: #666666; display: block; float: left; font-family: Century Gothic , Verdana, Arial, sans-serif; font-size: 0.6em; font-weight: bold; margin-left: 2em; text-align: center; text-decoration: none; text-transform: uppercase}
+.header .links li a {color: #666666; display: block; float: left; font-family: Century Gothic, Verdana, Arial, sans-serif; font-size: 0.6em; font-weight: bold; margin-left: 2em; text-align: center; text-decoration: none; text-transform: uppercase}
 .header .links li a img {border: 0; margin: 0; padding: 0}
 .header .links li a span {display: block; margin: 0; padding: 0; text-align: center}
-.navigation {background-color: #de6a2a; clear: both; font-family: Century Gothic , Verdana, Arial, sans-serif; font-size: 14px; font-weight: bold; height: 30px; line-height: 16px; margin: 0; padding: 0 80px; position: relative; z-index: 10}
+.navigation {background-color: #de6a2a; clear: both; font-family: Century Gothic, Verdana, Arial, sans-serif; font-size: 14px; font-weight: bold; height: 30px; line-height: 16px; margin: 0; padding: 0 80px; position: relative; z-index: 10}
 .navigation .tops {list-style: none; margin: 0; padding: 0}
-.navigation .tops .top {border-left: 1px solid rgb(251, 209, 77); float: left; margin: 0; padding: 0; position: relative}
-.navigation .tops .top .title {color: #ffffff; display: block; margin: 0; padding: 0.5em 1em; text-decoration: none; white-space: nowrap}
-.navigation .tops .top .title:hover {background-color: rgb(251, 209, 77); color: #de6a2a}
+.navigation .tops .top {border-left: 1px solid #fbd14d; float: left; margin: 0; padding: 0; position: relative}
+.navigation .tops .top .title {color: white; display: block; margin: 0; padding: 0.5em 1em; text-decoration: none; white-space: nowrap}
+.navigation .tops .top .title:hover {background-color: #fbd14d; color: #de6a2a}
 .navigation .tops .top .children {background-color: #de6a2a; display: none; list-style: none; margin: 0; padding: 0; position: absolute}
 .navigation .tops .top .children .child {display: inline; font-weight: normal; margin: 0; padding: 0}
-.navigation .tops .top .children .child .title {border-top: 1px solid rgb(251, 209, 77); position: relative; left: 0; right: 0}
+.navigation .tops .top .children .child .title {border-top: 1px solid #fbd14d; position: relative; left: 0; right: 0}
 .navigation .tops .top.first {border-left: none}
