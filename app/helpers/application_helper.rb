@@ -80,21 +80,21 @@ module ApplicationHelper
 
   class JustGivingDonationFormBuilder < DonationFormBuilder
     def form_action
-      'http://www.justgiving.com/charity/donate.asp'
+      'https://www.justgiving.com/donation/direct/Default.aspx'
     end
 
     private
 
     def shared_hidden_fields
-      { :submitted => true, :FRSId => 249192, :FundraiserId => 182061, :SiteCategory => 'CharityMicroSite', :ProcessStepName => 'CharityLandingPage', :amount => @amount }
+      { :cid => 182061, :amt => @amount, :cr => 'true' }
     end
 
     def specific_hidden_fields
       case @kind
       when :one_time
-        { :_monthly => 0 }
+        { :df => 0 }
       when :monthly
-        { :_monthly => 1 }
+        { :df => 1 }
       end
     end
   end
