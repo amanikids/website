@@ -3,7 +3,7 @@
 %html{html_attrs}
   %head
     = stylesheet_link_tag 'admin'
-    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js'
+    = javascript_include_tag_either 'prototype-1.6.1.0', 'http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js'
 
   %body.admin
     - if @current_user

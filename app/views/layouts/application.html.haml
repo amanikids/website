@@ -7,8 +7,8 @@
         = "#{@content.title} &mdash; Amani Children's Home | Moshi, Tanzania"
       - else
         Amani Children's Home | Moshi, Tanzania
-    = stylesheet_link_tag '/facebox/facebox.css', 'content', 'document', 'donation_page', 'facebox', 'form', 'header', 'navigation'
-    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'
+    = stylesheet_link_tag '/facebox/facebox.css', 'application'
+    = javascript_include_tag_either 'jquery-1.3.2', 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'
     = javascript_include_tag '/facebox/facebox.js', 'application'
     = auto_discovery_link_tag :atom, formatted_feed_path(:atom)
     - if @content

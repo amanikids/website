@@ -36,6 +36,14 @@ module ApplicationHelper
     concat("\n</form>\n")
   end
 
+  def javascript_include_tag_either(development, production)
+    if Rails.env.development?
+      javascript_include_tag development
+    else
+      javascript_include_tag production
+    end
+  end
+
   def slideshow_tag(photos, options = {})
     render :partial => photos, :locals => { :style => :large, :size => '500x500', :slideshow => true }.merge(options)
   end
