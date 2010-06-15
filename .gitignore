@@ -2,7 +2,5 @@
 config/environment_variables.rb
 db/*.sqlite3
 log/*.log
-public/stylesheets/*.css
-!public/stylesheets/*_packaged.css
 public/system
 tmp/*
