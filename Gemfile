@@ -1,28 +1,26 @@
-bin_path 'vendor/bundler_gems/bin'
-bundle_path 'vendor/bundler_gems'
-clear_sources
-source 'http://gemcutter.org'
+source 'http://rubygems.org'
 
-# We can reasonably expect these gems to be installed anywhere, so we don't bundle them.
-gem 'rails',          '= 2.3.4', :bundle => false
-gem 'rake',           '= 0.8.7', :bundle => false
-gem 'activesupport',  '= 2.3.4', :bundle => false
-gem 'activerecord',   '= 2.3.4', :bundle => false
-gem 'actionpack',     '= 2.3.4', :bundle => false
-gem 'actionmailer',   '= 2.3.4', :bundle => false
-gem 'activeresource', '= 2.3.4', :bundle => false
-gem 'RedCloth',       '= 4.1.9', :bundle => false
+gem 'rails', '2.3.4', :require => nil
 
-gem 'authlogic'
-gem 'aws-s3', :require_as => 'aws/s3'
-gem 'fastercsv'
-gem 'haml'
-gem 'paperclip'
-gem 'rack'
-gem 'rack-canonical-host'
+gem 'authlogic',           '2.1.2'
+gem 'aws-s3',              '0.6.2', :require => 'aws/s3'
+gem 'fastercsv',           '1.5.0'
+gem 'haml',                '2.2.12'
+gem 'paperclip',           '2.3.1.1'
+gem 'rack-canonical-host', '0.0.1'
+gem 'RedCloth',            '4.1.9'
 
-only :test do
-  gem 'factory_girl'
-  gem 'mocha', :require_as => []
-  gem 'shoulda'
+group :development do
+  gem 'sqlite3-ruby',      '1.2.5', :require => 'sqlite3'
+end
+
+group :test do
+  gem 'factory_girl',      '1.2.3'
+  gem 'mocha',             '0.9.8', :require => nil
+  gem 'shoulda',           '2.10.2'
+  gem 'sqlite3-ruby',      '1.2.5', :require => 'sqlite3'
+end
+
+group :production do
+  gem 'pg',                '0.9.0'
 end

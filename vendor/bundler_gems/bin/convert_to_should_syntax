@@ -1,3 +1,0 @@
-#!/opt/local/bin/ruby
-require File.join(File.dirname(__FILE__), "../environment")
-load File.join(File.dirname(__FILE__), "../gems/shoulda-2.10.2/bin/convert_to_should_syntax")
