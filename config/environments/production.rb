@@ -27,13 +27,13 @@ config.action_mailer.default_url_options = {
 }
 
 config.action_mailer.smtp_settings = {
-  :tls            => true,
-  :address        => 'smtp.gmail.com',
-  :port           => '587',
-  :domain         => 'amanikids.org',
-  :authentication => :plain,
-  :user_name      => 'no-reply@amanikids.org',
-  :password       => ENV['GOOGLE_SECRET']
+  :address              => 'smtp.gmail.com',
+  :port                 => '587',
+  :domain               => 'amanikids.org',
+  :user_name            => 'no-reply@amanikids.org',
+  :password             => ENV['GOOGLE_SECRET'],
+  :authentication       => :plain,
+  :enable_starttls_auto => true
 }
 
 # Enable threaded mode
