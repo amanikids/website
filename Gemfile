@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '2.3.4', :require => nil
+gem 'rails', '2.3.8', :require => nil
 
 gem 'authlogic',           '2.1.2'
 gem 'aws-s3',              '0.6.2', :require => 'aws/s3'

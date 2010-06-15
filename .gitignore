@@ -1,4 +1,5 @@
-*~
+.bundle
+.rvmrc
 config/environment_variables.rb
 db/*.sqlite3
 log/*.log

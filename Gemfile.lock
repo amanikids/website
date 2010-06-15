@@ -11,7 +11,7 @@ dependencies:
   rails: 
     group: 
     - :default
-    version: = 2.3.4
+    version: = 2.3.8
     require: []
 
   authlogic: 
@@ -66,17 +66,17 @@ specs:
 - RedCloth: 
     version: 4.1.9
 - activesupport: 
-    version: 2.3.4
+    version: 2.3.8
 - rack: 
-    version: 1.0.1
+    version: 1.1.0
 - actionpack: 
-    version: 2.3.4
+    version: 2.3.8
 - actionmailer: 
-    version: 2.3.4
+    version: 2.3.8
 - activerecord: 
-    version: 2.3.4
+    version: 2.3.8
 - activeresource: 
-    version: 2.3.4
+    version: 2.3.8
 - authlogic: 
     version: 2.1.2
 - builder: 
@@ -102,12 +102,12 @@ specs:
 - rack-canonical-host: 
     version: 0.0.1
 - rails: 
-    version: 2.3.4
+    version: 2.3.8
 - shoulda: 
     version: 2.10.2
 - sqlite3-ruby: 
     version: 1.2.5
-hash: 30040034dd4dbd4751af5ec3b57466f7c543428e
+hash: f44c2e6091e3712d40e48f6eb8da82b560f8ef14
 sources: 
 - Rubygems: 
     uri: http://rubygems.org
