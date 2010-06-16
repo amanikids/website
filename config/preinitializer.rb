@@ -1,8 +1,14 @@
 # =====================================================================
 # This is a nice way to use heroku-style environment variables locally.
 # =====================================================================
-environment_variables = File.join(RAILS_ROOT, 'config', 'environment_variables.rb')
-load(environment_variables) if File.exists?(environment_variables)
+environment = File.join(RAILS_ROOT, 'config', 'environment.yml')
+
+if File.exists?(environment)
+  require 'yaml'
+  YAML.load_file(environment).each do |key, value|
+    ENV[key.upcase] = value
+  end
+end
 
 # You'll need to set the following:
 # ENV['CANONICAL_HOST'] = '' # Actually, this one's optional.
