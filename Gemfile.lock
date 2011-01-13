@@ -1,113 +1,62 @@
---- 
-dependencies: 
-  fastercsv: 
-    group: 
-    - :default
-    version: = 1.5.0
-  pg: 
-    group: 
-    - :production
-    version: = 0.9.0
-  rails: 
-    group: 
-    - :default
-    version: = 2.3.8
-    require: []
+GEM
+  remote: http://rubygems.org/
+  specs:
+    RedCloth (4.1.9)
+    actionmailer (2.3.8)
+      actionpack (= 2.3.8)
+    actionpack (2.3.8)
+      activesupport (= 2.3.8)
+      rack (~> 1.1.0)
+    activerecord (2.3.8)
+      activesupport (= 2.3.8)
+    activeresource (2.3.8)
+      activesupport (= 2.3.8)
+    activesupport (2.3.8)
+    authlogic (2.1.2)
+      activesupport
+    aws-s3 (0.6.2)
+      builder
+      mime-types
+      xml-simple
+    builder (3.0.0)
+    factory_girl (1.2.3)
+    fastercsv (1.5.0)
+    haml (2.2.12)
+    heroku-environment (0.0.1)
+    mime-types (1.16)
+    mocha (0.9.8)
+      rake
+    paperclip (2.3.1.1)
+    pg (0.9.0)
+    rack (1.1.0)
+    rack-canonical-host (0.0.1)
+    rails (2.3.8)
+      actionmailer (= 2.3.8)
+      actionpack (= 2.3.8)
+      activerecord (= 2.3.8)
+      activeresource (= 2.3.8)
+      activesupport (= 2.3.8)
+      rake (>= 0.8.3)
+    rake (0.8.7)
+    shoulda (2.10.2)
+    sqlite3-ruby (1.2.5)
+    xml-simple (1.0.12)
 
-  authlogic: 
-    group: 
-    - :default
-    version: = 2.1.2
-  haml: 
-    group: 
-    - :default
-    version: = 2.2.12
-  sqlite3-ruby: 
-    group: 
-    - :test
-    version: = 1.2.5
-    require: 
-    - sqlite3
-  shoulda: 
-    group: 
-    - :test
-    version: = 2.10.2
-  rack-canonical-host: 
-    group: 
-    - :default
-    version: = 0.0.1
-  factory_girl: 
-    group: 
-    - :test
-    version: = 1.2.3
-  paperclip: 
-    group: 
-    - :default
-    version: = 2.3.1.1
-  mocha: 
-    group: 
-    - :test
-    version: = 0.9.8
-    require: []
+PLATFORMS
+  ruby
 
-  RedCloth: 
-    group: 
-    - :default
-    version: = 4.1.9
-  aws-s3: 
-    group: 
-    - :default
-    version: = 0.6.2
-    require: 
-    - aws/s3
-specs: 
-- rake: 
-    version: 0.8.7
-- RedCloth: 
-    version: 4.1.9
-- activesupport: 
-    version: 2.3.8
-- rack: 
-    version: 1.1.0
-- actionpack: 
-    version: 2.3.8
-- actionmailer: 
-    version: 2.3.8
-- activerecord: 
-    version: 2.3.8
-- activeresource: 
-    version: 2.3.8
-- authlogic: 
-    version: 2.1.2
-- builder: 
-    version: 2.1.2
-- mime-types: 
-    version: "1.16"
-- xml-simple: 
-    version: 1.0.12
-- aws-s3: 
-    version: 0.6.2
-- factory_girl: 
-    version: 1.2.3
-- fastercsv: 
-    version: 1.5.0
-- haml: 
-    version: 2.2.12
-- mocha: 
-    version: 0.9.8
-- paperclip: 
-    version: 2.3.1.1
-- pg: 
-    version: 0.9.0
-- rack-canonical-host: 
-    version: 0.0.1
-- rails: 
-    version: 2.3.8
-- shoulda: 
-    version: 2.10.2
-- sqlite3-ruby: 
-    version: 1.2.5
-hash: f44c2e6091e3712d40e48f6eb8da82b560f8ef14
-sources: 
-- Rubygems: 
-    uri: http://rubygems.org
+DEPENDENCIES
+  RedCloth (= 4.1.9)
+  authlogic (= 2.1.2)
+  aws-s3 (= 0.6.2)
+  factory_girl (= 1.2.3)
+  fastercsv (= 1.5.0)
+  haml (= 2.2.12)
+  heroku-environment (= 0.0.1)
+  mocha (= 0.9.8)
+  paperclip (= 2.3.1.1)
+  pg (= 0.9.0)
+  rack-canonical-host (= 0.0.1)
+  rails (= 2.3.8)
+  shoulda (= 2.10.2)
+  sqlite3-ruby (= 1.2.5)

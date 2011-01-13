@@ -11,6 +11,7 @@ gem 'rack-canonical-host', '0.0.1'
 gem 'RedCloth',            '4.1.9'
 
 group :development do
+  gem 'heroku-environment', '0.0.1'
   gem 'sqlite3-ruby',      '1.2.5', :require => 'sqlite3'
 end
 

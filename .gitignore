@@ -1,6 +1,6 @@
 .bundle
+.environment
 .rvmrc
-config/environment.yml
 db/*.sqlite3
 log/*.log
 public/system
