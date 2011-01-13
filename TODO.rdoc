@@ -1,0 +1,4 @@
+* Upgrade to Rails 2.3.10.
+* Add at least a Home, a User, to db/seeds.rb.
+* Investigate S3 pull. Clean up the staging bucket.
+* Set up minitest/pride?
