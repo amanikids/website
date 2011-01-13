@@ -1,7 +1,6 @@
 .bundle
 .environment
 .rvmrc
-db/*.sqlite3
 log/*.log
 public/system
 tmp/*

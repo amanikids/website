@@ -39,7 +39,6 @@ GEM
       rake (>= 0.8.3)
     rake (0.8.7)
     shoulda (2.10.2)
-    sqlite3-ruby (1.2.5)
     xml-simple (1.0.12)
 
 PLATFORMS
@@ -59,4 +58,3 @@ DEPENDENCIES
   rack-canonical-host (= 0.0.1)
   rails (= 2.3.8)
   shoulda (= 2.10.2)
-  sqlite3-ruby (= 1.2.5)
