@@ -1,6 +1,5 @@
 .bundle
 .environment
-.rvmrc
 log/*.log
 public/system
 tmp/*
