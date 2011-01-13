@@ -12,7 +12,7 @@ gem 'rack-canonical-host', '0.0.1'
 gem 'RedCloth',            '4.1.9'
 
 group :development do
-  gem 'heroku',            '1.17.5'
+  gem 'heroku',            '1.17.5', :require => nil
 end
 
 group :test do
