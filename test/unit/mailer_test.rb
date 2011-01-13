@@ -20,7 +20,7 @@ class MailerTest < ActionMailer::TestCase
       end
 
       should 'have link to page' do
-        assert_match "http://shoes.local:3000#{@share.content.path}", @message.body
+        assert_match "http://#{ENV['CANONICAL_HOST']}#{@share.content.path}", @message.body
       end
 
       should 'include message' do
