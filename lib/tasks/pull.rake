@@ -1,12 +1,12 @@
 require 'shellwords'
 
-namespace :staging do
+namespace :pull do
   desc 'Clone production db and s3 data to staging'
-  task :pull => 'staging:pull:db' do
-    sh 'heroku rake staging:pull:s3 --remote staging'
+  task :staging => 'pull:staging:db' do
+    sh 'heroku rake pull:staging:s3 --remote staging'
   end
 
-  namespace :pull do
+  namespace :staging do
     def dburl
       Shellwords.escape(`heroku pgbackups:url --remote production`.strip)
     end
