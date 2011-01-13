@@ -109,7 +109,11 @@ module ApplicationHelper
 
   class PayPalDonationFormBuilder < DonationFormBuilder
     def form_action
-      PayPal.url
+      if Rails.env.production?
+        'https://www.paypal.com/cgi-bin/webscr'
+      else
+        'https://www.sandbox.paypal.com/cgi-bin/webscr'
+      end
     end
 
     private
