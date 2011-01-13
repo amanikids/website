@@ -1,11 +1,3 @@
-# You'll need to set the following:
-# ENV['CANONICAL_HOST'] = '' # Actually, this one's optional.
-# ENV['GOOGLE_SECRET']  = ''
-# ENV['S3_BUCKET']      = ''
-# ENV['S3_KEY']         = ''
-# ENV['S3_SECRET']      = ''
-# ENV['SESSION_SECRET'] = ''
-
 # =====================================================================
 # Use bundler.
 # =====================================================================
