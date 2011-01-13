@@ -1,6 +1,6 @@
 class Mailer < ActionMailer::Base
   def share_created(share)
-    from ActionMailer::Configuration.site
+    from "Amani Children's Home <#{ENV['GOOGLE_EMAIL']}>"
     reply_to share.from
     recipients share.to
     subject share.subject
@@ -8,7 +8,7 @@ class Mailer < ActionMailer::Base
   end
 
   def subscription_created(subscription)
-    from ActionMailer::Configuration.site
+    from "Amani Children's Home <#{ENV['GOOGLE_EMAIL']}>"
     recipients subscription.email_with_name
     subject "Amani Children's Home e-Newsletter"
     body :name => subscription.name

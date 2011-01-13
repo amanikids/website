@@ -16,7 +16,7 @@ class MailerTest < ActionMailer::TestCase
       end
 
       should 'be from site' do
-        assert_equal [ActionMailer::Configuration.site_address], @message.from
+        assert_equal [ENV['GOOGLE_EMAIL']], @message.from
       end
 
       should 'have link to page' do
@@ -44,7 +44,7 @@ class MailerTest < ActionMailer::TestCase
       end
 
       should 'be from site' do
-        assert_equal [ActionMailer::Configuration.site_address], @message.from
+        assert_equal [ENV['GOOGLE_EMAIL']], @message.from
       end
 
       should 'have a subject' do

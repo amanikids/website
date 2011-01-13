@@ -23,14 +23,14 @@ config.action_view.cache_template_loading            = true
 
 # ActionMailer settings
 config.action_mailer.default_url_options = {
-  :host => 'amanikids.org'
+  :host => ENV['CANONICAL_HOST']
 }
 
 config.action_mailer.smtp_settings = {
   :address              => 'smtp.gmail.com',
   :port                 => '587',
   :domain               => 'amanikids.org',
-  :user_name            => 'no-reply@amanikids.org',
+  :user_name            => ENV['GOOGLE_EMAIL'],
   :password             => ENV['GOOGLE_SECRET'],
   :authentication       => :plain,
   :enable_starttls_auto => true

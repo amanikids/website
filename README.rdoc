@@ -1,6 +1,7 @@
 == Environment Variables
 
 * CANONICAL_HOST
+* GOOGLE_EMAIL
 * GOOGLE_SECRET
 * S3_BUCKET
 * S3_KEY
