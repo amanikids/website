@@ -1,21 +1,24 @@
 require 'shellwords'
 
 namespace :staging do
-  namespace :db do
+  desc 'Clone production db and s3 data to staging'
+  task :pull => 'staging:pull:db' do
+    sh 'heroku rake staging:pull:s3 --remote staging'
+  end
+
+  namespace :pull do
     def dburl
       Shellwords.escape(`heroku pgbackups:url --remote production`.strip)
     end
 
     desc 'Clone production db to staging'
-    task :pull do
+    task :db do
       sh "heroku pgbackups:capture --expire --remote production"
       sh "heroku pgbackups:restore #{dburl} --remote staging --confirm amanikids-staging"
     end
-  end
 
-  namespace :s3 do
     desc 'Clone production s3 data to staging'
-    task :pull => :environment do
+    task :s3 => :environment do
       AWS::S3::Base.establish_connection!(
         :access_key_id     => ENV['S3_KEY'],
         :secret_access_key => ENV['S3_SECRET']

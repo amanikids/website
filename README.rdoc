@@ -11,8 +11,7 @@
 == Staging Deploys
 
  heroku maintenance:on --remote staging
- rake staging:db:pull
- heroku rake staging:s3:pull --remote staging
+ rake staging:pull
  git push staging
  heroku rake db:migrate --remote staging
  heroku maintenance:off --remote staging
