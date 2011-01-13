@@ -9,7 +9,7 @@ class AddressList < ActiveRecord::Base
 
   def csv_files=(csv_files)
     csv_files.each do |file|
-      FasterCSV.parse(file).each do |row|
+      CSV.parse(file).each do |row|
         add_unique_addresses(row.grep(EMAIL_ADDRESS_PATTERN))
       end
     end

@@ -4,7 +4,6 @@ gem 'rails', '2.3.8', :require => nil
 
 gem 'authlogic',           '2.1.2'
 gem 'aws-s3',              '0.6.2', :require => 'aws/s3'
-gem 'fastercsv',           '1.5.0'
 gem 'haml',                '2.2.12'
 gem 'heroku-environment',  '0.0.1'
 gem 'paperclip',           '2.3.1.1'
