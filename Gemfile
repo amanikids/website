@@ -12,6 +12,10 @@ gem 'pg',                  '0.9.0'
 gem 'rack-canonical-host', '0.0.1'
 gem 'RedCloth',            '4.1.9'
 
+group :development do
+  gem 'heroku',            '1.17.5'
+end
+
 group :test do
   gem 'factory_girl',      '1.2.3'
   gem 'mocha',             '0.9.8', :require => nil
