@@ -2,6 +2,9 @@ require 'shellwords'
 
 namespace :pull do
   desc 'Clone production db and s3 data to staging'
+  # We can pull the database just fine from our local machine, but it's a BIG
+  # WIN to pull the s3 data from heroku, which is inside Amazon's network, and
+  # so (a) faster and (b) cheaper, not incurring access fees.
   task :staging => 'pull:staging:db' do
     sh 'heroku rake pull:staging:s3 --remote staging'
   end
