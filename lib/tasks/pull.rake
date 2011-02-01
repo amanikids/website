@@ -44,3 +44,23 @@ namespace :pull do
     end
   end
 end
+
+namespace :s3 do
+  task :cleanup do
+    AWS::S3::Base.establish_connection!(
+      :access_key_id     => ENV['S3_KEY'],
+      :secret_access_key => ENV['S3_SECRET']
+    )
+
+    source_bucket = ENV['S3_BUCKET']
+
+    require 'aws/s3/bucket_extensions'
+
+    AWS::S3::Bucket.find_each(source_bucket) do |object|
+      if object.path =~ %r{/#{source_bucket}/log-}
+        puts "Would delete #{object.path}"
+      end
+    end
+
+  end
+end
