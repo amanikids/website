@@ -46,7 +46,7 @@ namespace :pull do
 end
 
 namespace :s3 do
-  task :cleanup do
+  task :cleanup => :environment do
     AWS::S3::Base.establish_connection!(
       :access_key_id     => ENV['S3_KEY'],
       :secret_access_key => ENV['S3_SECRET']
