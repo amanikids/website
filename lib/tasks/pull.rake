@@ -57,10 +57,7 @@ namespace :s3 do
     require 'aws/s3/bucket_extensions'
 
     AWS::S3::Bucket.find_each(source_bucket) do |object|
-      if object.path =~ %r{/#{source_bucket}/log-}
-        puts "Would delete #{object.path}"
-      end
+      object.delete if object.path =~ %r{/#{source_bucket}/log-}
     end
-
   end
 end
