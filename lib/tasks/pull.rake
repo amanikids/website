@@ -52,7 +52,7 @@ namespace :s3 do
       :secret_access_key => ENV['S3_SECRET']
     )
 
-    source_bucket = ENV['S3_BUCKET']
+    source_bucket = 'amanikids-development'
 
     require 'aws/s3/bucket_extensions'
 
