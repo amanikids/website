@@ -57,16 +57,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  RedCloth (= 4.1.9)
-  authlogic (= 2.1.2)
-  aws-s3 (= 0.6.2)
-  factory_girl (= 1.2.3)
-  haml (= 2.2.12)
-  heroku (= 1.17.5)
-  heroku-environment (= 0.0.1)
-  mocha (= 0.9.8)
-  paperclip (= 2.3.8)
-  pg (= 0.9.0)
-  rack-canonical-host (= 0.0.1)
-  rails (= 2.3.8)
-  shoulda (= 2.10.2)
+  RedCloth
+  authlogic
+  aws-s3
+  factory_girl
+  haml
+  heroku
+  heroku-environment
+  mocha
+  paperclip
+  pg
+  rack-canonical-host
+  rails (~> 2.3)
+  shoulda
