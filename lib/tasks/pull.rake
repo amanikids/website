@@ -1,6 +1,28 @@
 require 'shellwords'
+require 'tempfile'
 
 namespace :pull do
+  def dburl
+    Shellwords.escape(`heroku pgbackups:url --remote production`.strip)
+  end
+
+  desc 'Clone production db to development'
+  task :development => :environment do
+    sh "heroku pgbackups:capture --expire --remote production"
+
+    Tempfile.open('dump') do |file|
+      sh "curl -o #{file.path} #{dburl}"
+      sh "pg_restore --verbose --clean --no-acl --no-owner -d amanikids_website_development #{file.path}"
+    end
+
+    User.find_each do |user|
+      user.update_attributes(
+        :password              => 'secret',
+        :password_confirmation => 'secret'
+      )
+    end
+  end
+
   desc 'Clone production db and s3 data to staging'
   # We can pull the database just fine from our local machine, but it's a BIG
   # WIN to pull the s3 data from heroku, which is inside Amazon's network, and
@@ -10,10 +32,6 @@ namespace :pull do
   end
 
   namespace :staging do
-    def dburl
-      Shellwords.escape(`heroku pgbackups:url --remote production`.strip)
-    end
-
     desc 'Clone production db to staging'
     task :db do
       sh "heroku pgbackups:capture --expire --remote production"
