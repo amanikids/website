@@ -20,3 +20,9 @@ group :test do
   gem 'mocha', :require => nil
   gem 'shoulda'
 end
+
+group :cucumber do
+  gem 'capybara'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+end
