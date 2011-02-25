@@ -1,7 +1,5 @@
-require 'csv'
-
 class AddressList < ActiveRecord::Base
-  EMAIL_ADDRESS_PATTERN = /^\s*[a-z0-9._-]+@([a-z0-9-]+\.)+[a-z]{2,}\s*$/i
+  EMAIL_ADDRESS_PATTERN = /[a-z0-9._-]+@(?:[a-z0-9-]+\.)+[a-z]{2,}/i
 
   serialize :addresses, Array
 
@@ -13,8 +11,8 @@ class AddressList < ActiveRecord::Base
 
   def csv_files=(csv_files)
     csv_files.each do |file|
-      CSV.parse(file).each do |row|
-        add_addresses(row.grep(EMAIL_ADDRESS_PATTERN))
+      file.each_line do |line|
+        add_addresses(line.scan(EMAIL_ADDRESS_PATTERN))
       end
     end
   end
