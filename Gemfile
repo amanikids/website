@@ -2,6 +2,9 @@ source :rubygems
 
 gem 'rails', '~> 2.3.16', :require => nil
 
+# Pin to the older rake version
+gem 'rake', '~> 0.8.7'
+
 gem 'authlogic'
 gem 'aws-s3', :require => 'aws/s3'
 gem 'haml'
