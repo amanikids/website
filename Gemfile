@@ -14,10 +14,6 @@ gem 'pg'
 gem 'rack-canonical-host'
 gem 'RedCloth'
 
-group :development do
-  gem 'heroku', :require => nil
-end
-
 group :test do
   gem 'factory_girl'
   gem 'mocha', :require => nil
