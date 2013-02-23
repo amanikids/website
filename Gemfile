@@ -13,6 +13,7 @@ gem 'paperclip'
 gem 'pg'
 gem 'rack-canonical-host'
 gem 'RedCloth'
+gem 'thin'
 
 group :test do
   gem 'factory_girl'
