@@ -15,6 +15,10 @@ gem 'rack-canonical-host'
 gem 'RedCloth'
 gem 'thin'
 
+group :development do
+  gem 'foreman', :require => nil
+end
+
 group :test do
   gem 'factory_girl'
   gem 'mocha', :require => nil
