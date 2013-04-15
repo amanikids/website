@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'rails', '~> 2.3.17', :require => nil
+gem 'rails', '~> 2.3.18', :require => nil
 
 # Pin to the older rake version
 gem 'rake', '~> 0.8.7'
